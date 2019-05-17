@@ -1,0 +1,1980 @@
+
+
+
+************************************************************
+***     __  __ ____   ____ _                             ***
+***    |  \/  |  _ \ / ___| |__   ___ _ __ ___           ***
+***    | |\/| | |_) | |   | '_ \ / _ \ '_ ` _ \          ***
+***    | |  | |  _ <| |___| | | |  __/ | | | | |         ***
+***    |_|  |_|_| \_\\____|_| |_|\___|_| |_| |_|         ***
+***                                                      ***
+***    VERSION 0.0.1 (rev. 0e4c064a)                      ***
+***                                                      ***
+***    Stig Rune Jensen <stig.r.jensen@uit.no>           ***
+***    Luca Frediani    <luca.frediani@uit.no>           ***
+***    Peter Wind       <peter.wind@uit.no>              ***
+***                                                      ***
+************************************************************
+
+
++++ Parallel execution: 
+  MPI hosts available     : 16
+  Threads/host            : 32
+  Total used CPUs         : 512
+
+
+------------------------------------------------------------
+
+ MRCPP version   : X.Y.Z
+ Git revision    : 774c17b
+
+ Linear algebra  : EIGEN
+ Parallelization : MPI/OpenMP
+
+------------------------------------------------------------
+
+
+
+
+============================================================
+                  MultiResolution Analysis                  
+------------------------------------------------------------
+ polynomial order = 8
+ polynomial type  = Interpolating
+------------------------------------------------------------
+ unit length      = 64.000000
+ total boxes      = 18
+ boxes            = [           3           3           2 ]
+ lower bounds     = [ -128.000000 -128.000000  -64.000000 ]
+ upper bounds     = [   64.000000   64.000000   64.000000 ]
+ total length     = [  192.000000  192.000000  128.000000 ]
+============================================================
+
+
+============================================================
+                          Molecule
+------------------------------------------------------------
+ Nr  Element             x             y             z      
+------------------------------------------------------------
+  1     H           0.00000e+00   2.11460e+00   0.00000e+00
+  2     H           1.09037e+00  -7.04868e-01  -1.66863e+00
+  3     H           9.01399e-01  -7.04868e-01   1.77823e+00
+  4     H          -3.84559e+00  -2.22988e-01   1.52690e+00
+  5     H          -3.66985e+00  -2.13539e-01  -1.92185e+00
+  6     H          -1.63083e+00  -4.53534e+00  -1.83492e+00
+  7     H          -1.80091e+00  -4.55424e+00   1.61383e+00
+  8     H          -6.54790e+00  -4.06858e+00   1.38895e+00
+  9     H          -6.38916e+00  -4.04779e+00  -2.06169e+00
+ 10     H          -4.34826e+00  -8.36960e+00  -1.99933e+00
+ 11     H          -4.50322e+00  -8.39983e+00   1.45131e+00
+ 12     H          -9.25210e+00  -7.91417e+00   1.24911e+00
+ 13     H          -9.11037e+00  -7.88205e+00  -2.19964e+00
+ 14     H          -7.06758e+00  -1.22020e+01  -2.16185e+00
+ 15     H          -7.20553e+00  -1.22435e+01   1.28879e+00
+ 16     H          -1.19563e+01  -1.17598e+01   1.11116e+00
+ 17     H          -1.18297e+01  -1.17163e+01  -2.33948e+00
+ 18     H          -9.78689e+00  -1.60362e+01  -2.32436e+00
+ 19     H          -9.90783e+00  -1.60891e+01   1.12439e+00
+ 20     H          -1.46586e+01  -1.56054e+01   9.73209e-01
+ 21     H          -1.45490e+01  -1.55506e+01  -2.47743e+00
+ 22     H          -1.25062e+01  -1.98705e+01  -2.48877e+00
+ 23     H          -1.26101e+01  -1.99347e+01   9.61871e-01
+ 24     H          -1.73628e+01  -1.94509e+01   8.33369e-01
+ 25     H          -1.72683e+01  -1.93848e+01  -2.61727e+00
+ 26     H          -1.52255e+01  -2.37047e+01  -2.65129e+00
+ 27     H          -1.53124e+01  -2.37803e+01   7.99354e-01
+ 28     H          -2.00651e+01  -2.32965e+01   6.95419e-01
+ 29     H          -1.99895e+01  -2.32191e+01  -2.75711e+00
+ 30     H          -1.79448e+01  -2.75371e+01  -2.81569e+00
+ 31     H          -1.80148e+01  -2.76259e+01   6.36838e-01
+ 32     H          -2.27693e+01  -2.71440e+01   5.55579e-01
+ 33     H          -2.27088e+01  -2.70533e+01  -2.89506e+00
+ 34     H          -2.06642e+01  -3.13713e+01  -2.97821e+00
+ 35     H          -2.07190e+01  -3.14715e+01   4.72432e-01
+ 36     H          -2.54716e+01  -3.09896e+01   4.17629e-01
+ 37     H          -2.54282e+01  -3.08876e+01  -3.03301e+00
+ 38     H          -2.33835e+01  -3.52037e+01  -3.14072e+00
+ 39     H          -2.34213e+01  -3.53152e+01   3.09915e-01
+ 40     H          -2.71629e+01  -3.75942e+01  -1.53257e+00
+ 41     H          -2.81758e+01  -3.48352e+01   2.77790e-01
+ 42     H          -2.81475e+01  -3.47218e+01  -3.17285e+00
+ 43     C           0.00000e+00   0.00000e+00   0.00000e+00
+ 44     C          -2.76278e+00  -9.24076e-01  -1.49288e-01
+ 45     C          -2.71176e+00  -3.83992e+00  -1.56847e-01
+ 46     C          -5.47265e+00  -4.76400e+00  -2.94797e-01
+ 47     C          -5.42162e+00  -7.67985e+00  -3.11805e-01
+ 48     C          -8.18440e+00  -8.60392e+00  -4.40306e-01
+ 49     C          -8.13338e+00  -1.15198e+01  -4.68652e-01
+ 50     C          -1.08962e+01  -1.24438e+01  -5.85815e-01
+ 51     C          -1.08432e+01  -1.53578e+01  -6.23610e-01
+ 52     C          -1.36079e+01  -1.62819e+01  -7.33214e-01
+ 53     C          -1.35550e+01  -1.91977e+01  -7.80457e-01
+ 54     C          -1.63197e+01  -2.01218e+01  -8.78723e-01
+ 55     C          -1.62668e+01  -2.30376e+01  -9.35414e-01
+ 56     C          -1.90295e+01  -2.39617e+01  -1.02423e+00
+ 57     C          -1.89766e+01  -2.68776e+01  -1.09226e+00
+ 58     C          -2.17413e+01  -2.78016e+01  -1.16974e+00
+ 59     C          -2.16884e+01  -3.07175e+01  -1.24722e+00
+ 60     C          -2.44531e+01  -3.16416e+01  -1.31714e+00
+ 61     C          -2.43983e+01  -3.45555e+01  -1.40407e+00
+ 62     C          -2.71648e+01  -3.54815e+01  -1.46265e+00
+------------------------------------------------------------
+ Center of mass:   -1.35814e+01  -1.77405e+01  -7.53618e-01
+============================================================
+
+
+Error: calcNode(), line 94: This translation should not occourError: calcNode(), line 94: This translation should not occour
+
+Error: calcNode(), line 94: This translation should not occourError: calcNode(), line 94: This translation should not occour
+
+Error: calcNode(), line 94Error: calcNode(), line : This translation should not occour
+94: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 94: 94: This translation should not occourThis translation should not occour
+
+Error: calcNode(), line 141: This translation should not occour
+Error: calcNode(), line Error: calcNodeError: calcNode(), line 94: (), line 141This translation should not occour: This translation should not occour
+94: This translation should not occour
+
+Error: calcNode(), line 94Error: calcNode(), line 94: This translation should not occour: This translation should not occour
+
+Error: calcNode(), line 141Error: calcNode(), line 141: This translation should not occour
+: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 9494: : This translation should not occourThis translation should not occour
+
+Error: calcNode(), line 94: This translation should not occourError: calcNode(), line 94Error: calcNode(), line 94: This translation should not occour
+
+: This translation should not occour
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNode(), line 141Error: calcNode(), line 141: This translation should not occour
+: This translation should not occour
+Error: Error: calcNodeError: calcNode(), line (), line 94calcNode(), line 94: : This translation should not occour94: This translation should not occour
+
+This translation should not occour
+Error: calcNode(), line 94: This translation should not occour
+Error: Error: calcNode(), line 141: This translation should not occourcalcNode(), line 141: This translation should not occour
+
+Error: calcNodeError: calcNode(), line (), line 94: 94: Error: calcNode(), line 141This translation should not occour
+Error: calcNode(), line 141: This translation should not occour
+This translation should not occour
+: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 141: 141: This translation should not occourThis translation should not occour
+
+Error: calcNode(), line Error: calcNode(), line 141: This translation should not occour
+141: This translation should not occour
+Error: calcNode(), line 141Error: calcNode(), line 141: This translation should not occour
+: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line Error: calcNode(), line 94141: This translation should not occour
+Error: : This translation should not occourcalcNode(), line 
+94: This translation should not occour141: 
+This translation should not occour
+Error: calcNode(), line 94Error: calcNode(), line : Error: Error: This translation should not occour
+calcNode(), line 141: calcNode94(), line : This translation should not occour141: 
+This translation should not occour
+This translation should not occour
+Error: calcNode(), line 141Error: calcNode: This translation should not occour
+(), line 141: This translation should not occour
+Error: calcNode(), line 141: This translation should not occour
+Error: calcNode(), line 141: This translation should not occour
+Error: calcNode(), line Error: calcNode94: This translation should not occour(), line 94: This translation should not occour
+
+Error: calcNode(), line 141Error: calcNode(), line 141: This translation should not occour
+: This translation should not occour
+Error: calcNode(), line 141: Error: calcNodeThis translation should not occour
+(), line 141: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 94: This translation should not occour
+94: This translation should not occour
+Error: calcNodeError: calcNode(), line (), line 141141: : This translation should not occour
+This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 141141: This translation should not occour
+: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 94: This translation should not occour94: This translation should not occour
+
+Error: calcNode(), line Error: calcNode(), line 9494: : This translation should not occourThis translation should not occour
+
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNode(), line 141Error: calcNode(), line : This translation should not occour
+141: This translation should not occour
+Error: Error: calcNode(), line 94: This translation should not occour
+calcNode(), line 94: This translation should not occour
+Error: calcNode(), line 141Error: calcNode: This translation should not occour
+(), line 141: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 141141: This translation should not occour
+: This translation should not occour
+Error: calcNode(), line 141Error: calcNode(), line : This translation should not occour
+141: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 9494: This translation should not occour: This translation should not occour
+
+Error: calcNode(), line 94Error: calcNode(), line : This translation should not occour94: This translation should not occour
+
+Error: Error: calcNodeError: calcNode(), line Error: calcNode(), line 141calcNode(), line 94: This translation should not occour94: This translation should not occour: 
+
+This translation should not occour
+(), line 141: This translation should not occour
+Error: calcNodeError: calcNode(), line (), line 141141: This translation should not occour
+: This translation should not occour
+Error: calcNodeError: calcNode(), line 94(), line 94: This translation should not occour: This translation should not occour
+
+Error: Error: calcNode(), line calcNode(), line 94: This translation should not occour94: This translation should not occour
+
+Error: calcNode(), line 141: Error: calcNode(), line 141: This translation should not occour
+This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 9494: This translation should not occour
+Error: Error: : This translation should not occourcalcNode(), line 141: This translation should not occour
+
+calcNode(), line 141: This translation should not occour
+Error: calcNodeError: calcNode(), line (), line 141: This translation should not occour141: This translation should not occour
+
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNodeError: calcNode(), line 141: This translation should not occour
+(), line 141: This translation should not occour
+Error: calcNodeError: calcNode(), line (), line 9494: : This translation should not occourThis translation should not occour
+
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNode(), line 94: This translation should not occour
+Error: calcNode(), line Error: calcNode94: This translation should not occour
+(), line 94: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 141141: : This translation should not occour
+This translation should not occour
+Error: calcNode(), line 94: This translation should not occourError: calcNode(), line 94: This translation should not occour
+
+Error: calcNode(), line Error: calcNode(), line 141: This translation should not occour
+141: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 141141: This translation should not occour
+: This translation should not occour
+Error: calcNode(), line Error: calcNode(), line 141: This translation should not occour
+141: This translation should not occour
+===Error: calcNode(), line ================Error: calcNode(), line ===========94==========: This translation should not occour=========
+==========94: =
+       This translation should not occour
+         Setting up nuclear potential
+------------------------------------------------------------
+ Nr  Element         Charge        Precision     Smoothing 
+------------------------------------------------------------
+  1     H            1.00000e+00   1.00000e-05   3.51692e-03
+  2     H            1.00000e+00   1.00000e-05   3.51692e-03
+  3     H            1.00000e+00   1.00000e-05   3.51692e-03
+  4     H            1.00000e+00   1.00000e-05   3.51692e-03
+  5     H            1.00000e+00   1.00000e-05   3.51692e-03
+  6     H            1.00000e+00   1.00000e-05   3.51692e-03
+  7     H            1.00000e+00   1.00000e-05   3.51692e-03
+  8     H            1.00000e+00   1.00000e-05   3.51692e-03
+  9     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 10     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 11     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 12     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 13     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 14     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 15     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 16     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 17     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 18     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 19     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 20     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 21     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 22     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 23     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 24     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 25     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 26     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 27     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 28     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 29     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 30     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 31     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 32     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 33     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 34     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 35     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 36     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 37     H            1.00000e+00   1.00000e-05   3.51692e-03
+ 38     H Error: calcNode           1.00000e+00   1.00000e-05   3.51692e-03
+ 39(), line 141Error:      H            1.00000e+00   1.00000e-05   3.51692e-03
+calcNode(), line 141 40     H            1.00000e+00   1.00000e-05:    3.51692e-03
+ 41     H            1.00000e+00This translation should not occour
+   1.00000e-05   3.51692e-03
+ 42     H: This translation should not occour
+            1.00000e+00   1.00000e-05   3.51692e-03
+ 43     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 44     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 45     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 46     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 47     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 48     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 49     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 50     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 51     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 52     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 53     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 54     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 55     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 56     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 57     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 58     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 59     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 60     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 61     C            6.00000e+00   1.00000e-05   1.77519e-04
+ 62     C            6.00000e+00   1.00000e-05   1.77519e-04
+============================================================
+
+
+============================================================
+                Setting up Gaussian-type MOs
+------------------------------------------------------------
+    n  Spin  Occ                           SquareNorm
+------------------------------------------------------------
+Error: calcNode(), line Error: calcNode(), line 141: This translation should not occour
+141: This translation should not occour
+    0    p    2                       9.999999983209948e-01
+    1    p    2                      -1.000000000000000e+00
+    2    p    2                      -1.000000000000000e+00
+    3    p    2                      -1.000000000000000e+00
+    4    p    2                      -1.000000000000000e+00
+    5    p    2                      -1.000000000000000e+00
+    6    p    2                      -1.000000000000000e+00
+    7    p    2                      -1.000000000000000e+00
+    8    p    2                      -1.000000000000000e+00
+    9    p    2                      -1.000000000000000e+00
+   10    p    2                      -1.000000000000000e+00
+   11    p    2                      -1.000000000000000e+00
+   12    p    2                      -1.000000000000000e+00
+   13    p    2                      -1.000000000000000e+00
+   14    p    2                      -1.000000000000000e+00
+   15    p    2                      -1.000000000000000e+00
+   16    p    2                       1.000000001094700e+00
+   17    p    2                      -1.000000000000000e+00
+   18    p    2                      -1.000000000000000e+00
+   19    p    2                      -1.000000000000000e+00
+   20    p    2                      -1.000000000000000e+00
+   21    p    2                      -1.000000000000000e+00
+   22    p    2                      -1.000000000000000e+00
+   23    p    2                      -1.000000000000000e+00
+   24    p    2                      -1.000000000000000e+00
+   25    p    2                      -1.000000000000000e+00
+   26    p    2                      -1.000000000000000e+00
+   27    p    2                      -1.000000000000000e+00
+   28    p    2                      -1.000000000000000e+00
+   29    p    2                      -1.000000000000000e+00
+   30    p    2                      -1.000000000000000e+00
+   31    p    2                      -1.000000000000000e+00
+   32    p    2                       1.000000000702930e+00
+   33    p    2                      -1.000000000000000e+00
+   34    p    2                      -1.000000000000000e+00
+   35    p    2                      -1.000000000000000e+00
+   36    p    2                      -1.000000000000000e+00
+   37    p    2                      -1.000000000000000e+00
+   38    p    2                      -1.000000000000000e+00
+   39    p    2                      -1.000000000000000e+00
+   40    p    2                      -1.000000000000000e+00
+   41    p    2                      -1.000000000000000e+00
+   42    p    2                      -1.000000000000000e+00
+   43    p    2                      -1.000000000000000e+00
+   44    p    2                      -1.000000000000000e+00
+   45    p    2                      -1.000000000000000e+00
+   46    p    2                      -1.000000000000000e+00
+   47    p    2                      -1.000000000000000e+00
+   48    p    2                       9.999999999958467e-01
+   49    p    2                      -1.000000000000000e+00
+   50    p    2                      -1.000000000000000e+00
+   51    p    2                      -1.000000000000000e+00
+   52    p    2                      -1.000000000000000e+00
+   53    p    2                      -1.000000000000000e+00
+   54    p    2                      -1.000000000000000e+00
+   55    p    2                      -1.000000000000000e+00
+   56    p    2                      -1.000000000000000e+00
+   57    p    2                      -1.000000000000000e+00
+   58    p    2                      -1.000000000000000e+00
+   59    p    2                      -1.000000000000000e+00
+   60    p    2                      -1.000000000000000e+00
+   61    p    2                      -1.000000000000000e+00
+   62    p    2                      -1.000000000000000e+00
+   63    p    2                      -1.000000000000000e+00
+   64    p    2                       9.999999998842807e-01
+   65    p    2                      -1.000000000000000e+00
+   66    p    2                      -1.000000000000000e+00
+   67    p    2                      -1.000000000000000e+00
+   68    p    2                      -1.000000000000000e+00
+   69    p    2                      -1.000000000000000e+00
+   70    p    2                      -1.000000000000000e+00
+   71    p    2                      -1.000000000000000e+00
+   72    p    2                      -1.000000000000000e+00
+   73    p    2                      -1.000000000000000e+00
+   74    p    2                      -1.000000000000000e+00
+   75    p    2                      -1.000000000000000e+00
+   76    p    2                      -1.000000000000000e+00
+   77    p    2                      -1.000000000000000e+00
+   78    p    2                      -1.000000000000000e+00
+   79    p    2                      -1.000000000000000e+00
+   80    p    2                       9.999999995531382e-01
+------------------------------------------------------------
+                 Wall time: 8.40081e+01 sec 
+============================================================
+
+
+============================================================
+ OrbitalVector:  81 orbitals    81 occupied   162 electrons
+------------------------------------------------------------
+   n  RankID           Norm          Spin Occ      Error    
+------------------------------------------------------------
+   0     0       9.999999983210e-01    p   2    1.00000e+00
+   1     1      -1.000000000000e+00    p   2    1.00000e+00
+   2     2      -1.000000000000e+00    p   2    1.00000e+00
+   3     3      -1.000000000000e+00    p   2    1.00000e+00
+   4     4      -1.000000000000e+00    p   2    1.00000e+00
+   5     5      -1.000000000000e+00    p   2    1.00000e+00
+   6     6      -1.000000000000e+00    p   2    1.00000e+00
+   7     7      -1.000000000000e+00    p   2    1.00000e+00
+   8     8      -1.000000000000e+00    p   2    1.00000e+00
+   9     9      -1.000000000000e+00    p   2    1.00000e+00
+  10    10      -1.000000000000e+00    p   2    1.00000e+00
+  11    11      -1.000000000000e+00    p   2    1.00000e+00
+  12    12      -1.000000000000e+00    p   2    1.00000e+00
+  13    13      -1.000000000000e+00    p   2    1.00000e+00
+  14    14      -1.000000000000e+00    p   2    1.00000e+00
+  15    15      -1.000000000000e+00    p   2    1.00000e+00
+  16     0       1.000000001095e+00    p   2    1.00000e+00
+  17     1      -1.000000000000e+00    p   2    1.00000e+00
+  18     2      -1.000000000000e+00    p   2    1.00000e+00
+  19     3      -1.000000000000e+00    p   2    1.00000e+00
+  20     4      -1.000000000000e+00    p   2    1.00000e+00
+  21     5      -1.000000000000e+00    p   2    1.00000e+00
+  22     6      -1.000000000000e+00    p   2    1.00000e+00
+  23     7      -1.000000000000e+00    p   2    1.00000e+00
+  24     8      -1.000000000000e+00    p   2    1.00000e+00
+  25     9      -1.000000000000e+00    p   2    1.00000e+00
+  26    10      -1.000000000000e+00    p   2    1.00000e+00
+  27    11      -1.000000000000e+00    p   2    1.00000e+00
+  28    12      -1.000000000000e+00    p   2    1.00000e+00
+  29    13      -1.000000000000e+00    p   2    1.00000e+00
+  30    14      -1.000000000000e+00    p   2    1.00000e+00
+  31    15      -1.000000000000e+00    p   2    1.00000e+00
+  32     0       1.000000000703e+00    p   2    1.00000e+00
+  33     1      -1.000000000000e+00    p   2    1.00000e+00
+  34     2      -1.000000000000e+00    p   2    1.00000e+00
+  35     3      -1.000000000000e+00    p   2    1.00000e+00
+  36     4      -1.000000000000e+00    p   2    1.00000e+00
+  37     5      -1.000000000000e+00    p   2    1.00000e+00
+  38     6      -1.000000000000e+00    p   2    1.00000e+00
+  39     7      -1.000000000000e+00    p   2    1.00000e+00
+  40     8      -1.000000000000e+00    p   2    1.00000e+00
+  41     9      -1.000000000000e+00    p   2    1.00000e+00
+  42    10      -1.000000000000e+00    p   2    1.00000e+00
+  43    11      -1.000000000000e+00    p   2    1.00000e+00
+  44    12      -1.000000000000e+00    p   2    1.00000e+00
+  45    13      -1.000000000000e+00    p   2    1.00000e+00
+  46    14      -1.000000000000e+00    p   2    1.00000e+00
+  47    15      -1.000000000000e+00    p   2    1.00000e+00
+  48     0       9.999999999958e-01    p   2    1.00000e+00
+  49     1      -1.000000000000e+00    p   2    1.00000e+00
+  50     2      -1.000000000000e+00    p   2    1.00000e+00
+  51     3      -1.000000000000e+00    p   2    1.00000e+00
+  52     4      -1.000000000000e+00    p   2    1.00000e+00
+  53     5      -1.000000000000e+00    p   2    1.00000e+00
+  54     6      -1.000000000000e+00    p   2    1.00000e+00
+  55     7      -1.000000000000e+00    p   2    1.00000e+00
+  56     8      -1.000000000000e+00    p   2    1.00000e+00
+  57     9      -1.000000000000e+00    p   2    1.00000e+00
+  58    10      -1.000000000000e+00    p   2    1.00000e+00
+  59    11      -1.000000000000e+00    p   2    1.00000e+00
+  60    12      -1.000000000000e+00    p   2    1.00000e+00
+  61    13      -1.000000000000e+00    p   2    1.00000e+00
+  62    14      -1.000000000000e+00    p   2    1.00000e+00
+  63    15      -1.000000000000e+00    p   2    1.00000e+00
+  64     0       9.999999998843e-01    p   2    1.00000e+00
+  65     1      -1.000000000000e+00    p   2    1.00000e+00
+  66     2      -1.000000000000e+00    p   2    1.00000e+00
+  67     3      -1.000000000000e+00    p   2    1.00000e+00
+  68     4      -1.000000000000e+00    p   2    1.00000e+00
+  69     5      -1.000000000000e+00    p   2    1.00000e+00
+  70     6      -1.000000000000e+00    p   2    1.00000e+00
+  71     7      -1.000000000000e+00    p   2    1.00000e+00
+  72     8      -1.000000000000e+00    p   2    1.00000e+00
+  73     9      -1.000000000000e+00    p   2    1.00000e+00
+  74    10      -1.000000000000e+00    p   2    1.00000e+00
+  75    11      -1.000000000000e+00    p   2    1.00000e+00
+  76    12      -1.000000000000e+00    p   2    1.00000e+00
+  77    13      -1.000000000000e+00    p   2    1.00000e+00
+  78    14      -1.000000000000e+00    p   2    1.00000e+00
+  79    15      -1.000000000000e+00    p   2    1.00000e+00
+  80     0       9.999999995531e-01    p   2    1.00000e+00
+============================================================
+
+
+============================================================
+                  Setting up Fock operator
+------------------------------------------------------------
+ Precision                                      1.00000e-05
+------------------------------------------------------------
+ Nuclear potential                   10778      7.19107e+00
+ Reduce density                                 3.22679e+00
+ Broadcast density                              1.80384e+00
+ Coulomb density                     20058      6.43807e+00
+ Coulomb potential                    2682      1.48624e+01
+------------------------------------------------------------
+                 Wall time: 2.84921e+01 sec 
+============================================================
+
+
+============================================================
+                  Calculating Fock matrix
+------------------------------------------------------------
+ Kinetic part                         3.296293791800000e+01
+ Potential part                       1.818954374800000e+01
+------------------------------------------------------------
+                 Wall time: 5.11527e+01 sec 
+============================================================
+
+
+
+
+####################### SCF cycle  1 #######################
+
+
+============================================================
+ Current precision                              1.00000e-05
+------------------------------------------------------------
+ Orbital threshold                              1.00000e-04
+ Property threshold                            -1.00000e+00
+============================================================
+
+
+============================================================
+                    Localizing orbitals
+------------------------------------------------------------
+ Computing position matrices                    6.51426e+01
+ Computing Foster-Boys matrix                   7.09419e-01
+ Converged after iteration                               25
+ Rotating orbitals                              1.25710e+01
+------------------------------------------------------------
+                 Wall time: 7.84232e+01 sec 
+============================================================
+
+
+============================================================
+                   Calculating SCF energy
+------------------------------------------------------------
+ Nuclear energy                       1.376117959136984e+03
+ Electronic energy                   -2.039780382062388e+03
+------------------------------------------------------------
+ Total energy                        -6.636624229254044e+02
+------------------------------------------------------------
+                 Wall time: 2.78140e+00 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz operators
+------------------------------------------------------------
+ Creating operator with lambda                 -7.58132e+00
+ Creating operator with lambda                 -7.57669e+00
+ Creating operator with lambda                 -5.00000e-01
+ Creating operator with lambda                 -5.00000e-01
+ Creating operator with lambda                 -5.00000e-01
+ Creating operator with lambda                 -5.00000e-01
+------------------------------------------------------------
+                 Wall time: 7.57691e-01 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz arguments
+------------------------------------------------------------
+ Potential part                                 1.51713e+00
+ Matrix part                                    1.30327e+01
+------------------------------------------------------------
+   0       6.50325e+00   7754            0.00000e+00      0
+  16       6.50536e+00   7786            0.00000e+00      0
+  32       5.21327e-01   7706            0.00000e+00      0
+  48       5.23803e-01   7706            0.00000e+00      0
+  64       5.24880e-01   7738            0.00000e+00      0
+  80       7.01597e-01   7722            0.00000e+00      0
+------------------------------------------------------------
+                 Wall time: 1.50480e+01 sec 
+============================================================
+
+
+============================================================
+                Applying Helmholtz operators
+------------------------------------------------------------
+ Orb    RealNorm   Nodes     ImagNorm   Nodes     Timing
+------------------------------------------------------------
+  0    1.02637e+00   866    0.00000e+00     0   4.53001e+00
+ 16    1.02637e+00   810    0.00000e+00     0   3.54368e+00
+ 32    1.07086e+00   914    0.00000e+00     0   5.34236e+00
+ 48    1.06876e+00  1066    0.00000e+00     0   5.83946e+00
+ 64    1.06728e+00  1146    0.00000e+00     0   5.96041e+00
+ 80    1.03901e+00  1746    0.00000e+00     0   7.60542e+00
+------------------------------------------------------------
+                 Wall time: 3.48440e+01 sec 
+============================================================
+
+
+============================================================
+               Iterative subspace accelerator
+------------------------------------------------------------
+ Push back orbitals                             1.58326e-01
+ Copy orbitals                                  6.19107e-02
+ Copy orbital updates                           7.27064e-02
+------------------------------------------------------------
+                 Wall time: 2.93052e-01 sec 
+============================================================
+
+
+============================================================
+                  Setting up Fock operator
+------------------------------------------------------------
+ Precision                                      1.00000e-05
+------------------------------------------------------------
+ Nuclear potential                   10778      7.17283e+00
+ Reduce density                                 5.10986e+00
+ Broadcast density                              2.22641e+00
+ Coulomb density                     24434      8.23531e+00
+ Coulomb potential                    2674      1.66356e+01
+------------------------------------------------------------
+                 Wall time: 3.20443e+01 sec 
+============================================================
+
+
+============================================================
+                  Calculating Fock matrix
+------------------------------------------------------------
+ Kinetic part                         1.001774346300000e+01
+ Potential part                       6.246030334000000e+00
+------------------------------------------------------------
+                 Wall time: 1.62640e+01 sec 
+============================================================
+
+
+============================================================
+                          Orbitals
+------------------------------------------------------------
+ Orb    F(i,i)        Error         nNodes  Spin  Occ  Done 
+------------------------------------------------------------
+  0  -8.27248e+00   4.30262e-02        850    p    2    0
+  1  -8.27238e+00   4.30261e-02          0    p    2    0
+  2  -8.26528e+00   4.30077e-02          0    p    2    0
+  3  -8.26518e+00   4.30081e-02          0    p    2    0
+  4  -8.25896e+00   4.30053e-02          0    p    2    0
+  5  -8.25882e+00   4.30056e-02          0    p    2    0
+  6  -8.25641e+00   4.30056e-02          0    p    2    0
+  7  -8.25632e+00   4.30059e-02          0    p    2    0
+  8  -8.25470e+00   4.30077e-02          0    p    2    0
+  9  -8.25471e+00   4.30059e-02          0    p    2    0
+ 10  -8.25406e+00   4.30041e-02          0    p    2    0
+ 11  -8.25396e+00   4.30057e-02          0    p    2    0
+ 12  -8.25354e+00   4.30057e-02          0    p    2    0
+ 13  -8.25351e+00   4.30057e-02          0    p    2    0
+ 14  -8.25314e+00   4.30067e-02          0    p    2    0
+ 15  -8.25321e+00   4.30063e-02          0    p    2    0
+ 16  -8.25310e+00   4.30066e-02        738    p    2    0
+ 17  -8.25319e+00   4.30057e-02          0    p    2    0
+ 18  -8.27600e+00   4.31316e-02          0    p    2    0
+ 19  -8.27592e+00   4.31322e-02          0    p    2    0
+ 20  -1.83366e-01   8.75503e-02          0    p    2    0
+ 21  -1.85172e-01   8.76203e-02          0    p    2    0
+ 22  -1.91379e-01   8.84677e-02          0    p    2    0
+ 23  -1.96175e-01   9.08942e-02          0    p    2    0
+ 24  -1.84004e-01   8.75833e-02          0    p    2    0
+ 25  -1.24066e-01   1.32940e-01          0    p    2    0
+ 26  -1.83712e-01   8.75625e-02          0    p    2    0
+ 27  -1.94879e-01   1.00488e-01          0    p    2    0
+ 28  -1.91137e-01   8.84583e-02          0    p    2    0
+ 29  -1.26475e-01   1.32946e-01          0    p    2    0
+ 30  -1.82750e-01   8.75530e-02          0    p    2    0
+ 31  -1.23517e-01   1.39949e-01          0    p    2    0
+ 32  -1.23426e-01   1.39929e-01        970    p    2    0
+ 33  -1.24672e-01   1.32927e-01          0    p    2    0
+ 34  -1.25206e-01   1.32936e-01          0    p    2    0
+ 35  -1.27790e-01   1.32913e-01          0    p    2    0
+ 36  -1.24282e-01   1.32929e-01          0    p    2    0
+ 37  -1.27699e-01   1.32918e-01          0    p    2    0
+ 38  -1.24211e-01   1.32965e-01          0    p    2    0
+ 39  -1.82765e-01   8.75527e-02          0    p    2    0
+ 40  -1.23837e-01   1.32930e-01          0    p    2    0
+ 41  -1.25274e-01   1.32938e-01          0    p    2    0
+ 42  -1.32251e-01   1.33403e-01          0    p    2    0
+ 43  -1.27898e-01   1.36448e-01          0    p    2    0
+ 44  -1.24774e-01   1.32939e-01          0    p    2    0
+ 45  -1.24238e-01   1.32951e-01          0    p    2    0
+ 46  -1.13926e-01   1.43019e-01          0    p    2    0
+ 47  -1.13944e-01   1.43033e-01          0    p    2    0
+ 48  -1.27755e-01   1.36416e-01       1138    p    2    0
+ 49  -1.87235e-01   8.77790e-02          0    p    2    0
+ 50  -1.86956e-01   8.77815e-02          0    p    2    0
+ 51  -1.24644e-01   1.32933e-01          0    p    2    0
+ 52  -1.32094e-01   1.33406e-01          0    p    2    0
+ 53  -1.24271e-01   1.32927e-01          0    p    2    0
+ 54  -1.23929e-01   1.32939e-01          0    p    2    0
+ 55  -1.24177e-01   1.32917e-01          0    p    2    0
+ 56  -1.83579e-01   8.75536e-02          0    p    2    0
+ 57  -1.24624e-01   1.32923e-01          0    p    2    0
+ 58  -1.83915e-01   8.75791e-02          0    p    2    0
+ 59  -1.27904e-01   1.36433e-01          0    p    2    0
+ 60  -1.26683e-01   1.32953e-01          0    p    2    0
+ 61  -1.32117e-01   1.33394e-01          0    p    2    0
+ 62  -1.24249e-01   1.32947e-01          0    p    2    0
+ 63  -1.28006e-01   1.32935e-01          0    p    2    0
+ 64  -1.26546e-01   1.32952e-01       1114    p    2    0
+ 65  -1.27910e-01   1.36448e-01          0    p    2    0
+ 66  -1.32417e-01   1.33425e-01          0    p    2    0
+ 67  -1.25238e-01   1.32938e-01          0    p    2    0
+ 68  -1.82994e-01   8.75517e-02          0    p    2    0
+ 69  -1.23446e-01   1.39933e-01          0    p    2    0
+ 70  -1.96165e-01   9.08854e-02          0    p    2    0
+ 71  -1.26659e-01   1.32973e-01          0    p    2    0
+ 72  -1.27741e-01   1.32903e-01          0    p    2    0
+ 73  -1.23436e-01   1.39937e-01          0    p    2    0
+ 74  -1.24154e-01   1.32921e-01          0    p    2    0
+ 75  -1.25165e-01   1.32934e-01          0    p    2    0
+ 76  -1.24097e-01   1.32940e-01          0    p    2    0
+ 77  -1.23902e-01   1.32945e-01          0    p    2    0
+ 78  -1.94656e-01   1.00493e-01          0    p    2    0
+ 79  -1.85211e-01   8.76274e-02          0    p    2    0
+ 80  -1.82817e-01   8.75592e-02       1762    p    2    0
+------------------------------------------------------------
+ Total error:                            9.74096e-01    0
+============================================================
+
+
+============================================================
+                    Energy                 Update      Done 
+------------------------------------------------------------
+ Orbital      -2.885157908642854e+02    -2.88516e+02    1
+ Kinetic       7.774990939360130e+02     7.77499e+02    1
+ N-E          -4.568544067196503e+03    -4.56854e+03    1
+ Coulomb       1.751264591198103e+03     1.75126e+03    1
+ Exchange      0.000000000000000e+00     0.00000e+00    1
+ X-C           0.000000000000000e+00     0.00000e+00    1
+------------------------------------------------------------
+ Electronic   -2.039780382062388e+03    -2.03978e+03    1
+ Nuclear       1.376117959136984e+03     1.37612e+03    1
+------------------------------------------------------------
+ Total        -6.636624229254044e+02    -6.63662e+02    1
+============================================================
+
+
+################ Wall time: 1.97923e+02 sec ################
+
+
+
+
+####################### SCF cycle  2 #######################
+
+
+============================================================
+ Current precision                              1.00000e-05
+------------------------------------------------------------
+ Orbital threshold                              1.00000e-04
+ Property threshold                            -1.00000e+00
+============================================================
+
+
+============================================================
+                    Localizing orbitals
+------------------------------------------------------------
+ Computing position matrices                    1.53897e+01
+ Computing Foster-Boys matrix                   6.18822e-01
+ Converged after iteration                                3
+ Rotating orbitals                              6.88009e+00
+------------------------------------------------------------
+                 Wall time: 2.28888e+01 sec 
+============================================================
+
+
+============================================================
+                   Calculating SCF energy
+------------------------------------------------------------
+ Nuclear energy                       1.376117959136984e+03
+ Electronic energy                   -2.043770467136299e+03
+------------------------------------------------------------
+ Total energy                        -6.676525079993148e+02
+------------------------------------------------------------
+                 Wall time: 2.34493e+00 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz operators
+------------------------------------------------------------
+ Creating operator with lambda                 -8.28236e+00
+ Creating operator with lambda                 -8.26299e+00
+ Creating operator with lambda                 -1.18857e-01
+ Creating operator with lambda                 -1.22281e-01
+ Creating operator with lambda                 -1.20941e-01
+ Creating operator with lambda                 -1.84137e-01
+------------------------------------------------------------
+                 Wall time: 9.31692e-01 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz arguments
+------------------------------------------------------------
+ Potential part                                 1.83902e+00
+ Matrix part                                    1.35038e+01
+------------------------------------------------------------
+   0       6.34653e+00   8762            0.00000e+00      0
+  16       6.34249e+00   8802            0.00000e+00      0
+  32       4.54278e-01   8714            0.00000e+00      0
+  48       4.55654e-01   8730            0.00000e+00      0
+  64       4.58871e-01   8738            0.00000e+00      0
+  80       6.66824e-01   8698            0.00000e+00      0
+------------------------------------------------------------
+                 Wall time: 1.58828e+01 sec 
+============================================================
+
+
+============================================================
+                Applying Helmholtz operators
+------------------------------------------------------------
+ Orb    RealNorm   Nodes     ImagNorm   Nodes     Timing
+------------------------------------------------------------
+  0    1.00504e+00   834    0.00000e+00     0   5.60858e+00
+ 16    1.00503e+00   778    0.00000e+00     0   5.08494e+00
+ 32    9.94105e-01   954    0.00000e+00     0   6.97111e+00
+ 48    9.95121e-01  1130    0.00000e+00     0   7.60560e+00
+ 64    9.97743e-01  1202    0.00000e+00     0   6.92227e+00
+ 80    9.91586e-01  1850    0.00000e+00     0   1.05788e+01
+------------------------------------------------------------
+                 Wall time: 4.64606e+01 sec 
+============================================================
+
+
+============================================================
+               Iterative subspace accelerator
+------------------------------------------------------------
+ Push back orbitals                             8.60673e-02
+ Copy orbitals                                  7.16567e-02
+ Copy orbital updates                           7.78802e-02
+------------------------------------------------------------
+                 Wall time: 2.35717e-01 sec 
+============================================================
+
+
+============================================================
+                  Setting up Fock operator
+------------------------------------------------------------
+ Precision                                      1.00000e-05
+------------------------------------------------------------
+ Nuclear potential                   10778      7.23538e+00
+ Reduce density                                 5.40410e+00
+ Broadcast density                              2.78425e+00
+ Coulomb density                     25714      9.58679e+00
+ Coulomb potential                    2674      1.91409e+01
+------------------------------------------------------------
+                 Wall time: 3.59637e+01 sec 
+============================================================
+
+
+============================================================
+                  Calculating Fock matrix
+------------------------------------------------------------
+ Kinetic part                         7.639757917000000e+00
+ Potential part                       6.546534758000000e+00
+------------------------------------------------------------
+                 Wall time: 1.41865e+01 sec 
+============================================================
+
+
+============================================================
+                          Orbitals
+------------------------------------------------------------
+ Orb    F(i,i)        Error         nNodes  Spin  Occ  Done 
+------------------------------------------------------------
+  0  -8.24662e+00   9.11923e-03        834    p    2    0
+  1  -8.24648e+00   9.12089e-03          0    p    2    0
+  2  -8.24254e+00   8.83611e-03          0    p    2    0
+  3  -8.24243e+00   8.83776e-03          0    p    2    0
+  4  -8.24399e+00   8.82974e-03          0    p    2    0
+  5  -8.24387e+00   8.83197e-03          0    p    2    0
+  6  -8.24452e+00   8.81818e-03          0    p    2    0
+  7  -8.24443e+00   8.81983e-03          0    p    2    0
+  8  -8.24459e+00   8.81620e-03          0    p    2    0
+  9  -8.24457e+00   8.81566e-03          0    p    2    0
+ 10  -8.24441e+00   8.81319e-03          0    p    2    0
+ 11  -8.24428e+00   8.81489e-03          0    p    2    0
+ 12  -8.24412e+00   8.81341e-03          0    p    2    0
+ 13  -8.24415e+00   8.81386e-03          0    p    2    0
+ 14  -8.24395e+00   8.81487e-03          0    p    2    0
+ 15  -8.24393e+00   8.81614e-03          0    p    2    0
+ 16  -8.24387e+00   8.81592e-03        722    p    2    0
+ 17  -8.24382e+00   8.81618e-03          0    p    2    0
+ 18  -8.25166e+00   9.98443e-03          0    p    2    0
+ 19  -8.25153e+00   9.98752e-03          0    p    2    0
+ 20  -1.51487e-01   4.23573e-02          0    p    2    0
+ 21  -1.52080e-01   4.22142e-02          0    p    2    0
+ 22  -1.52878e-01   4.26548e-02          0    p    2    0
+ 23  -1.53934e-01   4.46833e-02          0    p    2    0
+ 24  -1.51749e-01   4.23367e-02          0    p    2    0
+ 25  -1.22318e-01   6.09580e-02          0    p    2    0
+ 26  -1.51758e-01   4.23202e-02          0    p    2    0
+ 27  -1.56344e-01   5.74033e-02          0    p    2    0
+ 28  -1.52640e-01   4.26886e-02          0    p    2    0
+ 29  -1.22826e-01   6.02507e-02          0    p    2    0
+ 30  -1.51039e-01   4.24460e-02          0    p    2    0
+ 31  -1.16538e-01   6.68030e-02          0    p    2    0
+ 32  -1.16479e-01   6.68573e-02        978    p    2    0
+ 33  -1.22610e-01   6.07931e-02          0    p    2    0
+ 34  -1.22938e-01   6.06674e-02          0    p    2    0
+ 35  -1.22645e-01   5.99714e-02          0    p    2    0
+ 36  -1.22540e-01   6.08798e-02          0    p    2    0
+ 37  -1.22548e-01   6.00350e-02          0    p    2    0
+ 38  -1.22477e-01   6.08293e-02          0    p    2    0
+ 39  -1.50999e-01   4.24574e-02          0    p    2    0
+ 40  -1.22156e-01   6.10459e-02          0    p    2    0
+ 41  -1.22981e-01   6.06341e-02          0    p    2    0
+ 42  -1.22371e-01   6.12699e-02          0    p    2    0
+ 43  -1.20373e-01   6.42253e-02          0    p    2    0
+ 44  -1.22684e-01   6.07353e-02          0    p    2    0
+ 45  -1.22470e-01   6.08482e-02          0    p    2    0
+ 46  -1.09655e-01   7.08890e-02          0    p    2    0
+ 47  -1.09653e-01   7.08829e-02          0    p    2    0
+ 48  -1.20282e-01   6.42759e-02       1146    p    2    0
+ 49  -1.52239e-01   4.23229e-02          0    p    2    0
+ 50  -1.51988e-01   4.23895e-02          0    p    2    0
+ 51  -1.22589e-01   6.08254e-02          0    p    2    0
+ 52  -1.22219e-01   6.13628e-02          0    p    2    0
+ 53  -1.22488e-01   6.09060e-02          0    p    2    0
+ 54  -1.22270e-01   6.09659e-02          0    p    2    0
+ 55  -1.22416e-01   6.09451e-02          0    p    2    0
+ 56  -1.51600e-01   4.23419e-02          0    p    2    0
+ 57  -1.22597e-01   6.08021e-02          0    p    2    0
+ 58  -1.51680e-01   4.23447e-02          0    p    2    0
+ 59  -1.20399e-01   6.41740e-02          0    p    2    0
+ 60  -1.23009e-01   6.01212e-02          0    p    2    0
+ 61  -1.22266e-01   6.13097e-02          0    p    2    0
+ 62  -1.22447e-01   6.08453e-02          0    p    2    0
+ 63  -1.22813e-01   5.98415e-02          0    p    2    0
+ 64  -1.22898e-01   6.01732e-02       1186    p    2    0
+ 65  -1.20428e-01   6.41884e-02          0    p    2    0
+ 66  -1.22515e-01   6.11471e-02          0    p    2    0
+ 67  -1.22945e-01   6.06682e-02          0    p    2    0
+ 68  -1.51207e-01   4.24187e-02          0    p    2    0
+ 69  -1.16483e-01   6.68402e-02          0    p    2    0
+ 70  -1.53948e-01   4.46697e-02          0    p    2    0
+ 71  -1.22971e-01   6.01572e-02          0    p    2    0
+ 72  -1.22585e-01   6.00150e-02          0    p    2    0
+ 73  -1.16456e-01   6.68630e-02          0    p    2    0
+ 74  -1.22413e-01   6.09760e-02          0    p    2    0
+ 75  -1.22899e-01   6.06861e-02          0    p    2    0
+ 76  -1.22306e-01   6.09587e-02          0    p    2    0
+ 77  -1.22241e-01   6.10244e-02          0    p    2    0
+ 78  -1.56112e-01   5.74709e-02          0    p    2    0
+ 79  -1.52117e-01   4.22195e-02          0    p    2    0
+ 80  -1.51097e-01   4.24411e-02       1778    p    2    0
+------------------------------------------------------------
+ Total error:                            4.48907e-01    0
+============================================================
+
+
+============================================================
+                    Energy                 Update      Done 
+------------------------------------------------------------
+ Orbital      -3.480447746691089e+02    -5.95290e+01    1
+ Kinetic       7.087992164821710e+02    -6.86999e+01    1
+ N-E          -4.448295376085660e+03     1.20249e+02    1
+ Coulomb       1.695725692467190e+03    -5.55389e+01    1
+ Exchange      0.000000000000000e+00     0.00000e+00    1
+ X-C           0.000000000000000e+00     0.00000e+00    1
+------------------------------------------------------------
+ Electronic   -2.043770467136299e+03    -3.99009e+00    1
+ Nuclear       1.376117959136984e+03     0.00000e+00    1
+------------------------------------------------------------
+ Total        -6.676525079993148e+02    -3.99009e+00    1
+============================================================
+
+
+################ Wall time: 1.57373e+02 sec ################
+
+
+
+
+####################### SCF cycle  3 #######################
+
+
+============================================================
+ Current precision                              1.00000e-05
+------------------------------------------------------------
+ Orbital threshold                              1.00000e-04
+ Property threshold                            -1.00000e+00
+============================================================
+
+
+============================================================
+                   Calculating SCF energy
+------------------------------------------------------------
+ Nuclear energy                       1.376117959136984e+03
+ Electronic energy                   -2.044056879368871e+03
+------------------------------------------------------------
+ Total energy                        -6.679389202318869e+02
+------------------------------------------------------------
+                 Wall time: 3.11350e+00 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz operators
+------------------------------------------------------------
+ Creating operator with lambda                 -8.24662e+00
+ Creating operator with lambda                 -8.24387e+00
+ Creating operator with lambda                 -1.16479e-01
+ Creating operator with lambda                 -1.20282e-01
+ Creating operator with lambda                 -1.22898e-01
+ Creating operator with lambda                 -1.51097e-01
+------------------------------------------------------------
+                 Wall time: 7.33216e-01 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz arguments
+------------------------------------------------------------
+ Potential part                                 1.70206e+00
+ Matrix part                                    1.38238e+01
+------------------------------------------------------------
+   0       6.29154e+00   8914            0.00000e+00      0
+  16       6.28882e+00   8954            0.00000e+00      0
+  32       4.68822e-01   8866            0.00000e+00      0
+  48       4.65694e-01   8882            0.00000e+00      0
+  64       4.67306e-01   8898            0.00000e+00      0
+  80       6.71232e-01   8850            0.00000e+00      0
+------------------------------------------------------------
+                 Wall time: 1.60769e+01 sec 
+============================================================
+
+
+============================================================
+                Applying Helmholtz operators
+------------------------------------------------------------
+ Orb    RealNorm   Nodes     ImagNorm   Nodes     Timing
+------------------------------------------------------------
+  0    1.00129e+00   834    0.00000e+00     0   4.85586e+00
+ 16    1.00130e+00   794    0.00000e+00     0   4.42631e+00
+ 32    1.01950e+00   970    0.00000e+00     0   5.90077e+00
+ 48    1.01815e+00  1146    0.00000e+00     0   6.59990e+00
+ 64    1.01412e+00  1234    0.00000e+00     0   6.31165e+00
+ 80    1.01050e+00  1818    0.00000e+00     0   8.45956e+00
+------------------------------------------------------------
+                 Wall time: 4.73214e+01 sec 
+============================================================
+
+
+============================================================
+               Iterative subspace accelerator
+------------------------------------------------------------
+ Push back orbitals                             4.64267e-02
+ Setup linear system                            4.96808e-01
+ Solve linear system                            2.29880e-05
+ Expand solution                                3.87946e-01
+------------------------------------------------------------
+                 Wall time: 9.31320e-01 sec 
+============================================================
+
+
+============================================================
+                  Setting up Fock operator
+------------------------------------------------------------
+ Precision                                      1.00000e-05
+------------------------------------------------------------
+ Nuclear potential                   10778      7.26471e+00
+ Reduce density                                 5.41727e+00
+ Broadcast density                              2.88070e+00
+ Coulomb density                     26050      9.17003e+00
+ Coulomb potential                    2650      1.10665e+01
+------------------------------------------------------------
+                 Wall time: 2.75018e+01 sec 
+============================================================
+
+
+============================================================
+                  Calculating Fock matrix
+------------------------------------------------------------
+ Kinetic part                         1.568523328900000e+01
+ Potential part                       6.403180976000000e+00
+------------------------------------------------------------
+                 Wall time: 2.20886e+01 sec 
+============================================================
+
+
+============================================================
+                          Orbitals
+------------------------------------------------------------
+ Orb    F(i,i)        Error         nNodes  Spin  Occ  Done 
+------------------------------------------------------------
+  0  -8.40148e+00   3.79319e-03        842    p    2    0
+  1  -8.40146e+00   3.79418e-03          0    p    2    0
+  2  -8.39394e+00   3.62635e-03          0    p    2    0
+  3  -8.39388e+00   3.62676e-03          0    p    2    0
+  4  -8.38442e+00   3.48833e-03          0    p    2    0
+  5  -8.38436e+00   3.48936e-03          0    p    2    0
+  6  -8.37752e+00   3.45919e-03          0    p    2    0
+  7  -8.37745e+00   3.46014e-03          0    p    2    0
+  8  -8.37358e+00   3.45018e-03          0    p    2    0
+  9  -8.37362e+00   3.45124e-03          0    p    2    0
+ 10  -8.37209e+00   3.44923e-03          0    p    2    0
+ 11  -8.37203e+00   3.45016e-03          0    p    2    0
+ 12  -8.37116e+00   3.45050e-03          0    p    2    0
+ 13  -8.37111e+00   3.45034e-03          0    p    2    0
+ 14  -8.37056e+00   3.45064e-03          0    p    2    0
+ 15  -8.37070e+00   3.45098e-03          0    p    2    0
+ 16  -8.37055e+00   3.45109e-03        738    p    2    0
+ 17  -8.37071e+00   3.45246e-03          0    p    2    0
+ 18  -8.39804e+00   4.09629e-03          0    p    2    0
+ 19  -8.39804e+00   4.09852e-03          0    p    2    0
+ 20  -2.44407e-01   5.42052e-02          0    p    2    0
+ 21  -2.48372e-01   5.41440e-02          0    p    2    0
+ 22  -2.60951e-01   6.28249e-02          0    p    2    0
+ 23  -2.67231e-01   6.06729e-02          0    p    2    0
+ 24  -2.45941e-01   5.43919e-02          0    p    2    0
+ 25  -1.84097e-01   3.29659e-02          0    p    2    0
+ 26  -2.44995e-01   5.41431e-02          0    p    2    0
+ 27  -2.62712e-01   6.46119e-02          0    p    2    0
+ 28  -2.60745e-01   6.28229e-02          0    p    2    0
+ 29  -1.88770e-01   3.39751e-02          0    p    2    0
+ 30  -2.43653e-01   5.42885e-02          0    p    2    0
+ 31  -1.84492e-01   4.49610e-02          0    p    2    0
+ 32  -1.84351e-01   4.49389e-02       1026    p    2    0
+ 33  -1.85165e-01   3.30381e-02          0    p    2    0
+ 34  -1.86231e-01   3.32069e-02          0    p    2    0
+ 35  -1.92012e-01   3.52129e-02          0    p    2    0
+ 36  -1.84426e-01   3.29586e-02          0    p    2    0
+ 37  -1.91959e-01   3.52735e-02          0    p    2    0
+ 38  -1.84166e-01   3.29550e-02          0    p    2    0
+ 39  -2.43712e-01   5.43450e-02          0    p    2    0
+ 40  -1.83812e-01   3.29712e-02          0    p    2    0
+ 41  -1.86301e-01   3.32412e-02          0    p    2    0
+ 42  -1.97979e-01   3.95069e-02          0    p    2    0
+ 43  -1.93288e-01   4.28860e-02          0    p    2    0
+ 44  -1.85260e-01   3.30400e-02          0    p    2    0
+ 45  -1.84260e-01   3.29638e-02          0    p    2    0
+ 46  -1.72278e-01   4.68672e-02          0    p    2    0
+ 47  -1.72349e-01   4.69435e-02          0    p    2    0
+ 48  -1.93093e-01   4.28073e-02       1178    p    2    0
+ 49  -2.53092e-01   5.52474e-02          0    p    2    0
+ 50  -2.52850e-01   5.52688e-02          0    p    2    0
+ 51  -1.85124e-01   3.30395e-02          0    p    2    0
+ 52  -1.97848e-01   3.95638e-02          0    p    2    0
+ 53  -1.84423e-01   3.30018e-02          0    p    2    0
+ 54  -1.83884e-01   3.29256e-02          0    p    2    0
+ 55  -1.84330e-01   3.29922e-02          0    p    2    0
+ 56  -2.44886e-01   5.42199e-02          0    p    2    0
+ 57  -1.85094e-01   3.29996e-02          0    p    2    0
+ 58  -2.45830e-01   5.44477e-02          0    p    2    0
+ 59  -1.93269e-01   4.27911e-02          0    p    2    0
+ 60  -1.88965e-01   3.39580e-02          0    p    2    0
+ 61  -1.97831e-01   3.95016e-02          0    p    2    0
+ 62  -1.84289e-01   3.29903e-02          0    p    2    0
+ 63  -1.92243e-01   3.52268e-02          0    p    2    0
+ 64  -1.88847e-01   3.39672e-02       1210    p    2    0
+ 65  -1.93240e-01   4.27998e-02          0    p    2    0
+ 66  -1.98145e-01   3.94697e-02          0    p    2    0
+ 67  -1.86298e-01   3.32711e-02          0    p    2    0
+ 68  -2.44027e-01   5.43096e-02          0    p    2    0
+ 69  -1.84385e-01   4.49396e-02          0    p    2    0
+ 70  -2.67168e-01   6.06873e-02          0    p    2    0
+ 71  -1.88969e-01   3.40048e-02          0    p    2    0
+ 72  -1.91968e-01   3.52494e-02          0    p    2    0
+ 73  -1.84404e-01   4.49898e-02          0    p    2    0
+ 74  -1.84307e-01   3.30051e-02          0    p    2    0
+ 75  -1.86218e-01   3.32356e-02          0    p    2    0
+ 76  -1.84151e-01   3.30212e-02          0    p    2    0
+ 77  -1.83871e-01   3.29547e-02          0    p    2    0
+ 78  -2.62553e-01   6.46734e-02          0    p    2    0
+ 79  -2.48425e-01   5.42173e-02          0    p    2    0
+ 80  -2.43744e-01   5.42881e-02       1770    p    2    0
+------------------------------------------------------------
+ Total error:                            3.46207e-01    0
+============================================================
+
+
+============================================================
+                    Energy                 Update      Done 
+------------------------------------------------------------
+ Orbital      -3.457717264610176e+02     2.27305e+00    1
+ Kinetic       7.012370852415354e+02    -7.56213e+00    1
+ N-E          -4.443579117518259e+03     4.71626e+00    1
+ Coulomb       1.698285152907853e+03     2.55946e+00    1
+ Exchange      0.000000000000000e+00     0.00000e+00    1
+ X-C           0.000000000000000e+00     0.00000e+00    1
+------------------------------------------------------------
+ Electronic   -2.044056879368871e+03    -2.86412e-01    1
+ Nuclear       1.376117959136984e+03     0.00000e+00    1
+------------------------------------------------------------
+ Total        -6.679389202318869e+02    -2.86412e-01    1
+============================================================
+
+
+################ Wall time: 1.38562e+02 sec ################
+
+
+
+
+####################### SCF cycle  4 #######################
+
+
+============================================================
+ Current precision                              1.00000e-05
+------------------------------------------------------------
+ Orbital threshold                              1.00000e-04
+ Property threshold                            -1.00000e+00
+============================================================
+
+
+============================================================
+                   Calculating SCF energy
+------------------------------------------------------------
+ Nuclear energy                       1.376117959136984e+03
+ Electronic energy                   -2.044030055134592e+03
+------------------------------------------------------------
+ Total energy                        -6.679120959976078e+02
+------------------------------------------------------------
+                 Wall time: 3.60749e+00 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz operators
+------------------------------------------------------------
+ Creating operator with lambda                 -8.40148e+00
+ Creating operator with lambda                 -8.37055e+00
+ Creating operator with lambda                 -1.84351e-01
+ Creating operator with lambda                 -1.93093e-01
+ Creating operator with lambda                 -1.88847e-01
+ Creating operator with lambda                 -2.43744e-01
+------------------------------------------------------------
+                 Wall time: 7.70550e-01 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz arguments
+------------------------------------------------------------
+ Potential part                                 2.13725e+00
+ Matrix part                                    1.49363e+01
+------------------------------------------------------------
+   0       6.28606e+00   8882            0.00000e+00      0
+  16       6.28085e+00   8922            0.00000e+00      0
+  32       4.57046e-01   8834            0.00000e+00      0
+  48       4.57087e-01   8850            0.00000e+00      0
+  64       4.61013e-01   8858            0.00000e+00      0
+  80       6.63137e-01   8818            0.00000e+00      0
+------------------------------------------------------------
+                 Wall time: 1.76391e+01 sec 
+============================================================
+
+
+============================================================
+                Applying Helmholtz operators
+------------------------------------------------------------
+ Orb    RealNorm   Nodes     ImagNorm   Nodes     Timing
+------------------------------------------------------------
+  0    1.00036e+00   842    0.00000e+00     0   7.18501e+00
+ 16    1.00035e+00   802    0.00000e+00     0   4.92075e+00
+ 32    9.70614e-01  1026    0.00000e+00     0   8.15379e+00
+ 48    9.74696e-01  1178    0.00000e+00     0   8.93541e+00
+ 64    9.81094e-01  1282    0.00000e+00     0   8.73633e+00
+ 80    9.89861e-01  1826    0.00000e+00     0   1.17945e+01
+------------------------------------------------------------
+                 Wall time: 4.97265e+01 sec 
+============================================================
+
+
+============================================================
+               Iterative subspace accelerator
+------------------------------------------------------------
+ Push back orbitals                             3.18957e-01
+ Setup linear system                            1.01914e+00
+ Solve linear system                            2.36040e-05
+ Expand solution                                6.33630e-01
+------------------------------------------------------------
+                 Wall time: 1.97189e+00 sec 
+============================================================
+
+
+============================================================
+                  Setting up Fock operator
+------------------------------------------------------------
+ Precision                                      1.00000e-05
+------------------------------------------------------------
+ Nuclear potential                   10778      7.31105e+00
+ Reduce density                                 5.62457e+00
+ Broadcast density                              2.96420e+00
+ Coulomb density                     26074      9.66888e+00
+ Coulomb potential                    2666      1.28987e+01
+------------------------------------------------------------
+                 Wall time: 2.98793e+01 sec 
+============================================================
+
+
+============================================================
+                  Calculating Fock matrix
+------------------------------------------------------------
+ Kinetic part                         1.455951365000000e+01
+ Potential part                       6.205858664000000e+00
+------------------------------------------------------------
+                 Wall time: 2.07656e+01 sec 
+============================================================
+
+
+============================================================
+                          Orbitals
+------------------------------------------------------------
+ Orb    F(i,i)        Error         nNodes  Spin  Occ  Done 
+------------------------------------------------------------
+  0  -8.30396e+00   1.84102e-03        850    p    2    0
+  1  -8.30386e+00   1.84130e-03          0    p    2    0
+  2  -8.30281e+00   1.81625e-03          0    p    2    0
+  3  -8.30271e+00   1.81533e-03          0    p    2    0
+  4  -8.30175e+00   1.80302e-03          0    p    2    0
+  5  -8.30166e+00   1.80205e-03          0    p    2    0
+  6  -8.30071e+00   1.71890e-03          0    p    2    0
+  7  -8.30063e+00   1.71795e-03          0    p    2    0
+  8  -8.29988e+00   1.71050e-03          0    p    2    0
+  9  -8.29988e+00   1.71180e-03          0    p    2    0
+ 10  -8.29937e+00   1.71641e-03          0    p    2    0
+ 11  -8.29928e+00   1.71624e-03          0    p    2    0
+ 12  -8.29885e+00   1.71864e-03          0    p    2    0
+ 13  -8.29884e+00   1.71835e-03          0    p    2    0
+ 14  -8.29842e+00   1.72045e-03          0    p    2    0
+ 15  -8.29851e+00   1.71972e-03          0    p    2    0
+ 16  -8.29838e+00   1.72078e-03        754    p    2    0
+ 17  -8.29845e+00   1.72034e-03          0    p    2    0
+ 18  -8.29576e+00   1.92732e-03          0    p    2    0
+ 19  -8.29566e+00   1.92903e-03          0    p    2    0
+ 20  -1.87941e-01   2.39049e-02          0    p    2    0
+ 21  -1.89392e-01   2.38440e-02          0    p    2    0
+ 22  -1.92766e-01   2.52933e-02          0    p    2    0
+ 23  -1.93285e-01   2.59973e-02          0    p    2    0
+ 24  -1.88611e-01   2.38044e-02          0    p    2    0
+ 25  -1.48402e-01   2.30849e-02          0    p    2    0
+ 26  -1.88332e-01   2.38605e-02          0    p    2    0
+ 27  -1.89253e-01   2.66937e-02          0    p    2    0
+ 28  -1.92542e-01   2.52962e-02          0    p    2    0
+ 29  -1.49880e-01   2.36870e-02          0    p    2    0
+ 30  -1.87324e-01   2.39653e-02          0    p    2    0
+ 31  -1.37447e-01   3.19302e-02          0    p    2    0
+ 32  -1.37365e-01   3.18963e-02       1018    p    2    0
+ 33  -1.48961e-01   2.30819e-02          0    p    2    0
+ 34  -1.49430e-01   2.31969e-02          0    p    2    0
+ 35  -1.50312e-01   2.51020e-02          0    p    2    0
+ 36  -1.48668e-01   2.30790e-02          0    p    2    0
+ 37  -1.50236e-01   2.51203e-02          0    p    2    0
+ 38  -1.48511e-01   2.30889e-02          0    p    2    0
+ 39  -1.87345e-01   2.39590e-02          0    p    2    0
+ 40  -1.48177e-01   2.31097e-02          0    p    2    0
+ 41  -1.49488e-01   2.32063e-02          0    p    2    0
+ 42  -1.51528e-01   2.61430e-02          0    p    2    0
+ 43  -1.46695e-01   2.93720e-02          0    p    2    0
+ 44  -1.49045e-01   2.30815e-02          0    p    2    0
+ 45  -1.48556e-01   2.30736e-02          0    p    2    0
+ 46  -1.28612e-01   3.48125e-02          0    p    2    0
+ 47  -1.28631e-01   3.48600e-02          0    p    2    0
+ 48  -1.46557e-01   2.93462e-02       1170    p    2    0
+ 49  -1.90545e-01   2.43606e-02          0    p    2    0
+ 50  -1.90301e-01   2.43598e-02          0    p    2    0
+ 51  -1.48931e-01   2.30833e-02          0    p    2    0
+ 52  -1.51382e-01   2.61556e-02          0    p    2    0
+ 53  -1.48640e-01   2.30982e-02          0    p    2    0
+ 54  -1.48262e-01   2.30890e-02          0    p    2    0
+ 55  -1.48557e-01   2.30964e-02          0    p    2    0
+ 56  -1.88200e-01   2.38600e-02          0    p    2    0
+ 57  -1.48919e-01   2.30716e-02          0    p    2    0
+ 58  -1.88529e-01   2.37991e-02          0    p    2    0
+ 59  -1.46692e-01   2.93507e-02          0    p    2    0
+ 60  -1.50068e-01   2.36749e-02          0    p    2    0
+ 61  -1.51399e-01   2.61409e-02          0    p    2    0
+ 62  -1.48557e-01   2.30894e-02          0    p    2    0
+ 63  -1.50507e-01   2.50943e-02          0    p    2    0
+ 64  -1.49951e-01   2.36798e-02       1202    p    2    0
+ 65  -1.46706e-01   2.93429e-02          0    p    2    0
+ 66  -1.51673e-01   2.61316e-02          0    p    2    0
+ 67  -1.49462e-01   2.32254e-02          0    p    2    0
+ 68  -1.87619e-01   2.39157e-02          0    p    2    0
+ 69  -1.37381e-01   3.19008e-02          0    p    2    0
+ 70  -1.93272e-01   2.60023e-02          0    p    2    0
+ 71  -1.50049e-01   2.36888e-02          0    p    2    0
+ 72  -1.50262e-01   2.51149e-02          0    p    2    0
+ 73  -1.37365e-01   3.19211e-02          0    p    2    0
+ 74  -1.48547e-01   2.30970e-02          0    p    2    0
+ 75  -1.49399e-01   2.32167e-02          0    p    2    0
+ 76  -1.48420e-01   2.31049e-02          0    p    2    0
+ 77  -1.48245e-01   2.31041e-02          0    p    2    0
+ 78  -1.89046e-01   2.67137e-02          0    p    2    0
+ 79  -1.89433e-01   2.38512e-02          0    p    2    0
+ 80  -1.87409e-01   2.39536e-02       1770    p    2    0
+------------------------------------------------------------
+ Total error:                            1.99281e-01    0
+============================================================
+
+
+============================================================
+                    Energy                 Update      Done 
+------------------------------------------------------------
+ Orbital      -3.605567592260948e+02    -1.47850e+01    1
+ Kinetic       6.943183941300310e+02    -6.91869e+00    1
+ N-E          -4.421821745173120e+03     2.17574e+01    1
+ Coulomb       1.683473295908497e+03    -1.48119e+01    1
+ Exchange      0.000000000000000e+00     0.00000e+00    1
+ X-C           0.000000000000000e+00     0.00000e+00    1
+------------------------------------------------------------
+ Electronic   -2.044030055134592e+03     2.68242e-02    1
+ Nuclear       1.376117959136984e+03     0.00000e+00    1
+------------------------------------------------------------
+ Total        -6.679120959976078e+02     2.68242e-02    1
+============================================================
+
+
+################ Wall time: 1.44520e+02 sec ################
+
+
+
+
+####################### SCF cycle  5 #######################
+
+
+============================================================
+ Current precision                              1.00000e-05
+------------------------------------------------------------
+ Orbital threshold                              1.00000e-04
+ Property threshold                            -1.00000e+00
+============================================================
+
+
+============================================================
+                   Calculating SCF energy
+------------------------------------------------------------
+ Nuclear energy                       1.376117959136984e+03
+ Electronic energy                   -2.044105869926694e+03
+------------------------------------------------------------
+ Total energy                        -6.679879107897104e+02
+------------------------------------------------------------
+                 Wall time: 2.88997e+00 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz operators
+------------------------------------------------------------
+ Creating operator with lambda                 -8.30396e+00
+ Creating operator with lambda                 -8.29838e+00
+ Creating operator with lambda                 -1.37365e-01
+ Creating operator with lambda                 -1.46557e-01
+ Creating operator with lambda                 -1.49951e-01
+ Creating operator with lambda                 -1.87409e-01
+------------------------------------------------------------
+                 Wall time: 7.55731e-01 sec 
+============================================================
+
+
+============================================================
+               Setting up Helmholtz arguments
+------------------------------------------------------------
+ Potential part                                 1.48107e+00
+ Matrix part                                    1.42483e+01
+------------------------------------------------------------
+   0       6.27489e+00   8898            0.00000e+00      0
+  16       6.27184e+00   8938            0.00000e+00      0
+  32       4.63889e-01   8850            0.00000e+00      0
+  48       4.62104e-01   8866            0.00000e+00      0
+  64       4.64509e-01   8874            0.00000e+00      0
+  80       6.64695e-01   8834            0.00000e+00      0
+------------------------------------------------------------
+                 Wall time: 1.63650e+01 sec 
+============================================================
+
+
+============================================================
+                Applying Helmholtz operators
+------------------------------------------------------------
+ Orb    RealNorm   Nodes     ImagNorm   Nodes     Timing
+------------------------------------------------------------
+  0    1.00017e+00   850    0.00000e+00     0   4.94803e+00
+ 16    1.00017e+00   794    0.00000e+00     0   4.48266e+00
+ 32    1.00391e+00  1018    0.00000e+00     0   6.00348e+00
+ 48    1.00191e+00  1186    0.00000e+00     0   6.51862e+00
+ 64    1.00055e+00  1258    0.00000e+00     0   5.35103e+00
+ 80    9.99884e-01  1834    0.00000e+00     0   7.31633e+00
+------------------------------------------------------------
+                 Wall time: 4.95807e+01 sec 
+============================================================
+
+
+============================================================
+               Iterative subspace accelerator
+------------------------------------------------------------
+ Push back orbitals                             4.36607e-01
+ Setup linear system                            9.58665e-01
+ Solve linear system                            8.88900e-06
+ Expand solution                                5.40780e-01
+------------------------------------------------------------
+                 Wall time: 1.93619e+00 sec 
+============================================================
+
+
+============================================================
+                  Setting up Fock operator
+------------------------------------------------------------
+ Precision                                      1.00000e-05
+------------------------------------------------------------
+ Nuclear potential                   10778      7.28546e+00
+ Reduce density                                 6.29198e+00
+ Broadcast density                              2.98006e+00
+ Coulomb density                     26074      1.02475e+01
+ Coulomb potential                    2666      1.72993e+01
+------------------------------------------------------------
+                 Wall time: 3.48329e+01 sec 
+============================================================
+
+
+============================================================
+                  Calculating Fock matrix
+------------------------------------------------------------
+ Kinetic part                         1.128184832200000e+01
+ Potential part                       6.241415331000000e+00
+------------------------------------------------------------
+                 Wall time: 1.75235e+01 sec 
+============================================================
+
+
+============================================================
+                          Orbitals
+------------------------------------------------------------
+ Orb    F(i,i)        Error         nNodes  Spin  Occ  Done 
+------------------------------------------------------------
+  0  -8.31308e+00   7.44161e-04        858    p    2    0
+  1  -8.31297e+00   7.44121e-04          0    p    2    0
+  2  -8.30651e+00   6.98180e-04          0    p    2    0
+  3  -8.30641e+00   6.97925e-04          0    p    2    0
+  4  -8.30410e+00   6.75681e-04          0    p    2    0
+  5  -8.30400e+00   6.75235e-04          0    p    2    0
+  6  -8.30186e+00   6.95621e-04          0    p    2    0
+  7  -8.30177e+00   6.95631e-04          0    p    2    0
+  8  -8.30060e+00   6.89537e-04          0    p    2    0
+  9  -8.30058e+00   6.89634e-04          0    p    2    0
+ 10  -8.29999e+00   6.90418e-04          0    p    2    0
+ 11  -8.29987e+00   6.90147e-04          0    p    2    0
+ 12  -8.29945e+00   6.91546e-04          0    p    2    0
+ 13  -8.29946e+00   6.91754e-04          0    p    2    0
+ 14  -8.29918e+00   6.92592e-04          0    p    2    0
+ 15  -8.29920e+00   6.92015e-04          0    p    2    0
+ 16  -8.29911e+00   6.92402e-04        754    p    2    0
+ 17  -8.29911e+00   6.92001e-04          0    p    2    0
+ 18  -8.31549e+00   8.76425e-04          0    p    2    0
+ 19  -8.31540e+00   8.76426e-04          0    p    2    0
+ 20  -1.88439e-01   9.27648e-03          0    p    2    0
+ 21  -1.90206e-01   1.11570e-02          0    p    2    0
+ 22  -1.95630e-01   1.49880e-02          0    p    2    0
+ 23  -1.98788e-01   1.06731e-02          0    p    2    0
+ 24  -1.89176e-01   1.02260e-02          0    p    2    0
+ 25  -1.50037e-01   4.95271e-03          0    p    2    0
+ 26  -1.88831e-01   9.43227e-03          0    p    2    0
+ 27  -1.99940e-01   1.09937e-02          0    p    2    0
+ 28  -1.95402e-01   1.50190e-02          0    p    2    0
+ 29  -1.51918e-01   4.75887e-03          0    p    2    0
+ 30  -1.87907e-01   9.18927e-03          0    p    2    0
+ 31  -1.47507e-01   8.11966e-03          0    p    2    0
+ 32  -1.47429e-01   8.14472e-03       1034    p    2    0
+ 33  -1.50586e-01   4.89945e-03          0    p    2    0
+ 34  -1.51156e-01   4.99697e-03          0    p    2    0
+ 35  -1.53081e-01   5.40062e-03          0    p    2    0
+ 36  -1.50280e-01   4.92741e-03          0    p    2    0
+ 37  -1.53003e-01   5.41054e-03          0    p    2    0
+ 38  -1.50155e-01   4.95142e-03          0    p    2    0
+ 39  -1.87894e-01   9.23798e-03          0    p    2    0
+ 40  -1.49830e-01   4.96765e-03          0    p    2    0
+ 41  -1.51214e-01   5.01568e-03          0    p    2    0
+ 42  -1.55354e-01   5.27856e-03          0    p    2    0
+ 43  -1.52826e-01   6.65333e-03          0    p    2    0
+ 44  -1.50667e-01   4.89916e-03          0    p    2    0
+ 45  -1.50188e-01   4.94525e-03          0    p    2    0
+ 46  -1.39346e-01   1.30592e-02          0    p    2    0
+ 47  -1.39364e-01   1.30592e-02          0    p    2    0
+ 48  -1.52698e-01   6.64216e-03       1194    p    2    0
+ 49  -1.92065e-01   1.13420e-02          0    p    2    0
+ 50  -1.91819e-01   1.13852e-02          0    p    2    0
+ 51  -1.50569e-01   4.90872e-03          0    p    2    0
+ 52  -1.55211e-01   5.29640e-03          0    p    2    0
+ 53  -1.50240e-01   4.93150e-03          0    p    2    0
+ 54  -1.49927e-01   4.96621e-03          0    p    2    0
+ 55  -1.50160e-01   4.93221e-03          0    p    2    0
+ 56  -1.88683e-01   9.46285e-03          0    p    2    0
+ 57  -1.50558e-01   4.89953e-03          0    p    2    0
+ 58  -1.89108e-01   1.02677e-02          0    p    2    0
+ 59  -1.52822e-01   6.60038e-03          0    p    2    0
+ 60  -1.52101e-01   4.74746e-03          0    p    2    0
+ 61  -1.55231e-01   5.28264e-03          0    p    2    0
+ 62  -1.50175e-01   4.94361e-03          0    p    2    0
+ 63  -1.53267e-01   5.37861e-03          0    p    2    0
+ 64  -1.51986e-01   4.74757e-03       1210    p    2    0
+ 65  -1.52840e-01   6.63616e-03          0    p    2    0
+ 66  -1.55492e-01   5.24574e-03          0    p    2    0
+ 67  -1.51184e-01   5.00705e-03          0    p    2    0
+ 68  -1.88141e-01   9.33053e-03          0    p    2    0
+ 69  -1.47444e-01   8.14626e-03          0    p    2    0
+ 70  -1.98782e-01   1.06599e-02          0    p    2    0
+ 71  -1.52081e-01   4.75130e-03          0    p    2    0
+ 72  -1.53034e-01   5.41279e-03          0    p    2    0
+ 73  -1.47427e-01   8.14903e-03          0    p    2    0
+ 74  -1.50161e-01   4.93920e-03          0    p    2    0
+ 75  -1.51123e-01   5.01477e-03          0    p    2    0
+ 76  -1.50040e-01   4.95281e-03          0    p    2    0
+ 77  -1.49908e-01   4.96526e-03          0    p    2    0
+ 78  -1.99727e-01   1.10354e-02          0    p    2    0
+ 79  -1.90246e-01   1.11640e-02          0    p    2    0
+ 80  -1.87977e-01   9.22239e-03       1802    p    2    0
+------------------------------------------------------------
+ Total error:                            6.20094e-02    0
+============================================================
+
+
+============================================================
+                    Energy                 Update      Done 
+------------------------------------------------------------
+ Orbital      -3.515527899762586e+02     9.00397e+00    1
+ Kinetic       6.964223312506515e+02     2.10394e+00    1
+ N-E          -4.433081281127782e+03    -1.12595e+01    1
+ Coulomb       1.692553079950436e+03     9.07978e+00    1
+ Exchange      0.000000000000000e+00     0.00000e+00    1
+ X-C           0.000000000000000e+00     0.00000e+00    1
+------------------------------------------------------------
+ Electronic   -2.044105869926694e+03    -7.58148e-02    1
+ Nuclear       1.376117959136984e+03     0.00000e+00    1
+------------------------------------------------------------
+ Total        -6.679879107897104e+02    -7.58148e-02    1
+============================================================
+
+
+################ Wall time: 1.45581e+02 sec ################
+
+
+============================================================
+                      Convergence rate
+------------------------------------------------------------
+Iter    OrbError       Property                   Update  
+------------------------------------------------------------
+  1    9.74096e-01    -6.636624229254044e+02   -6.63662e+02
+  2    4.48907e-01    -6.676525079993148e+02   -3.99009e+00
+  3    3.46207e-01    -6.679389202318869e+02   -2.86412e-01
+  4    1.99281e-01    -6.679120959976078e+02    2.68242e-02
+  5    6.20094e-02    -6.679879107897104e+02   -7.58148e-02
+------------------------------------------------------------
+                   SCF did NOT converge!!!                  
+============================================================
+
+
+============================================================
+                    Localizing orbitals
+------------------------------------------------------------
+ Computing position matrices                    2.07616e+01
+ Computing Foster-Boys matrix                   6.45281e-01
+ Converged after iteration                                3
+ Rotating orbitals                              1.13983e+01
+------------------------------------------------------------
+                 Wall time: 3.28054e+01 sec 
+============================================================
+
+
+============================================================
+                        Fock matrix
+------------------------------------------------------------
+-8.31692e+00  1.29051e-07 -6.90131e-03  3.68641e-07  4.21716e-04 -3.27861e-06  3.08387e-04 -4.47346e-06 -4.49470e-06  5.85355e-05  4.39197e-06 -4.72532e-06 -1.05702e-05  7.15373e-06 -2.48844e-05 -7.85842e-06  3.21513e-05 -2.91258e-05 -6.61017e-03  8.95602e-07  8.57502e-05  3.75679e-06 -8.65668e-04 -3.85387e-06 -1.15059e-04  1.07168e-06 -2.15264e-06 -2.25663e-01 -8.29008e-06 -1.16960e-03  1.77195e-05 -1.07864e-07 -1.85401e-03  5.99580e-05 -2.07181e-06  5.56250e-03  9.43540e-06 -1.16397e-05  3.44628e-06  2.95097e-05  5.00482e-06 -1.95554e-06  5.22748e-04 -4.12392e-07  6.01994e-05 -6.45203e-07 -1.04394e-02  1.43401e-06  2.25594e-01 -4.71645e-03  3.87299e-06 -2.96810e-06  4.33111e-07  2.54562e-05  6.61623e-06 -2.66346e-05  1.55012e-04  6.86700e-06 -6.40019e-06  1.10416e-06  1.19508e-03 -5.26243e-04 -7.07951e-06  2.53397e-06 -1.88561e-06 -2.25704e-01  4.07083e-06  3.43313e-04  5.15388e-06  1.87131e-03  2.40409e-01  4.22171e-06 -5.55407e-03 -1.29465e-07  9.67569e-07  3.45571e-04 -5.48517e-06 -5.31175e-06 -3.68188e-06  1.80533e-03 -9.49498e-06
+-1.29143e-06 -8.31681e+00 -2.71567e-06  6.90089e-03 -3.55288e-07  4.19657e-04  3.45692e-06  3.04789e-04  6.47155e-05  4.84956e-06 -3.93988e-05 -2.87012e-06 -9.79251e-06 -4.49367e-05  1.31435e-05  6.41121e-06  1.03609e-05  2.31747e-06 -1.61097e-06  6.60135e-03  2.47779e-06  1.80342e-03 -1.47551e-05 -2.40468e-01 -6.92772e-06  7.72560e-06 -1.56305e-04 -1.89451e-06 -8.30425e-04  3.11937e-06  1.70606e-05  1.89435e-03  9.44149e-07 -1.69561e-05 -3.40421e-04  9.36261e-07 -3.18001e-05  5.56647e-03 -4.65412e-06  9.52220e-06 -4.68237e-06 -3.43617e-04  6.67862e-06 -2.25837e-01 -1.53249e-05 -6.44314e-06 -8.68029e-06  1.04543e-02 -2.02388e-06 -3.85189e-07  4.70522e-03 -5.85525e-05  5.04431e-04  6.68059e-06 -5.32239e-06  4.39246e-06  2.39234e-06 -5.80044e-05 -1.15798e-04  2.25709e-01 -1.26824e-06 -7.21681e-06  1.93895e-06  5.53978e-03 -1.17333e-03  3.27147e-07  5.60497e-04  2.13135e-05  8.24022e-05  1.02394e-06  2.81069e-06  1.19599e-03 -1.04997e-06 -1.85811e-03 -3.26935e-05  2.13419e-05 -2.50852e-06  8.27355e-06  2.25499e-01 -6.81511e-06 -2.85807e-05
+-6.90142e-03  6.15903e-07 -8.31012e+00  4.78932e-07  6.90860e-03 -1.72427e-06  4.31790e-04 -3.20083e-06 -7.78261e-06  3.10238e-04  9.05604e-06 -5.90391e-05 -1.75758e-05  7.14106e-06 -1.18686e-05 -1.55299e-05  1.67526e-05 -4.17073e-05 -3.28939e-04  5.18672e-07  1.96740e-04  9.33299e-06 -2.40043e-01 -2.78904e-06 -1.93347e-03  7.00023e-06 -2.20198e-06 -6.84377e-03 -4.98178e-06 -5.53434e-03  4.71982e-05  4.92651e-07  6.92887e-03 -3.10815e-04 -2.86842e-06 -1.10491e-03 -1.03175e-06 -1.81186e-06 -1.05679e-06  1.01799e-04 -1.23999e-06 -2.58924e-07  2.24597e-01  7.89369e-07 -3.07622e-04 -7.82035e-06 -8.26450e-03 -9.28411e-08  5.06227e-04 -1.69709e-03  5.06326e-06  3.17669e-06 -7.94660e-07  6.71450e-05  2.96326e-05 -6.74385e-05  1.99528e-04  4.33519e-06 -1.73211e-05 -4.19521e-07  5.54635e-03 -2.24320e-01  2.97320e-05 -1.60468e-06 -5.19311e-07 -5.02754e-04 -3.65514e-07 -1.14269e-03  1.06679e-05 -6.97552e-03 -2.34154e-01 -2.69204e-06  1.09086e-03 -5.03854e-07 -1.86804e-06 -1.16891e-03  2.68370e-05 -3.27181e-05 -3.87588e-06  5.08072e-03 -3.00941e-05
+-1.48688e-07  6.90083e-03  2.09847e-08 -8.31002e+00  1.20916e-06 -6.89118e-03  2.21517e-06 -4.28131e-04 -3.04068e-04  3.65791e-06  7.84757e-05 -6.28754e-07 -4.38273e-06  5.10932e-05 -3.17519e-05 -5.54721e-05  1.43034e-05 -2.42338e-05  3.31946e-08 -3.29440e-04 -1.69216e-05 -5.08062e-03 -3.98923e-06 -2.34213e-01  1.76517e-05  3.37912e-05  1.97843e-04  4.37986e-06  2.39867e-01  1.16624e-06 -3.83279e-05  6.95449e-03  2.12901e-06 -3.59413e-06 -1.14215e-03 -2.27377e-08  6.41486e-05  1.09834e-03  4.18412e-06 -2.89959e-05  6.84612e-06 -1.16346e-03  9.31146e-07  4.82969e-04 -3.81192e-06 -3.22987e-05  1.15687e-05 -8.26190e-03 -8.92453e-07  1.49619e-06 -1.69189e-03 -3.05427e-04 -2.24405e-01 -1.19391e-06 -6.88304e-06  7.52725e-07 -9.24136e-06 -3.03183e-04  1.93497e-03 -5.39143e-04 -1.16504e-06 -7.07526e-07  1.35602e-06  1.15073e-03  5.52509e-03  4.35250e-07 -2.24719e-01  2.08629e-06 -1.94188e-04 -5.69853e-06  3.25612e-06 -5.55212e-03 -1.37024e-07 -6.95122e-03  6.60508e-05  1.65377e-06  1.17379e-06  2.26530e-06 -6.83869e-03 -7.71278e-06  9.90509e-05
+ 4.21718e-04  7.25046e-07  6.90853e-03 -2.10052e-06 -8.30768e+00  1.01777e-06 -6.92636e-03  1.81248e-06  5.41651e-06 -4.37804e-04 -5.91836e-06  3.12919e-04  7.54740e-05 -1.77839e-05  1.74978e-05  2.02133e-05 -1.60541e-05  2.96441e-05  2.75021e-04  1.84158e-06 -2.80244e-04 -6.05170e-06 -2.34769e-01  2.64886e-06  5.41090e-03 -9.37052e-06  1.69549e-05  6.47585e-03  1.24389e-06 -7.83904e-04 -1.19594e-04  5.50312e-07 -1.12941e-03 -1.23964e-03  9.28842e-06  2.23416e-01 -5.65978e-06  1.57536e-06 -3.19578e-05 -2.32866e-04 -3.00050e-05  4.98866e-07  1.98833e-04 -1.26012e-07 -1.20972e-03  9.11296e-06  2.84657e-03 -1.04528e-06  5.86987e-03  2.39970e-01 -4.58902e-06 -1.26058e-06 -1.07399e-06  2.90572e-04  3.98205e-06 -2.93742e-04 -2.12873e-03 -1.17759e-07  8.99420e-06 -5.99270e-07  8.02650e-04 -1.96434e-04 -6.50749e-05 -1.09888e-06 -2.38250e-07 -5.83778e-03 -1.51641e-06  5.54205e-03 -2.90401e-05  1.16104e-03  6.09354e-03 -2.45209e-06 -2.23429e-01 -4.98652e-07 -6.23676e-06  5.56303e-03 -6.51587e-05 -4.29608e-06  2.66284e-06 -3.20559e-03  5.13403e-05
+ 2.20988e-06  4.19600e-04  2.96583e-06 -6.89107e-03  1.30062e-06 -8.30758e+00  3.83683e-06 -6.91658e-03 -4.32135e-04  6.46428e-06  3.26281e-04 -5.49724e-06 -1.92164e-05  6.68838e-05 -1.52441e-05 -3.05932e-05  2.09620e-05 -1.76386e-05 -1.91098e-06 -2.76260e-04 -2.81377e-05 -3.20875e-03  7.06338e-06 -6.08223e-03  1.09609e-05  6.52571e-05  2.12573e-03 -5.70743e-06 -2.34578e-01 -9.99193e-07 -1.19506e-04  1.15931e-03 -2.15392e-06  9.35871e-07 -5.52964e-03 -9.99962e-08 -2.91083e-04  2.23457e-01 -6.29061e-06 -5.04774e-05 -5.83322e-06 -5.56382e-03  7.75901e-07 -5.84291e-03 -3.98144e-06 -6.42959e-05 -3.74496e-06 -2.84734e-03 -4.93757e-07  4.57755e-06 -2.39836e-01  1.23811e-03  2.16991e-04  4.39257e-06  2.95130e-05 -4.14833e-06 -1.65329e-05  1.21343e-03  5.41427e-03  5.85761e-03  1.15410e-06 -2.29545e-06  1.20063e-05  2.23722e-01 -8.18185e-04 -3.40259e-07  1.50706e-04 -6.97384e-06 -2.79823e-04  1.46915e-06 -5.12688e-06  7.98372e-04 -2.26576e-07 -1.13163e-03 -2.94500e-04 -5.09174e-06  1.15997e-05 -3.10239e-05 -6.47862e-03 -7.29199e-06  2.31554e-04
+ 3.08724e-04 -1.92782e-06  4.32020e-04 -1.25206e-06 -6.92617e-03  3.23659e-06 -8.30534e+00  4.52921e-06  6.28370e-06 -6.94557e-03 -1.66104e-05  4.47034e-04  3.20561e-04 -2.34090e-05  3.97211e-05  1.72167e-05 -3.40665e-05  7.89842e-05  6.52868e-05  4.21422e-06 -2.19381e-03 -1.26239e-05 -5.84465e-03  4.42845e-06  3.86359e-03  6.08842e-06  3.21554e-05  2.52122e-03  4.02194e-06 -2.22824e-01 -2.44429e-04  1.12290e-06  3.52729e-04 -5.64720e-03 -1.66983e-06  2.59743e-04 -1.32331e-05  4.29410e-07 -7.20965e-05 -3.01735e-04 -7.21314e-05  9.89086e-07  5.79149e-03  4.38990e-07 -5.63120e-03 -7.23224e-06  4.79890e-04  4.40184e-07  1.34957e-03 -2.37081e-01 -9.17768e-06 -5.46083e-06  9.23067e-07 -1.21966e-03 -4.02577e-05  1.24834e-03 -5.60261e-03 -6.60997e-06  2.82418e-05  4.42274e-07  2.23014e-01 -5.76509e-03  2.99785e-04 -3.33960e-07 -5.03963e-06 -1.32287e-03  1.00932e-06 -5.85895e-04 -5.49748e-05 -3.50128e-04  5.95062e-03  6.06171e-06 -2.30439e-04 -1.24366e-06 -1.41714e-05 -6.03514e-04  2.97241e-04  3.82010e-05  4.37246e-06 -2.39659e-01  1.29439e-04
+ 1.59013e-06  3.04829e-04  1.03804e-06 -4.28137e-04  2.72200e-06 -6.91663e-03  3.95776e-06 -8.30525e+00 -6.94985e-03  2.45171e-06  4.58874e-04 -1.51467e-05 -1.76452e-05  3.15582e-04 -5.77377e-05 -5.80784e-05  8.21696e-05 -2.98607e-05 -2.98792e-06 -5.08402e-05 -5.60956e-05 -2.39628e-01  1.41361e-05 -5.94890e-03  1.73366e-05 -2.97496e-04  5.59443e-03 -2.34691e-05 -5.85054e-03 -5.53228e-06 -2.46578e-04 -3.50315e-04 -6.10761e-06  3.82469e-06  6.00776e-04  4.60529e-06  1.22134e-03  2.49856e-04  3.21630e-05 -1.26719e-04  3.43284e-05  5.92212e-04  6.85735e-07 -1.32564e-03  4.04195e-06  2.94479e-04 -1.75613e-05 -4.80607e-04  1.35401e-06  1.00434e-05  2.36940e-01  5.64650e-03  5.76575e-03  1.89024e-06  6.92798e-05 -1.90057e-06 -3.18706e-05  5.61986e-03  3.85208e-03  1.35527e-03  5.52059e-06 -8.33049e-07  2.39851e-06  2.85015e-04 -2.22899e-01 -1.51216e-06  5.78097e-03  3.26938e-06 -2.19688e-03  3.64563e-06 -6.59527e-06  2.23161e-01 -5.59640e-06  3.46591e-04  1.25072e-03  2.69132e-06  2.43423e-06 -7.00335e-05 -2.52519e-03 -4.10583e-06  3.01744e-04
+ 1.91498e-06  6.51426e-05  3.85091e-06 -3.06734e-04  5.45053e-06 -4.35273e-04  5.71732e-06 -6.94993e-03 -8.30404e+00  1.16109e-05  6.95773e-03 -9.93656e-06 -4.88819e-06  4.42454e-04 -7.08944e-05 -3.15123e-04  1.66210e-05 -1.90990e-05 -5.28471e-06 -4.93154e-06 -1.25078e-04  2.38115e-01  8.97884e-06 -2.41460e-03  2.98042e-05  1.24425e-03  4.22639e-03 -1.46239e-05 -6.01093e-03 -5.04172e-07 -3.13040e-04  7.26043e-05 -6.70093e-06  1.22859e-05  2.22560e-01 -3.57494e-06  5.64348e-03 -5.77879e-03  6.78326e-05 -2.57073e-04  6.82745e-05  2.22768e-01  2.06458e-06  2.32655e-04  1.32553e-05 -1.21628e-03 -9.90051e-06 -3.97496e-04 -2.14500e-06  1.29035e-05  5.09506e-03 -5.61772e-04  1.25882e-03 -7.06172e-06 -2.84220e-04  5.12072e-06 -5.46167e-05 -5.71923e-04  2.39409e-01 -2.33175e-04 -2.92878e-06 -2.52908e-06  2.93587e-05 -5.79072e-03 -4.46049e-04  2.44455e-06  1.28349e-03 -4.98797e-06 -5.70969e-03  1.34049e-05 -4.01789e-06  4.53718e-04  8.04800e-06 -7.15542e-05  5.67429e-03 -4.90916e-06  3.10190e-05  2.87021e-04 -4.96104e-04 -1.77320e-05  2.23709e-03
+ 6.07549e-05 -5.96147e-07  3.10511e-04  9.16109e-06 -4.38033e-04  9.61115e-06 -6.94549e-03  5.88629e-06  1.90012e-05 -8.30403e+00 -1.28747e-05  6.94663e-03  4.49573e-04 -2.60522e-05  2.76784e-05  7.95634e-05 -7.16659e-05  3.18703e-04  2.81859e-05  9.09047e-07 -5.70472e-03 -1.89511e-05 -6.01526e-03  1.04033e-05  2.39504e-01 -3.10171e-05  5.64198e-05  5.01332e-04  4.68236e-06 -4.31691e-04 -3.18226e-04 -7.45583e-06 -7.75412e-05  5.49375e-04  5.08569e-06 -5.78106e-03  6.14049e-07  8.90966e-06  2.93019e-04 -2.23908e-03  2.91635e-04  5.15869e-06  1.28891e-03 -4.21181e-06  5.66345e-04  3.32605e-05  4.03171e-04  5.28612e-07 -2.39274e-04 -5.10742e-03 -6.27443e-06 -4.65011e-06 -1.80268e-06 -5.64786e-03 -7.11099e-05  5.66993e-03 -4.22123e-03 -5.46983e-06  3.20204e-05  5.75117e-07  4.51724e-04 -1.26430e-03 -1.25438e-03  6.79321e-06  1.34426e-06  2.39210e-04 -1.48420e-06 -2.22767e-01 -1.31869e-04  7.74678e-05  2.41454e-03 -4.92124e-06  5.80393e-03  6.89741e-06 -1.43567e-06 -2.22618e-01 -1.23060e-03  7.05334e-05  8.92461e-06  2.38083e-01  2.54186e-04
+ 1.14793e-06 -1.38498e-05  2.51638e-06  7.57808e-05 -4.38411e-06  3.27657e-04 -1.72035e-05  4.60438e-04  6.95972e-03 -1.29474e-05 -8.30342e+00  6.97183e-06  7.57305e-06 -6.99255e-03  3.31374e-04  4.64082e-04 -7.79883e-05  1.66082e-05  8.91461e-06  5.84810e-06  2.98253e-04 -4.80408e-03 -1.40434e-05  4.51585e-04 -6.51895e-05 -5.67270e-03 -2.39592e-01  1.14428e-06  2.42693e-03  5.25793e-06  2.28124e-03 -2.88484e-05 -1.64653e-06  5.26337e-06 -5.18202e-04 -2.95764e-06  5.43153e-04  1.29503e-03  3.14294e-04  3.59149e-04  3.17846e-04 -5.13092e-04  9.44387e-07  1.14445e-04  6.09009e-06  5.63737e-03  3.74689e-06  2.14372e-04 -3.80309e-06 -2.34490e-05 -5.87780e-03  2.22692e-01  2.97510e-04 -3.56301e-05 -1.26103e-03  3.43484e-05  1.49767e-04  2.22542e-01  2.38348e-01 -1.15035e-04 -5.71013e-06  1.93649e-07 -8.81884e-05  1.31974e-03 -5.71802e-03  5.06773e-06  2.98463e-04  1.34265e-05  4.35074e-03  3.02086e-06  3.85064e-07  5.69638e-03  2.05494e-06  2.71778e-05  5.10106e-04  1.26944e-05 -8.98084e-05  1.28793e-03  3.76477e-04  3.81914e-05 -5.72463e-03
+-4.27628e-06  1.64529e-06 -5.79239e-05 -5.47394e-07  3.12870e-04 -6.99908e-06  4.46663e-04 -2.18611e-05 -2.37464e-05  6.94676e-03  1.91643e-05 -8.30330e+00 -6.96268e-03  7.40560e-05 -7.15908e-05 -6.17685e-05  3.18631e-04 -4.47540e-04 -3.09942e-05 -5.38051e-06  4.35412e-03  3.50224e-05  2.38744e-03 -1.86839e-05  2.38444e-01  6.98328e-05 -1.28092e-04 -3.33701e-04 -8.51306e-06 -5.72706e-03  2.24497e-03  1.34076e-06  2.62158e-05 -2.22605e-01 -2.77642e-05  1.26232e-03  3.48169e-05 -1.00823e-07  1.25138e-03  5.73209e-03  1.22768e-03 -2.75257e-05  2.75060e-04  4.10211e-06 -2.22813e-01 -7.09264e-05 -1.96578e-04  2.64502e-07 -9.52305e-05  5.87702e-03  8.30339e-06  3.98757e-06  6.19125e-06 -5.43477e-04 -2.88807e-04  5.29808e-04  2.39429e-01 -1.45327e-06 -5.73615e-05 -1.44953e-07  5.69716e-03 -2.72217e-04  5.66830e-03  4.21532e-06  6.62234e-06  9.42631e-05  7.36247e-06  5.12448e-04  2.56231e-04 -2.83204e-05 -4.15429e-04 -5.85455e-06 -1.28963e-03 -8.58801e-07  2.20711e-05  5.18195e-04  5.64879e-03  2.88090e-04 -1.52605e-05 -4.79112e-03 -3.21251e-04
+-7.47462e-06 -2.60028e-06 -7.12673e-06 -2.98177e-06  7.35218e-05 -1.46365e-05  3.20390e-04 -1.73294e-05 -2.00816e-05  4.49294e-04  3.22817e-05 -6.96270e-03 -8.30286e+00  3.91984e-05 -3.18389e-04 -6.97389e-05  4.50501e-04 -6.97636e-03 -3.45716e-05  3.07903e-06  2.39477e-01  5.88932e-05  4.00497e-04 -1.31916e-05  4.63143e-03 -2.90864e-04 -2.60907e-04 -1.67127e-04 -1.83563e-05 -1.27543e-03  5.74559e-03  8.08903e-06 -8.83870e-07 -5.31503e-04  3.78647e-06 -2.75727e-04  7.23882e-05 -8.65040e-06  5.67874e-03  4.40155e-03  5.66183e-03  3.82432e-06 -7.14360e-05  7.54492e-08 -5.40841e-04  2.93110e-04 -8.81957e-05 -2.29360e-06 -3.91875e-05  2.31058e-03  2.87477e-05  2.83893e-05 -2.12960e-07 -2.22642e-01  1.26090e-03  2.22469e-01 -2.38919e-01  3.04259e-05 -1.33140e-04  1.66930e-06  1.24678e-03  7.04875e-05 -5.35874e-04 -9.29224e-06  9.97167e-06  3.74404e-05  9.46448e-07 -5.69990e-03  3.28504e-04  3.83281e-06 -2.89036e-04 -1.04789e-05  2.79053e-04 -8.09809e-06  7.25157e-05 -5.67599e-03 -5.20073e-04 -1.23102e-03 -8.98224e-06 -5.81561e-03 -2.25104e-03
+ 2.65824e-06 -1.44253e-05 -1.50652e-06  3.51963e-05 -1.81846e-05  6.69069e-05 -2.18740e-05  3.17382e-04  4.39291e-04 -2.50860e-05 -6.99050e-03  2.07793e-05  1.86306e-05 -8.30287e+00  4.45571e-04  6.95514e-03 -3.19266e-04  7.25761e-05  9.30028e-06  3.41147e-06  3.25191e-04 -5.80734e-03 -1.92732e-05  2.80641e-04 -1.28747e-04  5.33294e-04  2.39061e-01  8.99435e-06  3.98671e-04  1.53170e-05  5.75176e-03  6.41749e-06 -8.71031e-06 -3.00089e-05  5.69021e-03 -4.14742e-06  2.22637e-01 -2.70908e-04 -1.22595e-03  2.25501e-03 -1.25213e-03  5.67641e-03 -6.69702e-06  3.92795e-05 -3.20750e-05 -5.72630e-04  2.41277e-06  9.26454e-05 -3.10628e-06 -3.28201e-05 -2.30832e-03  5.18315e-04 -6.82547e-05 -6.95165e-05 -5.65789e-03  6.92127e-05  2.58012e-04  5.27834e-04  4.61054e-03 -4.14128e-05 -1.59608e-05 -6.44353e-06  2.84320e-04 -2.72586e-04 -1.27186e-03  1.29973e-06 -6.79561e-05 -8.52118e-06  2.39160e-01  4.93783e-06  1.44859e-05  1.24190e-03  4.95249e-06 -5.34987e-06  2.22575e-01 -7.59274e-06  2.88023e-04  5.68391e-03  1.64643e-04  5.84297e-05 -4.42392e-03
+ 6.10467e-06  2.38703e-05 -1.14859e-05 -3.40323e-05  8.01553e-06 -9.00518e-05  2.06463e-06 -1.62289e-05 -7.04608e-05  8.87995e-06  3.30197e-04 -6.23622e-05 -3.18665e-04  4.45880e-04 -8.30259e+00 -6.95898e-03  6.95755e-03 -4.48361e-04 -4.53948e-06 -1.41886e-05 -5.75975e-03  3.41292e-04  6.53144e-05 -6.74595e-05  3.32236e-04 -5.52665e-04 -5.77264e-03 -2.18888e-05 -1.46070e-04 -3.34070e-05 -2.39084e-01  4.44537e-06  3.10816e-06 -2.86495e-04  2.87197e-04  1.72144e-06  5.68626e-03 -3.49807e-05 -5.86161e-04 -4.46927e-03 -5.33458e-04  2.86227e-04 -5.91721e-06 -9.64849e-06 -2.87859e-04  5.62454e-04 -1.29999e-05 -3.08004e-05 -6.17481e-06  1.34752e-04  2.70170e-04  1.23519e-03 -9.35053e-07  1.25937e-03 -2.22600e-01 -1.23697e-03 -2.25735e-03  1.26411e-03 -2.26881e-03  9.49802e-06  3.13675e-05  5.71394e-06  5.65525e-03 -3.64655e-05  7.25397e-05  5.54865e-06 -3.69566e-07 -6.94131e-05  4.49257e-03 -1.24173e-06 -3.54792e-05 -7.28093e-05 -9.25076e-07 -4.86591e-06  5.66300e-03 -6.82032e-05  5.68077e-03  2.22628e-01 -4.54555e-05 -2.60846e-04 -2.39018e-01
+-1.24168e-06  1.24403e-05 -2.64840e-06 -2.64599e-05  1.65041e-05 -2.60699e-05  2.04226e-05 -6.64743e-05 -3.12208e-04  7.83784e-05  4.62274e-04 -1.81900e-05 -7.55904e-05  6.95488e-03 -6.95882e-03 -8.30261e+00  4.48844e-04 -3.17776e-04 -6.07088e-06 -5.81958e-06 -2.25678e-03  2.28463e-03  3.85490e-05 -1.43372e-04  2.62540e-04 -2.22678e-01 -4.54805e-03 -1.77760e-05 -2.89982e-04  9.87463e-07 -4.45361e-03  6.85363e-06  6.09743e-06  7.05621e-05 -1.26096e-03  2.14072e-05 -5.70304e-04 -7.56950e-05  5.64935e-03 -5.75631e-03  5.68623e-03 -1.22938e-03  4.83627e-06 -6.87443e-06  7.12532e-05  2.22802e-01  1.75949e-05 -5.48683e-05  2.94616e-06  6.33634e-05  3.61693e-04  5.67588e-03  3.67566e-05 -2.88664e-04 -5.83129e-04  2.84664e-04 -3.28732e-04  5.69363e-03 -5.79994e-03  8.48106e-06 -2.57087e-06 -7.75993e-06  1.23198e-03 -7.56277e-05 -2.82272e-04  5.64722e-06  4.03254e-05 -2.79213e-05  2.38868e-01  3.13325e-06 -1.24709e-05  2.79284e-04 -2.06197e-05 -7.74973e-06 -5.50713e-04 -3.73934e-05  1.25844e-03  5.45932e-04 -8.11027e-05 -1.30335e-04  2.39110e-01
+ 7.66478e-06 -1.34143e-05  1.27608e-05  1.99981e-05 -3.86309e-05  2.07537e-05 -3.94412e-05  5.40495e-05  3.75402e-05 -7.26368e-05 -8.08835e-05  3.18683e-04  4.50385e-04 -3.17325e-04  6.95770e-03  4.48884e-04 -8.30252e+00  6.95325e-03  1.86639e-05  5.62837e-06  4.49852e-03 -2.63360e-04 -1.48886e-04  3.10547e-05 -2.27395e-03 -5.66420e-03  2.26090e-03  3.59101e-05  6.51142e-05  7.49979e-05 -2.39060e-01 -3.33096e-07 -2.16126e-06 -1.23679e-03  7.15073e-05 -4.01257e-05 -1.25890e-03 -1.36278e-06  2.22896e-01  2.38959e-01  2.22520e-01  7.14422e-05 -5.12692e-06  2.45607e-06 -1.26101e-03  5.67613e-03  2.93407e-05  1.30186e-05  1.44277e-05 -2.71041e-04 -1.35754e-04  2.88129e-04 -1.07216e-05 -5.69727e-03  5.80146e-04  5.67006e-03  5.78154e-03  2.89475e-04  3.32929e-04 -1.14005e-05 -7.39529e-05  5.28846e-06  5.81055e-04 -3.40683e-06 -3.37456e-05 -1.51779e-05 -1.17643e-05 -2.91112e-04 -5.76446e-03  4.74829e-06  6.55182e-05  3.74212e-05  4.44725e-05  4.64159e-07 -1.23040e-03 -2.88385e-04  5.38990e-04 -5.51863e-04  3.01119e-05  3.42463e-04  4.47587e-03
+-1.04005e-05 -5.51432e-07 -2.94532e-05 -2.09592e-05  1.37781e-05 -1.05573e-05  7.68298e-05 -2.78938e-05 -7.06730e-05  3.18294e-04  2.64163e-05 -4.47525e-04 -6.97634e-03  7.28395e-05 -4.47888e-04 -3.17696e-04  6.95314e-03 -8.30252e+00 -4.48906e-05 -4.70678e-06 -2.39147e-01  1.33053e-04  2.90492e-04 -2.23286e-05  5.79116e-03  1.23174e-03 -3.29241e-04 -8.85180e-05 -4.14150e-05  2.82386e-04  4.46489e-03 -2.35447e-06  6.04299e-06  5.66371e-03 -3.48020e-05  7.59619e-05 -2.90254e-04 -1.05389e-05 -5.92892e-04  2.39036e-01 -5.47861e-04 -3.27066e-05 -3.23746e-05  3.51086e-06  5.69413e-03 -1.25927e-03 -6.14274e-05 -1.65283e-05 -3.61539e-06  3.58629e-04  6.63692e-05  7.18589e-05  1.72480e-06 -5.34003e-04  5.68274e-03  5.44183e-04 -4.52892e-03  7.24039e-05 -2.62689e-04 -4.46106e-06 -2.79363e-04  3.19547e-05 -2.22813e-01 -1.04802e-05 -2.84682e-06  3.78675e-06  1.79877e-06 -1.25860e-03  2.26025e-03 -1.29889e-05 -1.45183e-04  2.01144e-06 -7.72308e-05 -2.27061e-07 -2.88174e-04 -1.23234e-03 -2.22694e-01 -5.65794e-03 -1.32592e-05 -2.28109e-03 -5.76020e-03
+-6.60965e-03  4.91876e-09 -3.28005e-04  4.75690e-07  2.69955e-04  4.88357e-06  1.16353e-04  8.82777e-06  2.82487e-06  9.56711e-05  1.77459e-06 -1.17568e-04 -5.37125e-05  6.49074e-06 -3.43233e-06 -8.08116e-06  7.18630e-05 -2.59678e-05 -8.32057e+00 -2.11737e-06  1.32245e-05 -2.91074e-05 -3.50890e-03  6.19800e-05 -5.90922e-05  8.51225e-05 -2.60008e-05  2.43776e-01  9.56235e-05  3.07631e-04  1.22513e-05 -2.50422e-06 -2.20407e-01  2.70641e-05 -1.46869e-04  1.14784e-03 -9.62845e-05  1.11481e-04  9.56192e-06  8.15013e-06  5.52407e-05  3.77120e-05 -4.54356e-03 -7.40673e-07  2.58211e-05  2.23787e-05 -2.19597e-01  1.03556e-05  1.84837e-03 -1.44186e-03  4.13514e-05  6.43849e-05 -1.27660e-05 -7.46807e-05 -5.96382e-05  7.32424e-05  5.20068e-05 -7.70281e-05 -4.71109e-05 -7.54739e-06 -3.08880e-04  4.54389e-03  9.05479e-05 -3.85737e-05 -1.14525e-05 -1.88742e-03 -3.42354e-05 -2.16267e-05  6.35747e-05  2.20461e-01 -3.03628e-03 -3.06472e-04 -1.11965e-03  3.08900e-06  9.32096e-05 -1.99529e-05  7.02471e-05 -1.57664e-05  3.03019e-05 -8.13708e-06 -8.44920e-05
+ 3.68481e-07  6.60143e-03 -2.27581e-07 -3.29294e-04 -3.61852e-06 -2.76249e-04 -6.02162e-06 -4.55047e-05 -4.16833e-06 -5.83520e-06  6.56213e-06  9.09931e-06  8.54117e-06  3.26229e-06 -1.78175e-05 -8.16654e-06 -1.09009e-05  4.98467e-06  3.93050e-06 -8.32048e+00  7.79070e-07  2.32273e-06 -5.48122e-05 -3.04122e-03 -3.68033e-07 -3.08744e-06  5.34282e-05  9.93005e-07  3.51323e-03  1.74974e-05 -1.37481e-05 -2.20518e-01  1.54946e-05 -2.00989e-05 -2.31671e-05 -5.00197e-06 -4.63070e-06 -1.15040e-03 -1.22076e-06 -6.93800e-06  5.56008e-07 -2.20564e-05  1.18774e-05  1.87782e-03 -1.52215e-05  2.80358e-06  2.20513e-05 -2.19684e-01  6.34526e-07  1.18690e-05 -1.44229e-03  3.32131e-05  4.55727e-03 -4.29913e-06  9.18771e-07  1.38987e-06 -2.67616e-07  3.17432e-05  6.27556e-05 -1.89683e-03 -1.41425e-05 -1.12169e-05 -2.24278e-06 -1.12440e-03 -3.10515e-04 -2.60327e-06  4.53830e-03  5.17305e-05 -1.66264e-05 -1.91449e-05  3.11761e-05  3.14707e-04  3.06049e-06  2.20463e-01 -3.99966e-06  5.19466e-05  5.24526e-07 -1.11087e-06  2.43664e-01  1.32902e-06  8.75543e-06
+ 8.53748e-05  6.42059e-07  1.96485e-04 -1.39046e-05 -2.80224e-04 -2.58131e-05 -2.19398e-03 -5.42751e-05 -1.17001e-04 -5.70486e-03  2.94300e-04  4.35399e-03  2.39477e-01  3.26412e-04 -5.76013e-03 -2.25785e-03  4.49852e-03 -2.39147e-01  1.78115e-05  4.28129e-06 -1.88917e-01  2.75096e-04 -1.25207e-03 -4.44416e-05 -2.69956e-02 -2.84601e-04 -1.19540e-03  3.26164e-04 -9.73403e-05 -2.61300e-04  2.69916e-02  1.87382e-06 -1.93827e-05 -1.82725e-02  6.19286e-06 -2.36147e-04  2.16679e-04 -2.36381e-05  1.82952e-02  8.40706e-02  1.82024e-02  6.00555e-06  2.48046e-04 -7.19050e-06 -1.83747e-02  2.85986e-04  2.47218e-04 -2.40916e-05  1.71992e-05 -2.55853e-03  1.62000e-04  2.36909e-04  9.42880e-07  6.72678e-02  7.22995e-03 -6.73520e-02  8.40563e-02  2.43155e-04 -7.26078e-04  6.81796e-06  2.57811e-04 -2.40961e-04 -6.72786e-02 -2.49437e-05  3.02725e-05 -1.74894e-05  1.08398e-06  7.23879e-03  2.51906e-03  1.97383e-05  7.47257e-04 -3.12213e-05  2.36151e-04 -1.91167e-06  2.18135e-04  7.14882e-03 -6.74393e-02 -7.12945e-03 -2.95069e-05  1.09972e-02 -1.09848e-02
+ 4.16889e-06  1.80345e-03  7.83489e-06 -5.08069e-03 -3.16033e-06 -3.20908e-03 -9.60859e-06 -2.39628e-01  2.38115e-01 -1.42855e-05 -4.80421e-03  3.10694e-05  5.99712e-05 -5.80733e-03  3.45261e-04  2.28503e-03 -2.68622e-04  1.34769e-04 -1.97536e-07  3.92652e-06  2.74823e-04 -1.91059e-01 -1.68419e-05 -1.10368e-02 -9.30412e-05  2.84988e-04 -2.69409e-02 -5.44820e-06 -2.69510e-02  5.00339e-06  1.19791e-03  1.67927e-04 -1.45156e-06 -2.23936e-05 -6.74669e-02 -4.92360e-06 -7.13141e-03 -1.87829e-02 -2.33055e-04  7.30741e-04 -2.42129e-04 -6.73949e-02  9.64978e-07  1.57439e-04 -2.35538e-05 -2.75784e-04 -8.08018e-07 -1.64844e-03 -2.76804e-07 -2.47005e-05  8.32855e-02 -1.81116e-02  7.34132e-03 -2.90920e-05 -2.13983e-04  2.92839e-05  1.62826e-04 -1.79877e-02 -8.36973e-02 -1.55870e-04 -5.44875e-06 -1.30682e-06  4.42827e-06 -1.88652e-02 -6.72930e-02 -3.26186e-07  7.42251e-03  8.54835e-08  1.10059e-02  4.24283e-06  6.45097e-06  6.74883e-02  5.50286e-06 -1.69011e-04 -7.23369e-03 -1.32945e-07  5.06250e-06  2.14155e-04 -2.84066e-03  4.32439e-05 -2.53310e-03
+-8.65485e-04 -2.13998e-07 -2.40044e-01 -4.35230e-06 -2.34769e-01  1.07733e-06 -5.84515e-03  5.81014e-06  6.81224e-06 -6.01647e-03 -1.29688e-05  2.38895e-03  4.00384e-04 -1.64564e-05  6.22376e-05  3.46480e-05 -1.49201e-04  2.89470e-04 -3.50938e-03  4.32677e-07 -1.25207e-03 -1.50778e-05 -1.96498e-01  3.00255e-06  1.11039e-02 -2.47157e-05  4.63294e-05 -2.68825e-02  2.47660e-06  1.72698e-02 -2.93289e-04  2.00940e-07  7.01007e-03  2.34418e-04  5.43324e-06  6.74595e-02  5.44603e-07 -1.78627e-06  2.08516e-06 -7.58512e-04  2.00296e-06  1.07605e-06  6.74175e-02 -1.02854e-07  2.34562e-04  2.32154e-05 -1.22579e-02  1.60461e-06 -1.97077e-02  8.29716e-02 -7.78133e-06 -4.87254e-06 -6.10730e-07 -2.16735e-04 -3.07474e-05  2.15251e-04 -2.65033e-03 -3.07644e-06  2.76931e-05  1.56397e-07 -1.73518e-02 -6.75051e-02 -2.42643e-04  1.02942e-06 -8.67199e-07  1.95998e-02 -4.26180e-08  7.04151e-03 -9.82463e-05 -7.12510e-03 -8.24126e-02  6.74553e-06 -6.76442e-02  4.86098e-08 -1.52816e-06  7.13565e-03 -2.34719e-04  3.17695e-05  1.10626e-06 -2.69535e-02  1.72804e-04
+ 3.26321e-08 -2.40468e-01 -2.19693e-06 -2.34213e-01  2.41829e-06 -6.08218e-03  6.67248e-06 -5.94863e-03 -2.41456e-03  5.21216e-06  4.49219e-04 -1.13082e-05 -1.16863e-05  2.81989e-04 -6.28551e-05 -1.38941e-04  2.86629e-05 -2.01834e-05 -2.37715e-07 -3.04130e-03 -4.42402e-05 -1.10368e-02  5.91630e-06 -1.98896e-01  1.34092e-05 -3.38863e-06  1.22872e-03 -2.09059e-05  8.24673e-02 -1.47874e-06 -1.67061e-04 -2.03464e-02  1.35151e-06  5.06615e-06  2.19888e-04  3.86112e-07  2.33174e-04 -1.66962e-02  2.35455e-05 -9.62984e-05  2.45258e-05  2.24478e-04 -4.79374e-07 -6.90453e-02  5.30658e-06  2.44699e-06 -2.40250e-05  3.06914e-02 -9.24180e-07  3.70214e-06 -2.65526e-02  2.09226e-04 -6.76689e-02  2.88298e-06  2.77697e-05 -4.50593e-06 -2.52903e-05  2.05231e-04  2.62679e-03  6.87833e-02  2.01133e-06  9.94887e-08  7.47601e-07 -1.65948e-02  7.06551e-03  4.60840e-07 -6.77611e-02 -1.67825e-06 -7.47249e-04  2.93920e-06 -3.76533e-06 -7.14557e-03 -4.74683e-07  2.02628e-02  2.40881e-04 -1.68402e-06  2.08130e-06 -2.76674e-05  8.15321e-02 -3.63666e-06  2.88094e-04
+-1.14770e-04  1.64195e-06 -1.93358e-03  8.02283e-06  5.41077e-03  7.62283e-06  3.86350e-03  1.52998e-05  2.76635e-05  2.39503e-01 -6.35630e-05  2.38445e-01  4.63151e-03 -1.25388e-04  3.33096e-04  2.64720e-04 -2.27431e-03  5.79129e-03 -6.02685e-05 -5.11314e-07 -2.69956e-02 -9.29244e-05  1.11040e-02  1.36233e-05 -1.89897e-01 -2.33273e-04  2.74685e-04 -1.34567e-03  2.64939e-05 -1.85781e-02 -2.52485e-03 -5.85285e-07  1.86475e-04  6.73182e-02  2.23385e-05  7.25621e-03  6.02678e-06  5.07664e-06  2.88397e-04 -1.10061e-02  2.86160e-04  2.04562e-05  2.03990e-04  1.28099e-06  6.75267e-02  2.40970e-04 -9.72395e-04  8.09658e-06 -3.00099e-04  2.68677e-02 -4.48980e-05 -2.95386e-05 -2.09223e-06 -1.81432e-02 -2.18092e-04  1.82470e-02 -8.38477e-02 -2.92361e-05  1.62400e-04 -1.12319e-06  1.84601e-02 -1.96017e-04 -7.22239e-03  5.86969e-06 -1.74987e-07  2.98731e-04 -2.02547e-06  6.72598e-02 -7.30002e-04 -1.95301e-04 -2.62405e-03  1.24253e-06 -7.34356e-03  7.46487e-07  3.80457e-06  6.73793e-02 -7.14280e-03  2.16841e-04  8.67508e-06 -8.36693e-02  1.19642e-03
+ 2.64877e-07  6.86507e-06  6.05480e-06  3.08530e-05 -8.66196e-06  6.65904e-05  2.37946e-06 -2.97088e-04  1.24383e-03 -3.36426e-05 -5.67273e-03  7.00234e-05 -2.90020e-04  5.33275e-04 -5.52734e-04 -2.22678e-01 -5.66429e-03  1.23215e-03 -1.33536e-06 -2.77595e-06 -2.84609e-04  2.84940e-04 -2.44045e-05 -2.65349e-06 -2.33117e-04 -1.48131e-01  1.82762e-02  3.64787e-05  2.40375e-04 -2.61714e-06  1.82223e-02  1.55472e-05 -1.36776e-05  1.97769e-04  1.58894e-03  1.29799e-05  1.85314e-02  5.00493e-04  1.93183e-04  7.13981e-03 -1.65195e-02 -3.87925e-03 -1.36679e-05 -2.70606e-07 -5.00409e-04  6.51241e-02  6.11170e-05  2.78962e-05  2.88114e-07 -2.99094e-05 -2.12350e-04 -1.65296e-02  1.88441e-04 -2.20525e-04  1.87926e-02  2.79928e-04  2.17589e-04  2.22231e-05  7.21453e-03 -4.19325e-05 -4.28731e-05  1.84977e-06 -1.64645e-03 -1.80216e-04 -2.79245e-04 -7.78769e-06 -1.51976e-05 -1.92991e-04  6.73056e-02  1.30209e-05  9.90667e-07  2.22401e-04  4.03465e-05  3.86118e-05 -2.84387e-02  1.83168e-05  3.87955e-03  2.84464e-02  2.92095e-05 -4.64528e-06  6.74254e-02
+ 1.91250e-06 -1.55164e-04 -1.68531e-07  1.98188e-04  1.40706e-05  2.12628e-03  2.84389e-05  5.59448e-03  4.22634e-03  5.53236e-05 -2.39592e-01 -1.26889e-04 -2.59737e-04  2.39061e-01 -5.77323e-03 -4.54817e-03  2.26148e-03 -3.29444e-04 -1.34654e-06  5.32452e-05 -1.19560e-03 -2.69409e-02  4.66436e-05  1.22835e-03  2.74770e-04  1.82762e-02 -1.89380e-01 -1.65455e-05  2.64923e-03 -2.45013e-05 -1.09865e-02  3.57513e-05 -1.09736e-07 -4.52142e-06  1.84188e-02  1.38611e-06 -6.73845e-02 -2.38184e-04 -2.83916e-04 -2.52304e-03 -2.88233e-04  1.83028e-02 -4.11152e-06  2.71590e-04 -5.17106e-06 -1.81559e-02 -1.27097e-05  4.10088e-04 -4.06037e-06  9.36041e-05 -1.10136e-02  6.75211e-02 -2.37765e-04  2.41910e-04  7.13302e-03 -2.35020e-04 -7.30010e-04  6.72005e-02  8.38863e-02 -2.80047e-04  2.34287e-05  2.29037e-06  2.16986e-04 -2.43479e-04 -7.27697e-03  3.50868e-06 -2.37043e-04 -3.01249e-05 -8.40132e-02  2.32425e-06 -2.58737e-05  7.18828e-03 -1.18854e-06 -3.50543e-05 -6.73478e-02 -2.90596e-05  2.18017e-04 -7.22507e-03  8.07314e-04 -1.62492e-04  2.69774e-02
+-2.25663e-01  4.98830e-07 -6.84364e-03 -3.67849e-06  6.47518e-03 -5.51908e-07  2.52610e-03 -4.89162e-06 -3.01405e-06  5.07677e-04 -1.07609e-06 -3.42550e-04 -1.73710e-04  3.39686e-06 -1.97711e-05 -1.33937e-05  4.00197e-05 -8.74213e-05  2.43776e-01 -2.86657e-08  3.25698e-04 -1.32379e-05 -2.68824e-02 -1.04039e-05 -1.34558e-03  4.24911e-05 -1.73776e-05 -2.01690e-01 -1.33029e-05  1.56422e-04  1.01672e-04 -6.55036e-07  7.26555e-02  2.41606e-04  1.58361e-05  6.95110e-03  3.91720e-06 -1.55893e-05  3.15575e-05  1.78275e-04  1.57224e-05 -2.96214e-06 -1.58804e-02  2.32116e-06  2.33429e-04 -1.68217e-05  7.54882e-02 -6.98295e-08  6.66840e-02 -1.12918e-02 -2.23010e-05 -1.11028e-05  4.80266e-06  6.25740e-06  1.38330e-05 -6.18855e-06  8.09883e-04  9.87869e-06 -5.12091e-06  9.86765e-07 -1.57141e-04  1.59832e-02  3.85644e-05  2.77705e-06 -6.55864e-06 -6.64632e-02  5.09875e-06 -2.01972e-04  3.91138e-05 -7.26261e-02  8.15229e-02  1.87542e-05 -6.86652e-03  8.77460e-08 -1.87516e-05 -2.02546e-04  3.61844e-05  2.32225e-06 -2.49623e-06  2.83641e-03 -6.29192e-05
+ 4.44466e-07 -8.30391e-04 -3.41097e-06  2.39867e-01  9.68062e-08 -2.34578e-01 -8.95678e-07 -5.85038e-03 -6.01082e-03  2.74992e-06  2.42656e-03 -3.13360e-06 -1.65228e-05  3.99343e-04 -1.45360e-04 -2.89391e-04  6.39972e-05 -3.97138e-05  1.29926e-06  3.51302e-03 -9.72956e-05 -2.69510e-02  2.69205e-06  8.24673e-02  2.55100e-05  2.40609e-04  2.64923e-03 -2.70128e-05 -1.96278e-01 -4.38024e-07 -2.92771e-04 -7.10550e-03  2.80398e-06  2.01780e-06 -7.04445e-03 -9.32608e-08  2.17192e-04  6.75016e-02  2.99858e-05 -1.71820e-04  2.98289e-05 -7.12939e-03  3.38831e-07  1.96425e-02  2.54500e-06 -2.33258e-04 -2.89285e-05  1.22648e-02 -1.88379e-06  7.03986e-06 -8.29551e-02 -2.32331e-04  6.75591e-02  9.26538e-07 -3.21131e-06 -1.45474e-06 -4.62318e-05 -2.32518e-04  1.11097e-02 -1.97435e-02  2.96145e-07 -4.28116e-07  2.18065e-05  6.75414e-02  1.72679e-02  1.04268e-06  6.72989e-02  1.39498e-06 -1.25440e-03 -2.75240e-07 -1.30765e-06 -1.73583e-02  2.82634e-07  7.03097e-03  2.18415e-04  1.16907e-06  2.32851e-05  2.89104e-06  2.69138e-02 -1.19710e-05  7.58546e-04
+-1.16954e-03  1.70084e-07 -5.53437e-03  5.52227e-07 -7.83732e-04 -5.69081e-07 -2.22824e-01 -1.66582e-06 -1.36648e-06 -4.31605e-04  3.64710e-06 -5.72716e-03 -1.27449e-03  1.43436e-05 -3.73864e-05 -4.02662e-06  7.57263e-05  2.81656e-04  3.07994e-04 -4.32256e-07 -2.61186e-04  4.57181e-06  1.72698e-02 -1.07235e-06 -1.85781e-02 -2.64278e-06 -2.42435e-05  1.56459e-04 -5.62360e-07 -1.50036e-01  2.47215e-04 -2.23257e-07  2.56571e-04 -1.01875e-05 -5.05819e-06 -1.88466e-02 -1.15349e-05  6.69238e-07 -1.80583e-04  2.29135e-04  5.00918e-04  1.71031e-06 -1.65271e-02 -3.44952e-07  1.65178e-02 -4.16409e-05 -3.36194e-04 -1.45941e-07  3.84004e-03 -6.76089e-02  2.87137e-06 -1.15371e-05 -1.54890e-07 -3.86881e-03  1.39488e-05 -1.59839e-03  7.27859e-03 -1.56598e-06 -1.81707e-06 -1.37565e-07  6.50925e-02 -9.74487e-05  2.78949e-04  6.13899e-07 -6.04447e-07  1.67077e-03  5.76736e-07 -2.84623e-02  3.11221e-05 -3.68912e-04 -7.06529e-03 -3.73330e-06 -2.85315e-02  3.95679e-09  4.02328e-05  1.85581e-02  2.22783e-04  1.91219e-04 -7.81061e-07 -6.73482e-02  1.57995e-06
+ 1.55660e-05  1.65593e-05  4.48769e-05 -3.69227e-05 -1.17474e-04 -1.13550e-04 -2.42843e-04 -2.49047e-04 -3.14333e-04 -3.18609e-04  2.28094e-03  2.24493e-03  5.74547e-03  5.75206e-03 -2.39084e-01 -4.45382e-03 -2.39060e-01  4.46487e-03  9.09562e-06 -1.25565e-05  2.69916e-02  1.19787e-03 -2.93317e-04 -1.67039e-04 -2.52485e-03  1.82223e-02 -1.09864e-02  1.02560e-04 -2.92812e-04  2.47223e-04 -1.88365e-01 -3.95734e-06  5.44200e-06  2.80924e-04 -2.16443e-04 -1.72759e-07  7.22901e-03  5.08777e-07  6.74196e-02  8.40384e-02  6.72674e-02 -2.15752e-04  2.99495e-05 -3.00806e-05  2.84884e-04 -1.83315e-02  6.18640e-05 -7.00896e-05  2.98074e-05 -7.34330e-04  7.34103e-04 -2.77398e-04  2.98869e-05 -7.23775e-03 -6.72022e-02  7.16027e-03  1.09945e-02 -2.77850e-04 -2.52249e-03  3.06353e-05 -2.39423e-04 -3.04001e-05 -1.82170e-02  5.55490e-07  2.46030e-04 -2.84807e-05  2.95686e-05  2.17428e-04  2.69949e-02 -4.74942e-06  1.67055e-04 -2.39026e-04 -8.18552e-07  4.01171e-06  7.14043e-03  2.15291e-04 -1.83324e-02  6.74154e-02 -1.08269e-04  1.19728e-03 -8.40588e-02
+-1.37802e-07  1.89421e-03 -2.97736e-07  6.95441e-03  2.83603e-07  1.15962e-03 -3.23390e-07 -3.49520e-04  6.77948e-05 -1.07570e-07 -2.87937e-05 -2.55518e-06  1.06194e-06  5.13079e-06  2.99670e-06  9.32092e-07  3.39213e-06 -4.56765e-07 -2.54415e-07 -2.20517e-01  1.57620e-06  1.67602e-04  2.84244e-06 -2.03464e-02 -1.21864e-07  1.60527e-05  3.51264e-05  3.21356e-08 -7.10548e-03 -1.02129e-06 -3.89897e-06 -1.43720e-01 -1.22474e-06  2.16022e-06  4.91581e-04  3.08751e-07 -3.89490e-06  1.68247e-03  1.34173e-06  2.58405e-06 -5.08028e-06 -2.04368e-04 -7.77948e-07 -1.87981e-02  3.67326e-07  3.80892e-05 -6.14599e-07 -6.19552e-02  1.69617e-07 -4.39480e-07 -6.17726e-04 -1.67892e-05 -2.46279e-05  9.12519e-07  1.40894e-05 -1.11094e-06 -9.72296e-08  2.14610e-04 -1.94733e-04 -3.06957e-02  7.41114e-07  5.96913e-07 -2.05858e-06 -4.28786e-03 -3.65026e-04  9.50027e-08 -1.53555e-02 -3.21471e-06  1.95901e-05  1.93212e-06 -1.69578e-06  2.60174e-04  1.07102e-07  6.48221e-02 -4.16794e-05 -2.49593e-06  2.04661e-06 -2.06524e-06  7.25691e-02 -1.08278e-06 -1.64063e-05
+-1.85378e-03 -4.47594e-08  6.92878e-03  1.83916e-06 -1.12895e-03 -1.29015e-06  3.50396e-04 -1.30599e-06 -1.63862e-06 -8.74281e-05 -7.51699e-07  3.49408e-05  2.60071e-06 -2.42008e-06  1.83982e-06  4.15760e-06 -6.68851e-06  8.89854e-06 -2.20407e-01  6.41704e-07 -1.91015e-05  4.04647e-06  7.01007e-03 -7.43736e-06  1.86410e-04 -2.16127e-05 -4.41696e-07  7.26555e-02 -1.08671e-05  2.56686e-04  5.82635e-06  6.57537e-08 -1.43641e-01  2.18610e-04  2.21459e-05  4.29192e-03 -7.95251e-06 -1.09701e-05  5.65120e-06 -1.39265e-05 -1.06700e-05 -7.76564e-06 -1.59397e-04 -3.92547e-07 -2.41624e-05  7.77744e-06 -6.18585e-02  2.61099e-06 -1.91192e-02 -6.05208e-04 -4.44367e-06 -6.82920e-06  1.26441e-06 -3.88705e-05  2.46928e-06 -5.47866e-07  3.47985e-05  3.35058e-07  1.64517e-05  3.62419e-07 -3.64918e-04 -1.53442e-02 -4.98155e-05  3.52288e-07 -4.63721e-06 -3.07122e-02  4.26906e-06 -2.20815e-04 -4.15907e-08  6.48876e-02 -2.02160e-02  3.86004e-05  1.76012e-03  9.41705e-07 -7.23740e-06  4.94040e-04  1.63747e-05  4.62479e-06 -4.13078e-06 -1.68005e-04  8.51923e-06
+ 5.96173e-05  1.12505e-06 -3.09854e-04 -4.39794e-06 -1.23992e-03  1.58471e-06 -5.64721e-03  5.15924e-06  1.17704e-05  5.50286e-04  3.04246e-06 -2.22605e-01 -5.31420e-04 -3.44795e-05 -2.84776e-04  7.50095e-05 -1.23700e-03  5.66381e-03  3.09920e-05 -7.69265e-07 -1.82725e-02 -2.28345e-05  2.34261e-04  5.62388e-06  6.73182e-02  1.97732e-04 -4.06742e-06  2.42051e-04  3.38759e-06 -1.01887e-05  2.80777e-04  1.56812e-07  2.18330e-04 -1.48695e-01  4.13530e-05  3.86060e-03  1.91701e-04  4.67144e-06  3.87733e-03 -7.15411e-03 -1.64780e-03 -1.24194e-05  2.79296e-04 -1.31012e-06 -6.50984e-02  5.00619e-04 -3.60743e-06  7.10374e-07 -1.78615e-04 -7.19986e-03 -3.49060e-08 -4.29118e-05 -1.85901e-07  1.88231e-02 -2.20224e-04  2.84495e-02  6.74056e-02  2.98710e-06  3.02373e-05  9.58994e-07 -1.65317e-02 -2.17313e-04 -1.65393e-02 -1.90852e-06  1.11556e-05 -4.95216e-04 -4.27238e-06 -1.85632e-02 -2.33829e-04  1.82372e-05  2.07176e-04 -1.25575e-06  1.60453e-03  6.98409e-07 -1.71372e-05  2.84497e-02  1.86278e-04  2.80739e-04  1.67069e-06  1.81100e-02  2.17788e-04
+-8.35186e-07 -3.39545e-04 -1.64990e-06 -1.14140e-03  2.74117e-06 -5.53001e-03 -3.48594e-07  6.00642e-04  2.22560e-01  2.59242e-06 -5.18113e-04 -1.46422e-05  2.32534e-06  5.69052e-03  2.86563e-04 -1.26126e-03  7.21204e-05 -3.42929e-05 -2.55225e-06 -2.27937e-05  5.72324e-06 -6.74669e-02  3.15971e-06  2.19693e-04  2.29697e-05  1.58903e-03  1.84187e-02  3.82835e-05 -7.04438e-03 -4.81107e-06 -2.16349e-04  4.91865e-04  2.54334e-06  4.06156e-05 -1.49259e-01  4.58258e-06  1.65322e-02  1.47308e-04  4.99095e-04 -2.41970e-04 -1.82509e-04 -6.50818e-02 -4.33473e-07 -2.79215e-04 -1.10253e-05  3.87415e-03  3.44744e-05 -2.43984e-04  1.71882e-06  4.47114e-06  1.77194e-02 -1.85237e-02  1.68037e-03  4.12206e-05  2.19802e-04  3.43825e-06 -2.89631e-05  2.84282e-02 -6.72171e-02  2.49046e-04 -2.30106e-06  9.15851e-09 -1.91569e-04 -1.65129e-02  2.84399e-02 -2.57650e-06 -3.80709e-03  1.88239e-06 -7.24543e-03 -8.28239e-06 -5.08765e-07  1.88086e-02 -2.14476e-07  2.19728e-04 -7.03048e-06  1.13654e-05  1.22365e-05 -2.79735e-04 -2.02865e-04 -1.26045e-06 -2.84388e-04
+ 5.56241e-03 -1.30374e-07 -1.10488e-03 -8.17331e-07  2.23416e-01  5.57658e-08  2.59854e-04  6.10820e-07  3.47673e-07 -5.78110e-03 -3.10030e-06  1.26169e-03 -2.74786e-04 -2.80089e-06  6.98334e-06  1.21813e-05 -3.58338e-05  7.68797e-05  1.14845e-03  6.99165e-07 -2.36093e-04 -3.25739e-06  6.74595e-02 -1.62339e-07  7.25616e-03  1.33535e-05  1.50108e-06  6.95117e-03  3.04481e-09 -1.88466e-02 -7.38415e-07  2.10493e-07  4.29188e-03  3.86063e-03  4.81823e-06 -1.51114e-01  1.10846e-05  2.03612e-07  1.90208e-04 -2.44094e-04 -1.96557e-05 -2.17433e-06 -1.86230e-02 -8.54796e-08 -1.66114e-03  4.02613e-05 -5.67260e-04  1.46687e-07 -3.77346e-05 -6.75526e-02 -9.98752e-07 -5.87034e-06  2.04689e-07 -2.79803e-04  2.45315e-06  2.21023e-04  2.34030e-04  1.66657e-06  4.78792e-06  1.38962e-08 -2.85054e-02 -2.85325e-02 -5.01925e-04 -2.49982e-07  7.28516e-07 -1.63799e-02 -9.68096e-08 -1.55984e-04 -2.39771e-05  1.68007e-03  1.67147e-02  5.59300e-07  6.50654e-02 -7.38868e-08  5.38162e-07  1.65283e-02  1.95401e-04  4.34962e-05 -1.57884e-07 -1.87921e-02  3.11613e-05
+ 1.66956e-07 -2.98374e-05 -1.12736e-06  6.37312e-05 -4.70166e-06 -2.91667e-04 -1.28949e-05  1.22191e-03  5.64466e-03 -2.41422e-06  5.43967e-04  3.17410e-05  7.20649e-05  2.22637e-01  5.68624e-03 -5.70251e-04 -1.25919e-03 -2.89797e-04 -7.55075e-07 -3.55707e-06  2.16719e-04 -7.13146e-03 -1.33845e-06  2.33221e-04  5.47653e-06  1.85314e-02 -6.73845e-02  2.14272e-05  2.17163e-04 -1.14572e-05  7.22902e-03 -3.85368e-06 -1.53674e-05  1.91901e-04  1.65322e-02  1.13911e-05 -1.48380e-01  2.81219e-04  3.87501e-03 -2.85474e-04 -1.59129e-03 -1.97413e-04  3.79600e-06  2.36907e-05 -1.24949e-05  2.84145e-02  4.40941e-05  4.17520e-05 -1.77406e-06 -2.29134e-05  2.57651e-04  1.88404e-02  1.94664e-04  1.81827e-04 -1.65178e-02  5.01035e-04  2.40088e-04 -2.84555e-02  1.81454e-02  1.88492e-04 -4.04349e-05  2.39181e-06 -2.18248e-04  2.20402e-04  3.86866e-03 -4.20744e-06 -4.98952e-04  4.17085e-05 -6.71852e-02  6.67665e-06  3.02558e-06  1.65616e-03 -1.63919e-06  4.19699e-05 -6.51743e-02 -3.32863e-06 -2.79995e-04 -2.64981e-05  5.44643e-06  2.80867e-05 -1.83466e-02
+ 1.26150e-06  5.56630e-03  5.99734e-07  1.09823e-03 -3.14674e-08  2.23457e-01  1.75124e-06  2.49695e-04 -5.77879e-03  1.05007e-06  1.29115e-03 -9.39974e-07 -4.66081e-06 -2.70291e-04 -3.52536e-05 -7.68758e-05  3.16696e-06 -1.01863e-05  1.50987e-06 -1.14966e-03 -2.33961e-05 -1.87828e-02  1.20085e-06 -1.66961e-02  4.54152e-06  5.00565e-04 -2.37846e-04 -3.43781e-05  6.75016e-02  3.85924e-07  4.48290e-07  1.68239e-03  2.98768e-06  4.63746e-06  1.47339e-04  1.19707e-07  2.81374e-04 -1.51023e-01  4.21918e-05 -3.12630e-05 -2.81977e-06 -1.65128e-02  1.55080e-07 -1.63833e-02 -2.33331e-06  1.95273e-04 -3.29336e-05  5.67171e-04 -1.92060e-06  1.09473e-06  6.76508e-02 -3.85796e-03  2.85317e-02 -1.12493e-05  1.86002e-05  1.23540e-06 -1.36916e-06  1.66062e-03  7.25890e-03 -3.64713e-05  6.11923e-08 -1.22859e-06 -1.32460e-05 -6.51058e-02 -1.88573e-02  1.73795e-06 -1.86028e-02 -3.43049e-06 -2.36744e-04  6.73176e-06 -1.20107e-06 -2.85267e-02  7.99409e-07  4.29526e-03  2.25006e-04  1.17611e-06  3.98681e-05  1.91034e-04 -6.95042e-03 -2.46351e-06  2.43469e-04
+ 8.39505e-07 -1.67004e-06  1.49303e-06  3.99480e-06 -3.33927e-05 -1.56322e-06 -7.28105e-05  3.37464e-05  6.54596e-05  2.92581e-04  3.11003e-04  1.25076e-03  5.67877e-03 -1.22491e-03 -5.86279e-04  5.64948e-03  2.22896e-01 -5.92919e-04  2.24749e-06 -6.95020e-07  1.82951e-02 -2.33295e-04  1.82355e-06  2.34138e-05  2.88288e-04  1.93229e-04 -2.83648e-04  3.00674e-05  2.97465e-05 -1.80634e-04  6.74196e-02  1.37786e-06  2.70192e-06  3.87735e-03  4.98860e-04  1.89876e-04  3.87500e-03  4.24693e-05 -1.48247e-01 -6.72134e-02 -6.51193e-02 -1.97783e-04  4.23197e-05 -1.30942e-06 -1.59050e-03  1.65177e-02  1.17957e-05  6.37675e-06 -1.20520e-05 -2.39196e-04  2.39525e-06 -2.78366e-04  1.36047e-05  2.67491e-05 -2.84246e-02  1.65331e-02  7.21916e-03 -2.18973e-04  2.19710e-04  1.07646e-05 -5.00834e-04  3.17050e-06 -2.84099e-02 -3.02184e-06  1.90903e-04 -4.01422e-05 -3.89812e-05  2.78652e-04 -7.13232e-03 -1.26277e-05  2.75710e-05  1.96146e-05  1.39461e-05  5.25402e-06 -1.64453e-03  2.17539e-04  1.85222e-02 -1.87861e-02  2.67063e-06  2.13982e-04  1.82045e-02
+ 2.67009e-05  6.49149e-06  1.00962e-04 -2.52544e-05 -2.34168e-04 -4.74808e-05 -3.03169e-04 -1.24378e-04 -2.57884e-04 -2.24003e-03  3.55325e-04  5.73192e-03  4.40149e-03  2.25521e-03 -4.46937e-03 -5.75701e-03  2.38959e-01  2.39036e-01  8.40041e-06 -5.61301e-06  8.40706e-02  7.30710e-04 -7.58589e-04 -9.63376e-05 -1.10061e-02  7.13985e-03 -2.52276e-03  1.79083e-04 -1.71909e-04  2.29175e-04  8.40383e-02  4.65200e-07 -1.44236e-05 -7.15409e-03 -2.42112e-04 -2.44415e-04 -2.85640e-04 -3.16234e-05 -6.72134e-02 -1.88361e-01 -6.74548e-02 -2.32836e-04 -2.41707e-06 -6.86052e-06 -7.24222e-03 -7.22358e-03  1.30549e-04 -4.18042e-05  4.29014e-05 -1.20870e-03  2.78761e-04  2.21747e-04  2.26913e-05 -1.83749e-02  1.83267e-02  1.82891e-02  2.70280e-02  2.21515e-04 -1.19572e-03  3.34809e-06 -2.28360e-04  2.30611e-06  6.73403e-02 -3.19041e-05 -2.06903e-06 -4.27545e-05  2.35851e-05 -2.83455e-04  1.09906e-02  1.61089e-05  2.87877e-04  2.18371e-06  2.52029e-04 -7.64856e-07 -2.84205e-04 -2.82318e-04  6.72919e-02 -1.82042e-02 -5.25045e-05  2.53479e-03 -2.69951e-02
+ 2.72993e-06 -2.53348e-06  1.42812e-06  2.89056e-06 -3.16120e-05  7.28064e-08 -7.28649e-05  3.64483e-05  6.67772e-05  2.90965e-04  3.14638e-04  1.22727e-03  5.66184e-03 -1.25127e-03 -5.33551e-04  5.68630e-03  2.22520e-01 -5.47816e-04  5.05844e-06  3.28331e-07  1.82024e-02 -2.42282e-04  2.60527e-06  2.48564e-05  2.86157e-04 -1.65195e-02 -2.87949e-04  7.67030e-06  2.95056e-05  5.00800e-04  6.72674e-02 -5.57076e-06 -7.74571e-06 -1.64780e-03 -1.82793e-04 -2.00849e-05 -1.59130e-03 -2.63661e-06 -6.51193e-02 -6.74548e-02 -1.47911e-01  4.99636e-04 -2.24497e-06 -1.24252e-05  3.88198e-03 -3.04414e-05 -4.55658e-06  6.72862e-06  3.87819e-05 -2.31199e-04  3.10929e-06 -2.21284e-04 -4.01215e-05 -1.65322e-02  1.85535e-02 -1.89526e-04  7.13658e-03 -2.78094e-04  2.21174e-04  1.20705e-06  1.96627e-04 -4.21064e-05  1.88079e-02  4.27185e-05 -1.39396e-05  1.44333e-05  1.22902e-05  2.20932e-04 -7.22710e-03 -1.22821e-05  2.66221e-05 -1.90806e-04 -1.90232e-04 -1.10616e-06  3.88138e-03  2.79802e-04 -2.84456e-02  2.84450e-02  3.09344e-06  2.14946e-04  1.83265e-02
+ 1.22945e-06 -3.42719e-04  6.39774e-07 -1.16357e-03  2.57514e-06 -5.56412e-03 -7.56181e-07  5.92042e-04  2.22768e-01  2.81380e-06 -5.13013e-04 -1.26391e-05  2.58384e-06  5.67663e-03  2.84437e-04 -1.22949e-03  7.15311e-05 -3.20486e-05  1.28751e-07 -2.16224e-05  5.65618e-06 -6.73949e-02  2.99595e-06  2.24344e-04  2.17048e-05 -3.87918e-03  1.83028e-02 -1.02154e-05 -7.12939e-03  1.41216e-06 -2.15688e-04 -2.03933e-04 -2.87992e-06 -1.30967e-05 -6.50818e-02 -1.29623e-06 -1.97486e-04 -1.65128e-02 -1.97528e-04 -2.32781e-04  4.99871e-04 -1.49311e-01  9.80850e-07 -2.51449e-04  4.02550e-05 -1.64945e-03 -1.24360e-05 -2.52833e-04 -2.26979e-07  4.63028e-06  1.78255e-02  2.84463e-02 -3.81259e-03 -3.32745e-06  2.80818e-04 -4.20083e-05 -2.83938e-05 -1.88102e-02 -6.74553e-02  2.78546e-04  4.96292e-06 -2.28439e-07  1.82467e-05 -6.47973e-06 -1.85794e-02  1.27727e-06  1.62747e-03  1.14580e-05 -7.14318e-03 -2.74099e-06 -7.03134e-07 -2.84584e-02 -3.77897e-06 -4.92562e-04  1.65265e-02  1.28731e-06 -1.91969e-04 -2.21364e-04 -2.03265e-04 -5.68753e-07 -2.83899e-04
+ 5.22563e-04  2.91083e-10  2.24597e-01  6.28568e-07  1.99022e-04 -3.36206e-07  5.79114e-03 -5.22784e-07 -8.52737e-07  1.28809e-03  7.73120e-07  2.75272e-04 -7.15092e-05  9.60676e-08 -2.71436e-06 -1.76863e-06 -2.74429e-06 -3.31594e-05 -4.54378e-03  2.00263e-07  2.48121e-04  1.64800e-06  6.74174e-02 -1.29099e-06  2.03914e-04 -1.19630e-05 -4.11456e-06 -1.58804e-02 -1.79985e-06 -1.65271e-02  2.99606e-05  4.84316e-08 -1.59388e-04  2.79333e-04  2.24338e-06 -1.86230e-02  5.39498e-06 -2.06995e-06  4.23050e-05 -1.90389e-06 -2.88529e-06  5.83403e-07 -1.54013e-01  1.34668e-07  2.18148e-04  1.01839e-06 -6.52449e-03 -2.81211e-08 -2.86286e-02 -1.95325e-02  5.62509e-07  3.35506e-06  2.78626e-07  4.99348e-04 -9.95378e-06  1.77890e-04  2.37064e-04  5.12033e-07 -3.00382e-06  1.07816e-07  6.15460e-05  6.53713e-02  1.38491e-05  6.50463e-07  4.45139e-07 -1.90596e-02  7.13371e-07  3.81418e-03 -1.40745e-08 -1.53592e-02  6.78106e-02  3.23048e-06 -2.85418e-02 -1.58083e-07 -2.62716e-06 -1.62992e-03 -1.89624e-04 -3.98859e-05 -8.89848e-07  7.42988e-03 -2.26754e-05
+ 1.04903e-07 -2.25837e-01 -9.10956e-08  4.82837e-04  2.47176e-07 -5.84289e-03  5.26624e-07 -1.32561e-03  2.32191e-04 -2.32380e-07  1.14139e-04  1.36052e-06 -7.81550e-07  4.14659e-05 -7.62586e-06 -1.14991e-05 -4.78367e-06 -2.13672e-06 -5.86503e-10  1.87765e-03 -6.66431e-06  1.57363e-04 -6.07805e-07 -6.90453e-02  2.09371e-06  1.20995e-08  2.71805e-04  1.85027e-06  1.96425e-02 -8.26759e-08 -2.97802e-05 -1.87981e-02  1.67337e-07 -7.39861e-07 -2.79213e-04 -2.11915e-07  2.34847e-05 -1.63833e-02 -1.61596e-06 -6.99476e-06 -1.20267e-05 -2.51429e-04  1.40893e-07 -1.52099e-01 -4.28111e-07 -4.29656e-05  2.06973e-06 -1.70767e-02  8.42127e-08  7.70576e-07 -7.40339e-03  4.96227e-04  2.86590e-02  2.66946e-06 -1.36799e-05  7.27564e-07 -4.58052e-06 -1.92983e-04  3.02838e-04  6.50625e-02 -5.07258e-07  2.40451e-07  5.59886e-06  2.06120e-04  1.67110e-03 -6.70812e-08 -1.90787e-02  9.12630e-07 -1.83909e-05 -1.01777e-06  8.33138e-07  3.83773e-03 -9.67548e-08 -3.07187e-02 -1.88834e-04 -1.00019e-06 -1.48515e-06 -3.91997e-05  6.65348e-02 -6.06173e-07  4.28140e-05
+ 5.97913e-05  9.23645e-07 -3.06749e-04 -4.00376e-06 -1.20982e-03  1.45541e-06 -5.63115e-03  5.11162e-06  1.24216e-05  5.66258e-04  4.19196e-06 -2.22813e-01 -5.40687e-04 -3.55356e-05 -2.86113e-04  7.46726e-05 -1.26100e-03  5.69404e-03  2.98317e-05 -5.03502e-07 -1.83747e-02 -2.39415e-05  2.34419e-04  5.55832e-06  6.75267e-02 -5.00487e-04 -4.84477e-06  2.33881e-04  3.13609e-06  1.65179e-02  2.84762e-04 -3.24271e-07 -2.44466e-05 -6.50984e-02 -1.01815e-05 -1.66118e-03 -1.26115e-05 -1.50550e-06 -1.59055e-03 -7.24226e-03  3.88197e-03  4.11071e-05  2.18152e-04 -1.58177e-06 -1.48778e-01 -1.81781e-04 -3.62317e-06  8.62573e-07  4.94754e-04 -7.10614e-03  1.85547e-07  3.00674e-06 -3.89279e-06 -2.84503e-02 -2.78856e-04 -1.85586e-02  6.72560e-02 -4.18416e-05  3.04216e-05  8.83380e-07  1.84265e-04 -2.80424e-04  2.61971e-05  4.40229e-06  1.69787e-06  1.93794e-04 -4.32711e-07  2.84602e-02 -2.41712e-04 -2.17858e-04  2.06559e-04 -1.13128e-05 -3.86348e-03 -4.18905e-07  1.93091e-04 -1.88031e-02 -1.65346e-02  2.21685e-04  1.47566e-06  1.80082e-02  2.18018e-04
+-4.06362e-07 -5.53407e-06 -5.98383e-06 -3.01550e-05  5.93000e-06 -6.57933e-05 -5.45453e-06  2.92602e-04 -1.21541e-03  3.88196e-05  5.63751e-03 -7.08958e-05  2.91652e-04 -5.72637e-04  5.62561e-04  2.22802e-01  5.67628e-03 -1.25924e-03  3.32254e-07  2.48239e-06  2.85907e-04 -2.75707e-04  2.44553e-05  2.19629e-06  2.41078e-04  6.51241e-02 -1.81559e-02 -2.02490e-05 -2.33141e-04 -4.16131e-05 -1.83315e-02  3.83347e-05  1.44451e-05  5.00572e-04  3.87417e-03  4.10196e-05  2.84146e-02  1.95266e-04  1.65177e-02 -7.22357e-03 -3.04043e-05 -1.64937e-03  2.22893e-06 -4.24728e-05 -1.81686e-04 -1.48285e-01 -3.92385e-05 -2.63885e-05 -5.20168e-06  2.89081e-05  2.12575e-04 -1.94474e-04  2.07278e-05  2.79295e-04  2.84285e-02 -2.20199e-04 -2.18121e-04  1.65275e-02 -7.12224e-03 -4.36708e-07 -3.12496e-06 -1.20495e-05 -3.87352e-03 -5.01089e-04  2.18738e-04  2.13639e-07 -1.87803e-04 -1.25474e-05 -6.73909e-02 -1.23759e-05 -3.31803e-08 -2.79815e-04  1.02747e-05  1.71991e-05 -1.87974e-02  1.91626e-04  1.58780e-03  1.85539e-02 -2.85546e-05  5.04559e-06 -6.72589e-02
+-1.04392e-02  4.59513e-07 -8.26444e-03 -7.61580e-07  2.84618e-03 -1.78464e-06  4.74239e-04 -5.06291e-06 -3.43462e-06  4.00250e-04  6.65112e-06 -1.89552e-04 -8.32846e-05  4.35550e-06 -1.25317e-05 -5.29726e-06  2.37766e-05 -6.03543e-05 -2.19597e-01 -6.98967e-09  2.47507e-04  7.09219e-06 -1.22579e-02 -3.35788e-05 -9.72416e-04  5.18295e-05 -1.28418e-05  7.54882e-02 -4.34489e-05 -3.36160e-04  6.33027e-05  9.27099e-07 -6.18586e-02 -3.71212e-06  4.90545e-05 -5.67324e-04  5.25567e-05 -4.39993e-05  4.64690e-06  1.30783e-04 -1.66039e-05 -1.79592e-05 -6.52453e-03  2.46245e-06 -3.41176e-06 -4.75289e-05 -1.33887e-01 -5.04804e-06 -1.69480e-02 -3.00044e-03 -2.44912e-05 -2.25164e-05  9.22388e-06  6.19577e-05  3.58162e-05 -6.11124e-05  4.11193e-04  3.45471e-05 -2.36174e-05  2.83130e-06  3.37589e-04  6.63793e-03  2.72244e-05  8.71730e-06 -6.13783e-06  1.71400e-02  1.48656e-05 -2.43112e-04  1.79937e-05  6.18818e-02  3.07002e-02  8.07462e-05  5.48743e-04 -4.80897e-07 -3.78038e-05 -2.54381e-04  2.46553e-05 -5.75113e-06 -1.23449e-05  1.64860e-03 -3.50512e-05
+ 1.31428e-07  1.04542e-02 -5.81876e-07 -8.26191e-03  5.15366e-07 -2.84708e-03 -1.04836e-08 -4.80480e-04 -3.96757e-04  2.12161e-06  2.12190e-04 -2.97513e-06 -7.32822e-06  9.08176e-05 -2.56471e-05 -5.25177e-05  1.29102e-05 -8.71453e-06 -2.05805e-08 -2.19684e-01 -2.51973e-05 -1.64827e-03  3.10670e-06  3.06914e-02  7.83874e-06  2.76077e-05  4.10114e-04 -1.06855e-06  1.22647e-02 -8.88066e-07 -7.01805e-05 -6.19552e-02  2.69643e-06  1.90710e-06 -2.43878e-04  2.04269e-07  4.16442e-05  5.67261e-04  6.18742e-06 -4.13764e-05  6.15318e-06 -2.52735e-04 -4.27139e-07 -1.70767e-02  1.71618e-06 -2.62921e-05 -5.10691e-06 -1.33899e-01  1.82352e-07  2.15759e-06 -3.00245e-03 -1.82896e-06  6.63204e-03  2.01252e-06  1.85883e-06 -1.66817e-06 -1.33397e-05 -2.29379e-06  9.74555e-04  1.69496e-02  6.74540e-07  2.25227e-07  3.57801e-06  5.52548e-04  3.35713e-04 -2.38342e-07  6.53943e-03 -1.98374e-06 -2.49029e-04  7.36298e-08 -1.29936e-06 -3.37421e-04 -3.06993e-08  6.18730e-02  4.19524e-05 -2.11095e-06  3.34034e-06 -1.62769e-06  7.54755e-02 -4.58722e-06  1.40983e-04
+ 2.25594e-01  1.07582e-07  5.06113e-04 -1.01910e-06  5.86848e-03 -2.23957e-07  1.35011e-03 -4.75289e-07 -6.01385e-07 -2.38042e-04  5.05180e-07 -9.66582e-05 -3.95668e-05  5.94551e-06 -5.11838e-06 -1.18364e-06  1.42786e-05 -9.63297e-06  1.84846e-03  2.77337e-07  1.75148e-05 -2.04023e-06 -1.97076e-02  4.65598e-07 -3.00049e-04  2.16937e-06 -4.24969e-06  6.66840e-02 -7.51397e-08  3.84002e-03  2.99850e-05  6.45594e-08 -1.91192e-02 -1.78441e-04 -1.80002e-06 -3.78367e-05 -3.89388e-06 -3.40773e-07 -1.15875e-05  4.26603e-05  4.01169e-05  1.02700e-06 -2.86286e-02  3.71418e-08  4.94661e-04 -5.32916e-06 -1.69478e-02  5.07331e-07 -1.51979e-01 -7.48295e-03 -1.25858e-06 -8.89069e-07 -9.25441e-08 -1.90337e-04 -1.88476e-08 -1.68508e-05  2.80154e-04 -8.87514e-07 -1.26572e-06 -3.82636e-08  1.61698e-03 -1.88202e-02  4.39793e-05 -4.10902e-07 -1.66412e-06  6.50705e-02  2.43066e-07 -2.49515e-04  7.49798e-06 -3.07346e-02 -6.88451e-02 -1.48558e-06 -1.63748e-02  3.65625e-07  2.74557e-06 -2.77095e-04  7.79385e-07  1.09669e-05 -3.01068e-07 -1.63120e-04 -5.57091e-06
+-4.71618e-03  1.25305e-07 -1.69709e-03  2.94053e-07  2.39970e-01  1.39018e-06 -2.37081e-01  9.27904e-06  1.07965e-05 -5.10781e-03 -2.25993e-05  5.87743e-03  2.31121e-03 -3.14834e-05  1.30393e-04  6.01182e-05 -2.70308e-04  3.59953e-04 -1.44299e-03 -9.20605e-07 -2.55851e-03 -2.44451e-05  8.29716e-02  4.85218e-06  2.68678e-02 -2.99854e-05  9.35230e-05 -1.12919e-02  7.38370e-06 -6.76089e-02 -7.34266e-04  1.37757e-08 -6.05250e-04 -7.19985e-03  5.74794e-06 -6.75526e-02 -2.17744e-05  4.76402e-07 -2.39293e-04 -1.20866e-03 -2.31658e-04  3.80256e-06 -1.95325e-02  8.51008e-07 -7.10610e-03  2.87721e-05 -3.00040e-03  2.43438e-06 -7.48284e-03 -1.93231e-01 -1.40888e-05 -8.34789e-07 -8.81568e-07  2.59030e-04  4.40121e-06 -2.63010e-04 -1.10098e-02 -3.66123e-07  4.25089e-05 -6.31436e-07  6.73834e-02  1.94325e-02 -2.14307e-04  8.32303e-07 -2.97947e-06  7.38924e-03 -7.22781e-07  1.77127e-02 -1.64073e-04  6.17548e-04 -2.65649e-02  3.86771e-06  6.75042e-02 -7.67922e-08 -2.18464e-05  1.78243e-02 -2.15668e-04 -4.92919e-06  3.11552e-06 -8.32864e-02  2.78691e-04
+ 3.08968e-06  4.70513e-03  4.80039e-06 -1.69188e-03 -7.93593e-07 -2.39836e-01  1.01186e-06  2.36939e-01  5.09497e-03 -5.38062e-06 -5.87797e-03  5.08267e-06  2.70954e-05 -2.30816e-03  2.66686e-04  3.62978e-04 -1.32039e-04  6.38784e-05  1.15325e-06 -1.44263e-03  1.61880e-04  8.32855e-02 -7.49336e-06 -2.65526e-02 -4.50614e-05 -2.12413e-04 -1.10136e-02 -2.61438e-05 -8.29551e-02  1.65136e-06  7.34149e-04 -6.17750e-04 -3.43840e-07  2.87680e-07  1.77194e-02 -2.95665e-07  2.57775e-04  6.76508e-02  2.69201e-06  2.78563e-04  3.35293e-06  1.78255e-02  7.29709e-07 -7.40341e-03  8.99168e-07  2.12698e-04 -2.12718e-05 -3.00248e-03 -1.17274e-06 -1.45500e-05 -1.92999e-01 -7.19702e-03  1.94194e-02 -2.33134e-05 -2.31512e-04  2.29358e-05  9.21885e-05 -7.10772e-03 -2.68798e-02  7.49658e-03 -1.45408e-06 -1.40642e-06 -2.84186e-05  6.74569e-02  6.75237e-02  1.82918e-07  1.95050e-02  3.96486e-06  2.56105e-03  6.49284e-06  3.22558e-06 -6.75020e-02  6.42600e-07  6.09876e-04  2.60726e-04  3.81018e-06 -2.86293e-05  2.39064e-04 -1.13040e-02  2.54338e-05 -1.20708e-03
+ 8.08621e-07 -5.80822e-05  2.28159e-06 -3.04643e-04 -2.08718e-06  1.23821e-03 -4.14528e-06  5.64709e-03 -5.62136e-04 -4.71029e-06  2.22692e-01  6.24880e-06  2.76074e-05  5.18421e-04  1.23509e-03  5.67653e-03  2.87950e-04  7.14061e-05  2.64964e-06  3.29481e-05  2.37307e-04 -1.81116e-02 -4.11902e-06  2.09396e-04 -2.95996e-05 -1.65296e-02  6.75212e-02 -2.05878e-05 -2.32183e-04 -1.15305e-05 -2.77270e-04 -1.66782e-05 -1.04543e-06 -4.28571e-05 -1.85237e-02 -6.04155e-06  1.88404e-02 -3.85772e-03 -2.78175e-04  2.21958e-04 -2.21268e-04  2.84463e-02  4.38198e-06  4.96475e-04  2.88043e-06 -1.94455e-04 -2.00091e-05 -1.49276e-06 -1.61984e-06 -8.62855e-07 -7.19703e-03 -1.48680e-01 -2.18721e-04  1.92601e-04 -1.65351e-03  1.85971e-05 -2.05353e-06 -6.51125e-02 -6.72775e-02  1.76612e-04  1.59452e-06  1.72570e-07  1.96551e-04  1.60301e-03  9.91538e-06  2.27217e-06 -2.77519e-04  3.96461e-05  1.82953e-02  4.06559e-06  1.41494e-06  1.65001e-02 -1.32109e-06 -2.15395e-04 -2.84941e-02 -1.39767e-05 -5.02240e-04 -3.87912e-03  2.45985e-04  2.34602e-05 -7.15442e-03
+-2.53752e-07  5.04326e-04 -2.75359e-07 -2.24405e-01 -7.38490e-07  2.16930e-04 -5.05056e-07  5.76579e-03  1.25840e-03 -4.98746e-07  2.94444e-04  7.89819e-07  1.25815e-06 -7.00634e-05  3.70363e-06  3.44856e-05 -7.57260e-06  3.62848e-06  1.66903e-07  4.55709e-03  1.63947e-06  7.34127e-03 -2.05606e-06 -6.76689e-02 -3.92428e-06  1.88398e-04 -2.37506e-04  5.41466e-06  6.75591e-02 -5.74462e-08  3.22972e-05 -2.46327e-05 -5.78751e-07  4.34051e-07  1.68037e-03  2.85624e-08  1.96376e-04  2.85317e-02  1.39159e-05  2.48118e-05 -4.06900e-05 -3.81259e-03  3.81632e-07  2.86590e-02 -4.85308e-06  2.17910e-05  5.95707e-06  6.63204e-03  1.34208e-07 -1.40435e-06  1.94194e-02 -2.18765e-04 -1.53855e-01  2.13656e-06 -4.34410e-05  6.03149e-06  4.89136e-06 -2.79731e-04  2.04284e-04  1.88410e-02 -9.55864e-07 -6.16081e-08  1.52176e-06 -1.88721e-02  1.00490e-04 -1.80722e-09 -6.53674e-02  1.17270e-06  2.40022e-04 -1.84168e-06  1.28399e-06  1.65221e-02  4.10461e-07  1.53502e-02 -4.97992e-04  1.64073e-06  1.20387e-05 -9.93438e-07  1.60003e-02  2.50472e-06  2.61329e-06
+ 2.49958e-05 -1.86983e-06  6.66073e-05  5.69841e-07  2.89934e-04  2.55538e-06 -1.21958e-03 -2.83081e-07 -3.17376e-06 -5.64805e-03 -3.74214e-05 -5.43514e-04 -2.22642e-01 -7.10113e-05  1.25956e-03 -2.88032e-04 -5.69808e-03 -5.34118e-04 -5.69814e-06  1.21944e-06  6.72679e-02 -2.90964e-05 -2.17623e-04  4.32685e-06 -1.81433e-02 -2.20504e-04  2.41955e-04  1.31925e-05  1.30361e-06 -3.86868e-03 -7.23777e-03 -4.75896e-07 -4.02574e-05  1.88232e-02  4.14608e-05 -2.79662e-04  1.82009e-04 -1.12605e-05  2.67291e-05 -1.83749e-02 -1.65322e-02 -3.05534e-06  4.98774e-04  4.05927e-06 -2.84503e-02  2.79219e-04  4.97598e-05  1.21411e-06 -1.89368e-04  2.58499e-04 -2.38490e-05  1.92647e-04  1.34945e-06 -1.48337e-01 -1.59584e-03  6.51494e-02 -6.74293e-02 -1.29646e-05 -5.04327e-06  1.05074e-06 -1.65601e-03  1.93872e-04  1.85672e-02 -1.46920e-06  1.25002e-05 -2.29159e-05 -5.39312e-06  1.65126e-02 -2.18106e-04  5.08077e-06  2.32809e-04  3.87368e-05  2.22830e-04 -5.59898e-07 -5.00574e-04 -1.85691e-04 -2.84742e-02 -3.88127e-03  2.93174e-06  7.13005e-03 -2.85788e-04
+ 3.19189e-06 -6.97810e-06  2.32529e-05 -2.70353e-06  6.84649e-07  3.62579e-05 -3.72534e-05  6.91711e-05 -2.83772e-04 -7.12966e-05 -1.25735e-03 -2.88221e-04  1.26024e-03 -5.65795e-03 -2.22600e-01 -5.83062e-04  5.80145e-04  5.68289e-03 -2.20480e-06  2.31412e-06  7.22993e-03 -2.13894e-04 -3.15878e-05  2.79342e-05 -2.18151e-04  1.87926e-02  7.13277e-03  2.25099e-05 -2.81622e-06  1.38829e-05 -6.72022e-02  1.37695e-05 -3.55487e-06 -2.20189e-04  2.19818e-04  2.49425e-06 -1.65178e-02  1.87151e-05 -2.84247e-02  1.83267e-02  1.85535e-02  2.80701e-04 -1.10442e-05 -1.36953e-05 -2.78837e-04  2.84285e-02  2.81095e-05  2.15188e-06  3.11883e-07  3.51694e-06 -2.31553e-04 -1.65323e-03 -4.24929e-05 -1.59574e-03 -1.48014e-01 -3.87796e-03 -2.83989e-04  3.87562e-03 -2.84038e-04 -3.92206e-05  1.90975e-04 -4.03393e-05 -1.65179e-02 -1.91141e-04 -5.01039e-04  9.55857e-06  2.55807e-06 -1.82373e-04 -1.82011e-02  1.15666e-06  2.40666e-05 -1.96826e-04  4.21188e-05 -1.27488e-06  1.94342e-04  5.00817e-04  2.29562e-05  6.51600e-02  2.32906e-05  2.41170e-04 -6.73653e-02
+-2.59769e-05  4.59177e-06 -6.68694e-05 -3.14463e-06 -2.93106e-04 -2.60834e-06  1.24820e-03 -1.97037e-07  6.68827e-07  5.67002e-03  3.59398e-05  5.29687e-04  2.22469e-01  7.06663e-05 -1.23688e-03  2.83985e-04  5.66996e-03  5.44117e-04  4.09816e-06 -1.79728e-06 -6.73521e-02  2.89659e-05  2.16153e-04 -4.67221e-06  1.82471e-02  2.79849e-04 -2.35097e-04 -1.24247e-05 -1.86233e-06 -1.59854e-03  7.16027e-03 -2.52594e-07  4.07436e-06  2.84495e-02  3.28715e-06  2.20928e-04  5.01049e-04  1.12241e-06  1.65331e-02  1.82891e-02 -1.89496e-04 -4.21811e-05  1.78400e-04  9.05018e-07 -1.85586e-02 -2.20178e-04 -4.89126e-05 -1.17867e-06 -1.76165e-05 -2.62488e-04  2.31255e-05  1.85693e-05  5.59233e-06  6.51494e-02 -3.87791e-03 -1.48255e-01  6.72671e-02 -1.91941e-04  4.29525e-06  4.25095e-06 -3.86911e-03  4.99252e-04  2.84614e-02  1.10694e-05  3.90508e-05 -1.89419e-04 -1.35358e-06  1.97633e-05  2.19836e-04 -3.97984e-05 -2.39666e-04  1.44085e-05 -2.79399e-04 -1.89460e-07 -1.97300e-04 -1.65234e-02 -1.88381e-02 -1.65085e-03 -3.21857e-06 -7.21788e-03  2.75635e-04
+ 1.54713e-04  2.07101e-06  1.99124e-04 -6.20960e-06 -2.12832e-03 -1.39697e-05 -5.60280e-03 -3.12419e-05 -5.34369e-05 -4.22120e-03  1.47523e-04  2.39429e-01 -2.38919e-01  2.61014e-04 -2.25879e-03 -3.33002e-04  5.78157e-03 -4.52902e-03  5.25755e-05  4.13181e-07  8.40563e-02  1.62902e-04 -2.65046e-03 -2.58234e-05 -8.38477e-02  2.17777e-04 -7.29789e-04  8.10008e-04 -4.64944e-05  7.27866e-03  1.09945e-02 -1.01180e-06  3.47411e-05  6.74056e-02 -3.00493e-05  2.34171e-04  2.40179e-04 -7.51252e-07  7.21922e-03  2.70280e-02  7.13668e-03 -2.95521e-05  2.37074e-04 -4.29043e-06  6.72560e-02 -2.18150e-04  4.11222e-04 -1.34792e-05  2.80181e-04 -1.10098e-02  9.24531e-05 -2.42620e-06  4.71779e-06 -6.74294e-02 -2.84168e-04  6.72672e-02 -1.89237e-01 -3.83710e-06 -2.72845e-04  3.98346e-06 -7.18861e-03 -2.37580e-04  1.83057e-02 -7.31896e-07  2.44819e-05 -2.71845e-04  4.48749e-06  1.84275e-02  1.19520e-03 -3.56629e-05  1.23242e-03 -2.42183e-05 -2.40444e-04  8.49020e-07  2.32604e-04  1.83119e-02  1.82215e-02  2.87422e-04 -1.84061e-05  2.69438e-02 -2.52140e-03
+-9.48065e-07 -5.73810e-05  2.11531e-06 -3.02376e-04 -1.25051e-06  1.21352e-03 -3.92465e-06  5.62031e-03 -5.72240e-04 -4.72830e-06  2.22542e-01  5.81966e-06  2.94585e-05  5.27968e-04  1.26398e-03  5.69427e-03  2.89866e-04  7.19398e-05 -2.51437e-07  3.14076e-05  2.43540e-04 -1.79877e-02 -4.76976e-06  2.05412e-04 -2.89911e-05  2.21832e-05  6.72005e-02  2.43738e-05 -2.32386e-04 -1.82920e-06 -2.77710e-04  2.14576e-04 -8.11287e-06  2.74995e-06  2.84282e-02  2.05602e-06 -2.84555e-02  1.66086e-03 -2.18861e-04  2.21886e-04 -2.77918e-04 -1.88102e-02 -7.48131e-07 -1.93000e-04 -4.21975e-05  1.65275e-02  2.72703e-05 -1.99581e-06  4.93445e-07 -1.37062e-06 -7.10773e-03 -6.51125e-02 -2.79628e-04 -1.29314e-05  3.87535e-03 -1.91889e-04 -2.79699e-06 -1.48672e-01 -6.74179e-02 -4.96332e-04  1.16135e-05 -3.00218e-06 -5.01266e-04 -3.85735e-03 -1.65272e-02 -8.11464e-07 -2.13525e-04 -1.21191e-05  1.83997e-02 -8.12762e-06  2.59058e-06 -1.78238e-04  4.80925e-06  2.30017e-05  1.85856e-02  3.89992e-05  1.81192e-04  1.59574e-03  2.35408e-04  2.38129e-05 -7.24771e-03
+-6.44493e-06 -1.14504e-04 -1.42653e-05  1.93498e-03  6.49081e-06  5.41463e-03  2.25393e-05  3.85223e-03  2.39409e-01  2.84929e-05  2.38348e-01 -5.69727e-05 -1.32810e-04  4.61063e-03 -2.26908e-03 -5.80019e-03  3.33471e-04 -2.63008e-04 -6.75378e-07  6.13171e-05 -7.25918e-04 -8.36973e-02  2.74930e-05  2.62700e-03  1.62239e-04  7.21459e-03  8.38863e-02  5.83690e-07  1.11097e-02 -1.49964e-06 -2.52248e-03 -1.94353e-04  1.37943e-05  3.00211e-05 -6.72171e-02  4.53333e-06  1.81454e-02  7.25915e-03  2.20182e-04 -1.19546e-03  2.21666e-04 -6.74552e-02 -2.20880e-06  3.02878e-04  3.02519e-05 -7.12230e-03 -2.27408e-05  9.74745e-04 -6.58253e-07  4.25524e-05 -2.68798e-02 -6.72774e-02  2.04515e-04 -5.48955e-06 -2.84361e-04  4.40773e-06 -2.72721e-04 -6.74179e-02 -1.89832e-01 -3.03611e-04  1.38832e-06  2.10620e-06  2.30625e-04  7.33396e-03 -1.85645e-02  1.15833e-06  2.03728e-04 -2.26688e-05 -2.70149e-02 -9.82018e-06 -1.31891e-05  1.84711e-02 -4.06939e-06  1.87731e-04  1.82805e-02 -2.09845e-05  2.38782e-04  2.90254e-04  1.35155e-03 -9.24129e-05  1.09985e-02
+-2.62627e-07  2.25709e-01 -2.11846e-07 -5.39637e-04 -1.83218e-07  5.85780e-03 -4.69580e-07  1.35554e-03 -2.32622e-04  6.01807e-07 -1.14879e-04  4.69180e-08  1.05712e-06 -4.36655e-05  8.86008e-06  1.35445e-05 -1.61763e-06  3.17273e-06 -1.31099e-07 -1.89730e-03  6.64618e-06 -1.55771e-04  2.55484e-07  6.87832e-02 -2.12628e-06 -4.25865e-05 -2.80270e-04  1.99994e-06 -1.97435e-02 -5.35238e-07  3.13273e-05 -3.06957e-02 -2.76384e-07 -2.49264e-07  2.49026e-04  7.80073e-08  1.88460e-04 -3.64205e-05  1.09838e-05  5.67796e-06  1.48084e-06  2.78520e-04  2.59913e-07  6.50625e-02 -1.38539e-07 -8.87633e-08  2.07481e-06  1.69496e-02 -1.09920e-07 -2.07184e-06  7.49657e-03  1.76759e-04  1.88410e-02  1.43994e-06 -3.89642e-05  5.60260e-06  4.16507e-06 -4.96195e-04 -3.03579e-04 -1.52102e-01 -2.64936e-08 -4.90616e-08  1.97078e-06  1.63928e-02  3.83386e-03 -7.81088e-08 -2.86205e-02  1.02070e-06  1.90315e-05  5.06135e-08 -2.20461e-07  1.61425e-03 -2.23293e-07 -1.90427e-02 -1.81638e-05 -3.86274e-07 -6.92272e-06 -1.18310e-05 -6.66063e-02  2.13776e-06 -4.28123e-05
+ 1.19536e-03 -6.45951e-08  5.54657e-03 -4.44881e-07  8.02583e-04  6.96810e-07  2.23014e-01  1.73691e-06  1.41150e-06  4.51664e-04 -3.81683e-06  5.69736e-03  1.24590e-03 -1.48894e-05  3.40989e-05  4.72459e-06 -7.46034e-05 -2.78586e-04 -3.09414e-04  2.19844e-07  2.57686e-04 -4.76013e-06 -1.73518e-02  1.39463e-06  1.84601e-02 -4.27257e-05  2.34558e-05 -1.57183e-04  6.92838e-07  6.50925e-02 -2.39413e-04  1.04367e-07 -3.64780e-04 -1.65317e-02 -1.86400e-06 -2.85054e-02 -4.04691e-05 -3.30272e-07 -5.00869e-04 -2.28331e-04  1.96557e-04  5.70086e-06  6.15242e-05 -1.61103e-08  1.84306e-04 -2.79939e-06  3.37596e-04  1.40529e-07  1.61697e-03  6.73834e-02 -2.42730e-06  1.34771e-06 -6.15564e-07 -1.65584e-03  1.90846e-04 -3.86922e-03 -7.18855e-03  1.18457e-05  2.10696e-06 -3.71990e-07 -1.50228e-01 -1.65337e-02 -2.19555e-04 -7.24015e-07 -4.37720e-06  3.83450e-03  1.47967e-07 -1.88348e-02 -3.13739e-05  2.59367e-04  7.14251e-03 -6.76958e-07 -1.85984e-02 -2.77799e-08  1.26159e-05  2.84445e-02 -2.80223e-04  1.92655e-05  9.42790e-07  6.75050e-02 -9.15445e-07
+-5.26100e-04  2.30178e-08 -2.24320e-01 -6.03832e-07 -1.96597e-04  1.22029e-07 -5.76486e-03  5.76123e-07  7.70269e-07 -1.26345e-03 -5.02499e-07 -2.72450e-04  7.03628e-05 -5.51647e-07  2.62688e-06  1.79335e-06  2.85735e-06  3.27376e-05  4.54415e-03 -2.71557e-07 -2.41030e-04 -2.05272e-06 -6.75051e-02  6.42566e-07 -1.95938e-04  2.07258e-06  3.57392e-06  1.59832e-02  1.69131e-06 -9.74261e-05 -3.02354e-05  5.83029e-09 -1.53442e-02 -2.17311e-04 -2.15319e-06 -2.85325e-02  1.43041e-06  9.77705e-07  3.26869e-06  1.88005e-06 -4.15561e-05 -4.68304e-08  6.53713e-02  1.02560e-07 -2.80369e-04 -1.06858e-05  6.63789e-03 -1.50009e-07 -1.88202e-02  1.94325e-02 -1.23512e-06  1.26919e-06 -1.69184e-08  1.93327e-04 -4.14548e-05  4.99820e-04 -2.37558e-04 -4.38504e-06  2.93085e-06  9.28369e-09 -1.65337e-02 -1.53880e-01  1.90162e-04  9.37904e-08  3.05714e-07 -2.86123e-02 -3.65691e-07  1.68664e-03 -1.09460e-07  4.53809e-05 -6.75602e-02 -2.31414e-06 -1.89090e-02 -6.12202e-08 -4.57793e-06 -3.81204e-03 -1.90491e-05 -1.18100e-05  8.02868e-07 -7.35238e-03  2.19994e-05
+-3.79361e-06  9.30035e-07  2.38522e-05 -5.42908e-07 -6.54326e-05  8.77994e-06  2.98731e-04  6.63095e-06  3.27685e-05 -1.25368e-03 -8.67205e-05  5.66825e-03 -5.35730e-04  2.83807e-04  5.65524e-03  1.23176e-03  5.80847e-04 -2.22813e-01  6.22615e-06  1.06089e-06 -6.72787e-02  3.99595e-06 -2.41129e-04  1.15648e-06 -7.22222e-03 -1.64652e-03  2.16804e-04  3.03826e-05  2.19383e-05  2.78916e-04 -1.82170e-02 -3.40161e-06 -3.87204e-05 -1.65394e-02 -1.91600e-04 -5.01923e-04 -2.18218e-04 -1.33621e-05 -2.84099e-02  6.73403e-02  1.88079e-02  1.83491e-05  1.42322e-05  5.26808e-06  2.62124e-05 -3.87352e-03  3.02366e-05  3.75919e-06  4.26702e-05 -2.13739e-04 -2.84895e-05  1.96754e-04  1.70424e-06  1.85672e-02 -1.65179e-02  2.84614e-02  1.83056e-02 -5.01188e-04  2.30736e-04  1.53861e-06 -2.19572e-04  1.89709e-04 -1.48279e-01  3.98885e-05  2.94637e-06  5.15019e-07  1.18532e-05  1.59741e-03  2.82787e-04 -1.12527e-05 -7.95221e-07  4.29435e-05 -1.80443e-04 -1.57285e-06 -2.80592e-04 -3.87703e-03 -6.51776e-02 -1.99587e-04  4.22291e-06 -2.78830e-04  7.13350e-03
+ 2.65746e-07  5.54119e-03 -6.70246e-07  1.15065e-03 -7.01269e-08  2.23722e-01  1.68241e-06  2.84878e-04 -5.79211e-03  5.15269e-07  1.31616e-03 -3.16367e-07 -4.32407e-06 -2.71904e-04 -3.66726e-05 -7.69222e-05  1.06050e-06 -9.73867e-06 -2.13163e-07 -1.12407e-03 -2.50252e-05 -1.88652e-02  6.28127e-07 -1.65948e-02  4.98014e-06 -1.80197e-04 -2.43136e-04  8.89638e-06  6.75414e-02  4.49747e-07 -1.48360e-07 -4.28794e-03 -3.06540e-06 -1.69736e-06 -1.65129e-02 -4.98642e-09  2.20324e-04 -6.51058e-02 -3.04581e-06 -3.21052e-05  4.21987e-05 -6.45382e-06  4.19541e-07  2.06106e-04  4.37292e-06 -5.01148e-04  7.17629e-06  5.52463e-04  4.14113e-08  7.28451e-07  6.74569e-02  1.60272e-03 -1.88720e-02 -1.49398e-06 -1.91156e-04  1.14389e-05 -1.80310e-06 -3.85759e-03  7.33370e-03  1.63928e-02 -5.31165e-07  3.97426e-07  4.00612e-05 -1.51300e-01  2.84964e-02 -9.45226e-07  2.84832e-02  1.04529e-06 -2.34694e-04 -7.64651e-06 -2.58286e-07  1.85708e-02 -9.09439e-07 -1.75000e-03  2.80593e-04 -3.10751e-06 -1.14827e-05 -1.34381e-05 -6.86376e-03 -2.99650e-06  2.50828e-04
+ 7.03279e-07 -1.17222e-03  3.15775e-07  5.52500e-03 -1.09914e-06 -8.18221e-04 -4.73988e-06 -2.22899e-01 -4.46041e-04 -2.12516e-06 -5.71789e-03  5.34463e-06  9.76749e-06 -1.27072e-03  7.49110e-05 -2.81599e-04 -3.46516e-05  8.87805e-07  2.11734e-07 -3.09464e-04  3.01120e-05 -6.72930e-02 -1.54851e-06  7.06547e-03 -9.24481e-07 -2.79374e-04 -7.27693e-03 -3.13933e-06  1.72680e-02 -4.17807e-07  2.45833e-04 -3.65041e-04 -2.67622e-06  1.13820e-05  2.84399e-02  9.25813e-07  3.86871e-03 -1.88573e-02  1.91085e-04 -1.73358e-06 -1.36354e-05 -1.85794e-02  3.43022e-07  1.67102e-03  1.89632e-06  2.18700e-04 -2.93377e-06  3.35676e-04 -1.28703e-06 -2.82799e-06  6.75237e-02  9.97061e-06  1.00488e-04  1.24368e-05 -5.00995e-04  3.91225e-05  2.38360e-05 -1.65272e-02 -1.85645e-02  3.83395e-03 -4.18730e-06  2.08377e-07  3.05438e-06  2.84963e-02 -1.50106e-01 -1.40192e-06 -1.65238e-02  4.56814e-06 -2.62290e-04 -4.13539e-06  6.36560e-07  6.51550e-02 -4.13952e-07  2.57216e-04 -1.59998e-03 -1.36418e-06 -4.17834e-05 -1.81293e-04 -1.52041e-04  4.53132e-06 -2.26139e-04
+-2.25704e-01 -1.00790e-07 -5.02640e-04  3.48256e-07 -5.83641e-03  3.81585e-07 -1.32338e-03  5.66654e-07  7.44003e-07  2.37601e-04 -6.65570e-07  9.53908e-05  3.81255e-05 -5.60272e-06  4.47664e-06 -1.10616e-06 -1.48560e-05  9.35463e-06 -1.88750e-03 -7.53651e-08 -1.77223e-05  8.54915e-07  1.95998e-02 -7.15476e-07  2.98676e-04 -8.08188e-06  4.25699e-06 -6.64632e-02 -6.35403e-07  1.67076e-03 -2.85186e-05  3.22966e-09 -3.07122e-02 -4.95132e-04  1.53642e-07 -1.63798e-02 -3.19414e-06  3.98238e-07 -4.01434e-05 -4.23751e-05  1.35386e-05  4.99229e-07 -1.90596e-02 -5.25394e-08  1.93841e-04 -1.19310e-06  1.71398e-02 -4.88684e-07  6.50705e-02  7.38934e-03 -1.71132e-07  1.42021e-06  2.86118e-07 -2.18881e-05  1.06958e-05 -1.90340e-04 -2.71801e-04  1.29914e-07  1.47893e-06 -1.66537e-07  3.83449e-03 -2.86123e-02 -7.49829e-07 -4.86450e-07 -1.27200e-06 -1.52113e-01  3.14759e-07  2.78084e-04 -7.75960e-06 -1.87436e-02  6.89256e-02  1.93165e-08 -2.10076e-04 -2.60172e-07  3.29855e-06  2.47834e-04 -4.42371e-05 -7.56140e-07  1.71423e-07  1.60519e-04  5.32633e-06
+-1.32838e-07  5.60472e-04 -2.15677e-07 -2.24719e-01 -9.35431e-07  1.50650e-04 -7.85545e-07  5.78082e-03  1.28274e-03 -7.62293e-07  2.94916e-04  1.23775e-06  1.91234e-06 -6.91894e-05  5.78286e-06  4.03094e-05 -9.42713e-06  4.90517e-06  2.18583e-07  4.53813e-03  1.04152e-06  7.42247e-03 -2.27432e-06 -6.77611e-02 -5.62732e-06 -1.48872e-05 -2.36795e-04  9.66432e-06  6.72990e-02  1.02142e-06  2.90501e-05 -1.53555e-02 -7.27495e-07 -5.80926e-06 -3.80704e-03 -5.15511e-07 -4.98950e-04 -1.86029e-02 -3.88992e-05  2.38534e-05  1.18717e-05  1.62746e-03  2.85645e-07 -1.90787e-02 -6.99433e-08 -1.87919e-04  9.88358e-06  6.53943e-03  6.45341e-07 -1.55476e-06  1.95051e-02 -2.77669e-04 -6.53674e-02 -5.83790e-06  2.60183e-06 -2.45680e-06  4.07892e-06 -2.13649e-04  2.03497e-04 -2.86205e-02  1.09429e-07  4.09222e-08  1.14799e-05  2.84832e-02 -1.65237e-02 -5.84954e-08 -1.54152e-01  1.48144e-06  2.48478e-04 -3.17080e-06  1.46340e-06  6.49811e-05 -7.36871e-08 -1.33039e-04  1.79085e-04  1.08977e-06  2.15271e-06  4.23281e-05  1.58788e-02  2.55629e-06  2.13909e-06
+ 3.42538e-04 -1.84394e-07 -1.14422e-03  1.70155e-06  5.54101e-03 -1.64550e-06 -5.86686e-04 -4.37100e-07 -4.79945e-06 -2.22767e-01  1.42697e-05  5.12431e-04 -5.69992e-03 -4.43931e-06 -7.05979e-05 -2.83428e-05 -2.90936e-04 -1.25997e-03 -2.38026e-05  1.81352e-07  7.23877e-03  8.92386e-07  7.04159e-03 -1.51190e-06  6.72598e-02 -1.93386e-04 -3.14077e-05 -2.02039e-04 -1.35927e-06 -2.84623e-02  2.17387e-04  5.45345e-07 -2.20805e-04 -1.85631e-02  1.86102e-06 -1.56065e-04  4.23094e-05 -3.54047e-06  2.78889e-04 -2.83449e-04  2.20905e-04  1.13368e-05  3.81419e-03  8.06959e-07  2.84603e-02 -1.28509e-05 -2.43092e-04 -1.20966e-07 -2.49519e-04  1.77126e-02  3.91447e-06  4.04546e-05  8.71059e-08  1.65126e-02 -1.83295e-04  1.97394e-05  1.84275e-02 -1.21564e-05 -2.36985e-05  5.02566e-07 -1.88348e-02  1.68658e-03  1.59739e-03  1.00843e-06  5.01483e-06  2.78039e-04  4.67200e-07 -1.49289e-01 -3.34424e-06 -4.93508e-04  2.24938e-04  1.95153e-06 -1.65224e-02 -9.76980e-07 -3.01185e-06 -6.51996e-02 -3.87609e-03 -4.99736e-04 -1.34508e-06  6.75503e-02 -2.40042e-04
+ 2.18500e-06  8.24853e-05  4.06342e-06 -1.95033e-04 -2.62765e-05 -2.81572e-04 -5.22919e-05 -2.19794e-03 -5.71004e-03 -1.28363e-04  4.35074e-03  2.54938e-04  3.26921e-04  2.39160e-01  4.49272e-03  2.38868e-01 -5.76470e-03  2.26037e-03  1.96997e-06 -1.65296e-05  2.51906e-03  1.10059e-02 -9.71506e-05 -7.47189e-04 -7.30005e-04  6.73056e-02 -8.40132e-02  3.18020e-05 -1.25430e-03  3.15196e-05  2.69949e-02  1.94737e-05  2.11809e-06 -2.33719e-04 -7.24545e-03 -2.32618e-05 -6.71852e-02 -2.36773e-04 -7.13240e-03  1.09907e-02 -7.22718e-03 -7.14318e-03 -7.76013e-07 -1.80940e-05 -2.41689e-04 -6.73909e-02  2.15754e-05 -2.48684e-04  5.68992e-06 -1.63623e-04  2.56104e-03  1.82953e-02  2.40365e-04 -2.18122e-04 -1.82011e-02  2.19802e-04  1.19518e-03  1.83997e-02 -2.70149e-02  1.83925e-05 -3.19697e-05 -1.11273e-06  2.82855e-04 -2.34754e-04 -2.62408e-04 -5.01633e-06  2.48836e-04 -5.13974e-06 -1.88632e-01 -1.25119e-06  4.73656e-05  2.57049e-04  2.40329e-05 -1.96681e-05 -6.73930e-02 -6.83933e-06  2.89733e-04  1.83115e-02 -3.28210e-04  2.75215e-04 -8.40120e-02
+ 1.87107e-03  1.13146e-07 -6.97543e-03 -3.98261e-06  1.16058e-03  4.77346e-07 -3.46373e-04  8.80668e-07  1.14302e-06  8.70082e-05  9.26404e-07 -3.64957e-05  7.45161e-07  2.30714e-06 -8.12678e-07 -2.01166e-06  5.02602e-06 -1.62916e-05  2.20461e-01 -6.59804e-07  1.94971e-05 -2.93717e-06 -7.12509e-03  1.16120e-05 -1.95245e-04  2.25772e-05  3.07725e-06 -7.26261e-02  1.34872e-05 -3.69043e-04 -4.84913e-06  2.18931e-07  6.48876e-02  1.78197e-05 -2.79342e-05  1.68000e-03 -7.22748e-07  2.18845e-05 -1.64911e-05  1.55262e-05 -1.14937e-05  2.24976e-06 -1.53592e-02 -7.79189e-07 -2.18180e-04 -6.55228e-06  6.18817e-02  8.18875e-07 -3.07346e-02  6.17506e-04  9.62600e-06  9.05029e-06 -2.93566e-06 -2.44574e-07 -5.81299e-06 -3.71628e-05 -3.57608e-05 -1.72493e-05 -1.28358e-05 -9.72905e-07  2.59491e-04  4.53709e-05 -7.03156e-06 -1.16735e-05 -4.11229e-06 -1.87435e-02 -7.42445e-06 -4.93440e-04 -4.63279e-07 -1.43653e-01  2.03897e-02 -4.46700e-05  4.29530e-03  9.81881e-07  1.68755e-05  2.03517e-04  4.89416e-05 -7.80578e-06  4.50966e-06  1.69972e-04 -8.54137e-06
+ 2.40409e-01  2.58444e-08 -2.34154e-01  3.51050e-06  6.09225e-03 -6.05142e-07  5.95103e-03 -2.86270e-06 -1.99977e-06  2.41554e-03 -1.01887e-06 -4.15488e-04 -2.87865e-04  1.16502e-05 -3.57356e-05 -1.17019e-05  6.78760e-05 -1.46425e-04 -3.03604e-03 -2.34086e-07  7.47311e-04  5.59939e-06 -8.24126e-02 -1.93661e-06 -2.62400e-03  1.05053e-06 -2.64480e-05  8.15229e-02 -2.26563e-06 -7.06530e-03  1.66974e-04 -3.12179e-07 -2.02161e-02  2.07167e-04 -2.05408e-06  1.67146e-02  2.88951e-06 -7.01041e-07  2.78104e-05  2.87943e-04  2.71338e-05 -1.00905e-07  6.78106e-02  1.29203e-07  2.06557e-04 -3.84846e-08  3.07001e-02 -5.05520e-07 -6.88451e-02 -2.65650e-02  3.49692e-06  1.36074e-06  8.50246e-07  2.32307e-04  2.33050e-05 -2.39130e-04  1.23236e-03  2.36926e-06 -1.33463e-05  8.75017e-08  7.14252e-03 -6.75602e-02 -1.16123e-06  2.17692e-07 -4.53115e-07  6.89256e-02  9.76650e-07  2.25021e-04  4.73665e-05  2.03897e-02 -1.98894e-01 -3.34069e-06 -1.66183e-02 -1.53175e-08  3.39471e-06  2.23143e-04 -1.26193e-06 -2.09153e-05 -7.91183e-07  1.10397e-02 -9.55631e-05
+-2.63589e-06  1.19558e-03 -3.51963e-06 -5.55206e-03  8.76170e-07  7.98464e-04  4.32848e-06  2.23161e-01  4.53671e-04  1.41938e-06  5.69631e-03 -3.80128e-06 -1.04716e-05  1.24140e-03 -7.52321e-05  2.78557e-04  3.83269e-05 -1.81270e-06 -3.12086e-06  3.13655e-04 -3.15087e-05  6.74884e-02  1.48027e-06 -7.14550e-03  1.69968e-06  2.22408e-04  7.18820e-03  6.21642e-05 -1.73583e-02 -3.43986e-06 -2.38678e-04  2.60306e-04  3.06268e-06 -1.36519e-06  1.88086e-02  6.42890e-07  1.65617e-03 -2.85267e-02  1.96889e-05  1.38495e-06 -1.91038e-04 -2.84584e-02 -9.18695e-07  3.83780e-03 -1.15038e-05 -2.79798e-04  5.93070e-05 -3.37372e-04  3.81906e-06  2.46882e-06 -6.75020e-02  1.65001e-02  1.65221e-02  3.89782e-05 -1.97402e-04  1.44140e-05 -2.36455e-05 -1.78276e-04  1.84711e-02  1.61417e-03 -7.84347e-07  1.90574e-06  4.31201e-05  1.85709e-02  6.51550e-02 -4.31908e-06  6.49924e-05  1.27130e-06  2.56963e-04 -1.02020e-05 -9.03507e-07 -1.50203e-01 -3.61954e-07 -3.68139e-04 -3.86946e-03 -4.80657e-06 -2.23645e-06 -4.99430e-04  1.61250e-04 -5.15473e-06  2.28055e-04
+-5.55407e-03  1.15519e-07  1.09091e-03  6.57402e-07 -2.23429e-01 -9.01306e-08 -2.30555e-04 -7.20064e-07 -3.24875e-07  5.80417e-03  2.47042e-06 -1.28899e-03  2.78071e-04  3.19807e-06 -5.75449e-06 -1.18863e-05  3.94042e-05 -7.79244e-05 -1.12028e-03 -7.28374e-07  2.36076e-04  3.41896e-06 -6.76441e-02  3.12702e-07 -7.34351e-03  3.99866e-05 -1.35145e-06 -6.86659e-03  3.27810e-08 -2.85315e-02 -1.54030e-07 -1.72289e-09  1.76019e-03  1.60453e-03 -1.28991e-06  6.50654e-02 -1.48060e-06  8.95782e-07  1.35254e-05  2.51654e-04 -1.90605e-04 -3.02549e-06 -2.85418e-02 -7.51536e-08 -3.86351e-03  1.09535e-05  5.48697e-04 -1.05687e-07 -1.63749e-02  6.75042e-02  1.27626e-06 -9.92727e-07  9.16918e-08  2.22921e-04  4.20583e-05 -2.79498e-04 -2.40307e-04  4.80621e-06 -4.73879e-06 -1.13518e-07 -1.85985e-02 -1.89090e-02 -1.80436e-04 -6.65692e-07 -2.10148e-07 -2.09975e-04 -3.88063e-07 -1.65225e-02  2.46298e-05  4.29527e-03 -1.66184e-02 -2.10793e-07 -1.51064e-01  2.58788e-07 -1.05386e-05 -1.53629e-05  5.01141e-04  1.90935e-06  9.74649e-08  1.88905e-02 -3.10073e-05
+ 5.28001e-09 -1.85881e-03  2.45613e-07 -6.95119e-03 -3.86140e-07 -1.13197e-03  7.35965e-07  3.45951e-04 -6.73676e-05 -5.81475e-07  2.73142e-05  2.40245e-06 -8.58818e-07 -4.26815e-06 -5.13886e-06 -2.13175e-06 -3.09977e-06 -3.49891e-07  4.37815e-07  2.20463e-01 -1.77428e-06 -1.68749e-04 -3.14416e-06  2.02628e-02  5.12308e-07  3.87980e-05 -3.44375e-05 -5.75996e-07  7.03095e-03  1.15975e-06  3.53393e-06  6.48222e-02  2.13042e-06 -8.91172e-07  2.20102e-04 -7.17409e-08  4.20172e-05  4.29516e-03  5.13768e-06 -3.05773e-06 -1.00774e-06 -4.92330e-04  7.63511e-07 -3.07187e-02 -2.28813e-06  1.78018e-05  9.51775e-07  6.18730e-02  5.53394e-08  2.57320e-06  6.09802e-04 -2.15343e-04  1.53502e-02 -6.24600e-07 -1.55757e-06  9.22562e-08  1.43437e-08  2.31047e-05  1.88131e-04 -1.90427e-02 -9.02444e-07 -8.67643e-07 -9.35327e-07 -1.75009e-03  2.56955e-04 -3.53476e-07 -1.33044e-04  2.89827e-06 -1.97724e-05 -1.25041e-06  1.63083e-06 -3.68165e-04  1.73196e-07 -1.43620e-01  4.86839e-06  3.94993e-06  4.48428e-06  1.43813e-05 -7.27483e-02 -1.04115e-06  1.53892e-05
+ 2.77036e-06 -3.06729e-05 -1.61325e-06  6.54666e-05 -4.54720e-06 -2.94874e-04 -1.29673e-05  1.25094e-03  5.67434e-03 -5.23255e-06  5.10031e-04  1.90528e-05  7.21980e-05  2.22575e-01  5.66302e-03 -5.50682e-04 -1.23038e-03 -2.87699e-04  3.99357e-06 -2.71856e-06  2.18093e-04 -7.23369e-03 -1.32147e-07  2.40822e-04  3.63137e-06 -2.84387e-02 -6.73478e-02 -3.20319e-05  2.18437e-04  4.00751e-05  7.14039e-03 -4.17148e-05  5.86260e-07 -1.68411e-05 -7.01115e-06  4.91942e-07 -6.51743e-02  2.25012e-04 -1.64454e-03 -2.84121e-04  3.88138e-03  1.65265e-02 -2.15235e-06 -1.88997e-04  1.93276e-04 -1.87974e-02 -3.09231e-05  4.17465e-05  3.35368e-07 -2.13641e-05  2.60678e-04 -2.84941e-02 -4.98045e-04 -5.00555e-04  1.94293e-04 -1.97310e-04  2.32331e-04  1.85856e-02  1.82805e-02 -1.76726e-05  1.26764e-05 -6.31383e-06 -2.80653e-04  2.80579e-04 -1.60004e-03  4.04874e-06  1.79071e-04 -3.03067e-06 -6.73930e-02  9.40323e-06  2.79696e-06 -3.86942e-03 -1.04909e-05  4.58579e-06 -1.48254e-01  4.19734e-05 -2.22237e-04  1.65125e-02  4.84266e-06  2.89775e-05 -1.82270e-02
+ 3.44902e-04 -1.97868e-08 -1.16898e-03  1.99991e-06  5.56179e-03 -1.29914e-06 -6.03546e-04 -6.18712e-07 -4.31118e-06 -2.22618e-01  1.32500e-05  5.18133e-04 -5.67594e-03 -3.70847e-06 -6.98674e-05 -3.71616e-05 -2.88250e-04 -1.23242e-03 -2.22902e-05 -4.64889e-07  7.14883e-03  9.37490e-07  7.13576e-03 -1.68640e-06  6.73793e-02  1.90889e-05 -2.92317e-05 -2.02625e-04 -1.20789e-06  1.85581e-02  2.15268e-04  5.89191e-07  4.94104e-04  2.84497e-02  1.15334e-05  1.65282e-02 -2.81957e-06  1.06343e-06  2.17547e-04 -2.82304e-04  2.79730e-04  8.10260e-07 -1.62993e-03 -2.24503e-07 -1.88031e-02  1.91867e-04 -2.54342e-04 -2.93566e-07 -2.77136e-04  1.78242e-02  4.09121e-06 -1.42588e-05  6.21935e-07 -1.85643e-04  5.00860e-04 -1.65235e-02  1.83119e-02  4.02442e-05 -2.26305e-05 -3.46041e-07  2.84445e-02 -3.81207e-03 -3.87704e-03 -3.04392e-06 -1.41057e-06  2.47860e-04  6.79597e-08 -6.51996e-02 -6.39124e-06  2.03535e-04  2.23045e-04 -4.78155e-06 -1.53115e-05 -2.62292e-07  4.28478e-05 -1.49229e-01  1.65317e-03  1.98045e-04 -1.34135e-06  6.72936e-02 -2.32509e-04
+-2.79714e-06  1.12627e-06  2.15809e-05  7.50198e-07 -6.49986e-05  9.49476e-06  2.95934e-04  7.42804e-06  3.58833e-05 -1.22973e-03 -8.83655e-05  5.64877e-03 -5.19950e-04  2.87432e-04  5.68068e-03  1.25815e-03  5.38874e-04 -2.22694e-01  5.57917e-06  1.31652e-06 -6.74393e-02  4.92355e-06 -2.33601e-04  1.32269e-06 -7.14264e-03  3.87954e-03  2.17856e-04  3.01629e-05  2.31617e-05  2.22822e-04 -1.83324e-02  4.40966e-07  1.74103e-05  1.86299e-04  1.21186e-05  1.95268e-04 -2.79991e-04  3.98034e-05  1.85222e-02  6.72919e-02 -2.84456e-02 -1.92062e-04 -1.89317e-04 -2.39762e-06 -1.65346e-02  1.58787e-03  2.73407e-05  4.07733e-06 -3.14470e-07 -2.15240e-04 -2.83332e-05 -5.02035e-04  1.20060e-05 -2.84742e-02  2.29349e-05 -1.88381e-02  1.82215e-02  1.81211e-04  2.38874e-04 -5.48777e-06 -2.80241e-04 -1.92334e-05 -6.51776e-02 -1.14400e-05 -4.18380e-05 -4.22825e-05  2.48495e-06 -3.87609e-03  2.89630e-04  3.96405e-05 -1.05271e-06 -2.29364e-06  5.01139e-04  4.75227e-06 -2.22217e-04  1.65315e-03 -1.48138e-01  1.65094e-02  4.28676e-06 -2.74127e-04  7.22684e-03
+-2.38289e-06  9.52163e-06 -2.47149e-05 -7.05164e-07 -1.05801e-06 -3.58983e-05  3.57929e-05 -6.97712e-05  2.86678e-04  7.05020e-05  1.28388e-03  2.87537e-04 -1.23025e-03  5.68396e-03  2.22629e-01  5.45862e-04 -5.51772e-04 -5.65798e-03 -5.81336e-07 -1.79688e-06 -7.12937e-03  2.14085e-04  3.10061e-05 -2.77278e-05  2.16733e-04  2.84464e-02 -7.22479e-03  3.78320e-06  2.69549e-06  1.91288e-04  6.74154e-02 -1.91134e-06  2.15045e-06  2.80688e-04 -2.79748e-04  4.34526e-05 -2.65690e-05  1.91002e-04 -1.87861e-02 -1.82042e-02  2.84450e-02 -2.21275e-04 -3.95769e-05 -3.92694e-05  2.21632e-04  1.85539e-02 -1.43532e-06 -1.85346e-06  1.05704e-05 -4.57523e-06  2.39117e-04 -3.87937e-03 -1.65322e-06 -3.88131e-03  6.51600e-02 -1.65074e-03  2.87349e-04  1.59548e-03  2.89935e-04 -1.14416e-05  1.88798e-05 -1.20677e-05 -1.99601e-04 -1.31917e-05 -1.81212e-04 -6.13491e-07  4.22936e-05 -4.99762e-04  1.83115e-02 -6.12596e-06 -2.09226e-05 -4.99510e-04  1.99680e-06  1.38541e-05  1.65125e-02  1.97838e-04  1.65094e-02 -1.47995e-01 -2.37915e-05 -2.32542e-04  6.72777e-02
+-2.72395e-07  2.25499e-01 -1.26204e-06 -6.83856e-03  4.64729e-07 -6.47857e-03  3.50294e-06 -2.52474e-03 -4.95259e-04  9.75828e-07  3.69910e-04 -2.59463e-06 -6.13275e-06  1.62414e-04 -4.42075e-05 -7.95450e-05  2.24787e-05 -1.04261e-05  1.11453e-06  2.43664e-01 -2.97570e-05 -2.84068e-03 -1.31685e-05  8.15321e-02  8.63340e-06  2.87443e-05  8.07503e-04 -9.07243e-06  2.69138e-02  4.45957e-06 -1.07927e-04  7.25691e-02  4.28000e-06 -6.18766e-06 -2.02854e-04 -9.96034e-07  4.85520e-06 -6.95048e-03  2.22001e-06 -5.25173e-05  2.22595e-06 -2.03263e-04  3.41900e-06  6.65348e-02 -4.66644e-06 -2.84621e-05 -5.32600e-06  7.54755e-02 -1.10200e-06  4.22549e-06 -1.13039e-02  2.45548e-04  1.60003e-02  2.47170e-06  2.29587e-05 -2.68006e-06 -1.76094e-05  2.35088e-04  1.35125e-03 -6.66063e-02 -2.96619e-06 -3.21882e-06  3.13279e-06 -6.86382e-03 -1.52200e-04  7.78669e-08  1.58788e-02  1.35462e-05 -3.28039e-04 -5.08664e-06  6.80950e-06  1.61398e-04  2.92566e-07 -7.27483e-02  4.52175e-06  1.38475e-05  3.39767e-06 -2.36642e-05 -2.01484e-01 -6.59368e-06  1.88803e-04
+ 1.80538e-03  3.43173e-06  5.08062e-03 -1.09001e-06 -3.20437e-03 -4.10711e-06 -2.39659e-01 -6.98910e-07 -1.52333e-05  2.38083e-01  3.59035e-05 -4.79124e-03 -5.81564e-03  5.51486e-05 -2.59886e-04 -1.25305e-04  3.43528e-04 -2.28151e-03 -5.08497e-06 -8.21433e-07  1.09972e-02  4.31994e-05 -2.69536e-02 -5.79224e-06 -8.36693e-02 -5.20346e-06 -1.62579e-04  2.83662e-03 -1.46066e-05 -6.73481e-02  1.19728e-03 -5.97477e-07 -1.68170e-04  1.81100e-02 -7.94885e-07 -1.87920e-02  2.80439e-05 -1.10446e-06  2.14102e-04  2.53478e-03  2.15146e-04 -4.51812e-07  7.42986e-03 -1.95456e-06  1.80082e-02  5.41410e-06  1.64846e-03 -4.25537e-06 -1.63185e-04 -8.32863e-02  2.65860e-05  2.35771e-05  6.63303e-07  7.12991e-03  2.41293e-04 -7.21775e-03  2.69438e-02  2.38779e-05 -9.26987e-05  1.03206e-06  6.75050e-02 -7.35237e-03 -2.78833e-04 -1.67099e-06  3.80068e-06  1.60572e-04  2.19576e-07  6.75503e-02  2.75234e-04  1.70167e-04  1.10397e-02 -5.69599e-06  1.88904e-02  8.82040e-07  2.92690e-05  6.72936e-02 -2.74182e-04 -2.32793e-04 -4.62032e-06 -1.91095e-01 -7.30293e-04
+-9.12019e-06 -2.96326e-05 -2.72519e-05  1.00292e-04  5.15133e-05  2.37107e-04  1.30021e-04  3.01359e-04  2.23780e-03  2.58196e-04 -5.72473e-03 -3.20794e-04 -2.25153e-03 -4.42401e-03 -2.39018e-01  2.39110e-01  4.47582e-03 -5.76009e-03 -2.30426e-06  9.26938e-06 -1.09848e-02 -2.53309e-03  1.71504e-04  2.88147e-04  1.19633e-03  6.74254e-02  2.69774e-02 -5.50241e-05  7.58545e-04  1.92178e-06 -8.40587e-02 -1.57073e-05  1.74999e-06  2.17835e-04 -2.84385e-04  3.20554e-05 -1.83466e-02  2.43455e-04  1.82045e-02 -2.69951e-02  1.83265e-02 -2.83989e-04 -2.23134e-05  4.32326e-05  2.18070e-04 -6.72589e-02 -4.02870e-05  1.40976e-04 -3.85784e-06  2.78292e-04 -1.20714e-03 -7.15442e-03  3.15689e-06 -2.85861e-04 -6.73653e-02  2.75715e-04 -2.52130e-03 -7.24770e-03  1.09985e-02 -4.29318e-05 -1.54056e-06  2.15608e-05  7.13348e-03  2.50858e-04 -2.26205e-04  4.30097e-06  2.76355e-06 -2.40319e-04 -8.40120e-02 -8.01178e-07 -9.46351e-05  2.28160e-04 -3.17034e-05  1.47673e-05 -1.82270e-02 -2.32743e-04  7.22685e-03  6.72777e-02  1.88769e-04 -7.30089e-04 -1.88442e-01
+============================================================
+
+
+============================================================
+                      Orbital energies
+------------------------------------------------------------
+    n  spin  occ                            epsilon  
+------------------------------------------------------------
+    0    p    2                      -8.346244681834188e+00
+    1    p    2                      -8.346155350470122e+00
+    2    p    2                      -8.343394723398845e+00
+    3    p    2                      -8.343294307245433e+00
+    4    p    2                      -8.336964915364087e+00
+    5    p    2                      -8.336871758803108e+00
+    6    p    2                      -8.334436000333932e+00
+    7    p    2                      -8.334337982213258e+00
+    8    p    2                      -8.332160037763321e+00
+    9    p    2                      -8.332074381701544e+00
+   10    p    2                      -8.330894882296400e+00
+   11    p    2                      -8.330868868325073e+00
+   12    p    2                      -8.330277560870742e+00
+   13    p    2                      -8.330170354028397e+00
+   14    p    2                      -8.329774714058354e+00
+   15    p    2                      -8.329745364342726e+00
+   16    p    2                      -8.329590871316611e+00
+   17    p    2                      -8.329474262538383e+00
+   18    p    2                      -8.329345736979967e+00
+   19    p    2                      -8.329219756912407e+00
+   20    p    2                      -4.614476991020866e-01
+   21    p    2                      -4.584723469084294e-01
+   22    p    2                      -4.509147009078539e-01
+   23    p    2                      -4.400855996956397e-01
+   24    p    2                      -4.260793373763404e-01
+   25    p    2                      -4.092808364038737e-01
+   26    p    2                      -3.897413607274789e-01
+   27    p    2                      -3.676377174658214e-01
+   28    p    2                      -3.431379733605576e-01
+   29    p    2                      -3.165096822971604e-01
+   30    p    2                      -2.883326936945690e-01
+   31    p    2                      -2.599141494374819e-01
+   32    p    2                      -2.510802796765273e-01
+   33    p    2                      -2.482910210284063e-01
+   34    p    2                      -2.413396986344709e-01
+   35    p    2                      -2.353485346895924e-01
+   36    p    2                      -2.298754416840540e-01
+   37    p    2                      -2.227924611323511e-01
+   38    p    2                      -2.124303089247788e-01
+   39    p    2                      -2.118403772589041e-01
+   40    p    2                      -1.997547886654755e-01
+   41    p    2                      -1.961317505746300e-01
+   42    p    2                      -1.881234686431717e-01
+   43    p    2                      -1.768749932023537e-01
+   44    p    2                      -1.626829121617415e-01
+   45    p    2                      -1.459992830238392e-01
+   46    p    2                      -1.403957897229584e-01
+   47    p    2                      -1.374867556328085e-01
+   48    p    2                      -1.272573302407242e-01
+   49    p    2                      -1.245525334582567e-01
+   50    p    2                      -1.233792060484518e-01
+   51    p    2                      -1.069754933503150e-01
+   52    p    2                      -1.042784895147409e-01
+   53    p    2                      -9.647156737045015e-02
+   54    p    2                      -8.587471502758441e-02
+   55    p    2                      -8.363470476828272e-02
+   56    p    2                      -6.949475329407061e-02
+   57    p    2                      -6.495165795366091e-02
+   58    p    2                      -5.979815681773994e-02
+   59    p    2                      -5.240072208539878e-02
+   60    p    2                      -4.994373102623133e-02
+   61    p    2                      -4.878566162463695e-02
+   62    p    2                      -4.549367406093852e-02
+   63    p    2                      -4.454087436894093e-02
+   64    p    2                      -4.147436336046923e-02
+   65    p    2                      -4.141210403190555e-02
+   66    p    2                      -3.722109062177691e-02
+   67    p    2                      -3.691579143667199e-02
+   68    p    2                      -3.134051219128989e-02
+   69    p    2                      -2.933093395060265e-02
+   70    p    2                      -2.930258640799459e-02
+   71    p    2                      -2.533210349474914e-02
+   72    p    2                      -2.455055708182988e-02
+   73    p    2                      -2.016611285953245e-02
+   74    p    2                      -1.664639949454617e-02
+   75    p    2                      -1.451898380982109e-02
+   76    p    2                      -9.409057907754294e-03
+   77    p    2                      -9.221640212102663e-03
+   78    p    2                       5.295237398727301e-03
+   79    p    2                       3.371909557371233e-02
+   80    p    2                       5.642563562102187e-02
+============================================================
+
+
+============================================================
+                          Molecule
+------------------------------------------------------------
+ Nr  Element             x             y             z      
+------------------------------------------------------------
+  1     H           0.00000e+00   2.11460e+00   0.00000e+00
+  2     H           1.09037e+00  -7.04868e-01  -1.66863e+00
+  3     H           9.01399e-01  -7.04868e-01   1.77823e+00
+  4     H          -3.84559e+00  -2.22988e-01   1.52690e+00
+  5     H          -3.66985e+00  -2.13539e-01  -1.92185e+00
+  6     H          -1.63083e+00  -4.53534e+00  -1.83492e+00
+  7     H          -1.80091e+00  -4.55424e+00   1.61383e+00
+  8     H          -6.54790e+00  -4.06858e+00   1.38895e+00
+  9     H          -6.38916e+00  -4.04779e+00  -2.06169e+00
+ 10     H          -4.34826e+00  -8.36960e+00  -1.99933e+00
+ 11     H          -4.50322e+00  -8.39983e+00   1.45131e+00
+ 12     H          -9.25210e+00  -7.91417e+00   1.24911e+00
+ 13     H          -9.11037e+00  -7.88205e+00  -2.19964e+00
+ 14     H          -7.06758e+00  -1.22020e+01  -2.16185e+00
+ 15     H          -7.20553e+00  -1.22435e+01   1.28879e+00
+ 16     H          -1.19563e+01  -1.17598e+01   1.11116e+00
+ 17     H          -1.18297e+01  -1.17163e+01  -2.33948e+00
+ 18     H          -9.78689e+00  -1.60362e+01  -2.32436e+00
+ 19     H          -9.90783e+00  -1.60891e+01   1.12439e+00
+ 20     H          -1.46586e+01  -1.56054e+01   9.73209e-01
+ 21     H          -1.45490e+01  -1.55506e+01  -2.47743e+00
+ 22     H          -1.25062e+01  -1.98705e+01  -2.48877e+00
+ 23     H          -1.26101e+01  -1.99347e+01   9.61871e-01
+ 24     H          -1.73628e+01  -1.94509e+01   8.33369e-01
+ 25     H          -1.72683e+01  -1.93848e+01  -2.61727e+00
+ 26     H          -1.52255e+01  -2.37047e+01  -2.65129e+00
+ 27     H          -1.53124e+01  -2.37803e+01   7.99354e-01
+ 28     H          -2.00651e+01  -2.32965e+01   6.95419e-01
+ 29     H          -1.99895e+01  -2.32191e+01  -2.75711e+00
+ 30     H          -1.79448e+01  -2.75371e+01  -2.81569e+00
+ 31     H          -1.80148e+01  -2.76259e+01   6.36838e-01
+ 32     H          -2.27693e+01  -2.71440e+01   5.55579e-01
+ 33     H          -2.27088e+01  -2.70533e+01  -2.89506e+00
+ 34     H          -2.06642e+01  -3.13713e+01  -2.97821e+00
+ 35     H          -2.07190e+01  -3.14715e+01   4.72432e-01
+ 36     H          -2.54716e+01  -3.09896e+01   4.17629e-01
+ 37     H          -2.54282e+01  -3.08876e+01  -3.03301e+00
+ 38     H          -2.33835e+01  -3.52037e+01  -3.14072e+00
+ 39     H          -2.34213e+01  -3.53152e+01   3.09915e-01
+ 40     H          -2.71629e+01  -3.75942e+01  -1.53257e+00
+ 41     H          -2.81758e+01  -3.48352e+01   2.77790e-01
+ 42     H          -2.81475e+01  -3.47218e+01  -3.17285e+00
+ 43     C           0.00000e+00   0.00000e+00   0.00000e+00
+ 44     C          -2.76278e+00  -9.24076e-01  -1.49288e-01
+ 45     C          -2.71176e+00  -3.83992e+00  -1.56847e-01
+ 46     C          -5.47265e+00  -4.76400e+00  -2.94797e-01
+ 47     C          -5.42162e+00  -7.67985e+00  -3.11805e-01
+ 48     C          -8.18440e+00  -8.60392e+00  -4.40306e-01
+ 49     C          -8.13338e+00  -1.15198e+01  -4.68652e-01
+ 50     C          -1.08962e+01  -1.24438e+01  -5.85815e-01
+ 51     C          -1.08432e+01  -1.53578e+01  -6.23610e-01
+ 52     C          -1.36079e+01  -1.62819e+01  -7.33214e-01
+ 53     C          -1.35550e+01  -1.91977e+01  -7.80457e-01
+ 54     C          -1.63197e+01  -2.01218e+01  -8.78723e-01
+ 55     C          -1.62668e+01  -2.30376e+01  -9.35414e-01
+ 56     C          -1.90295e+01  -2.39617e+01  -1.02423e+00
+ 57     C          -1.89766e+01  -2.68776e+01  -1.09226e+00
+ 58     C          -2.17413e+01  -2.78016e+01  -1.16974e+00
+ 59     C          -2.16884e+01  -3.07175e+01  -1.24722e+00
+ 60     C          -2.44531e+01  -3.16416e+01  -1.31714e+00
+ 61     C          -2.43983e+01  -3.45555e+01  -1.40407e+00
+ 62     C          -2.71648e+01  -3.54815e+01  -1.46265e+00
+------------------------------------------------------------
+ Center of mass:   -1.35814e+01  -1.77405e+01  -7.53618e-01
+============================================================
+
+
+                                                            
+============================================================
+                         SCF Energy                         
+------------------------------------------------------------
+                                                            
+ Sum orbital energy:                  0.000000000000000e+00
+ Kinetic energy:                      0.000000000000000e+00
+ E-N energy:                          0.000000000000000e+00
+ Coulomb energy:                      0.000000000000000e+00
+ Exchange energy:                     0.000000000000000e+00
+ X-C energy:                          0.000000000000000e+00
+ El. External field energy:           0.000000000000000e+00
+ Nuc. External field energy:          0.000000000000000e+00
+                                                            
+------------------------------------------------------------
+                                                            
+ Electronic energy:                   0.000000000000000e+00
+ Nuclear energy:                      0.000000000000000e+00
+                                                            
+------------------------------------------------------------
+                                                            
+ Total energy       (au)              0.000000000000000e+00
+                    (kJ/mol)          0.000000000000000e+00
+                    (kcal/mol)        0.000000000000000e+00
+                    (eV)              0.000000000000000e+00
+                                                            
+============================================================
+                                                            
+
+                                                            
+============================================================
+                         Dipole moment                      
+------------------------------------------------------------
+                                                            
+ Length of vector:   (au)                  0.0000000000e+00
+                     (Debye)               0.0000000000e+00
+                                                            
+------------------------------------------------------------
+                                                            
+   0.0000000000e+00    0.0000000000e+00    0.0000000000e+00
+                                                            
+============================================================
+                                                            
+
+
+
+************************************************************
+***                                                      ***
+***                    Exiting MRChem                    ***
+***                                                      ***
+***               Wall time: 9.807228e+02                ***
+***                                                      ***
+************************************************************
+
+
