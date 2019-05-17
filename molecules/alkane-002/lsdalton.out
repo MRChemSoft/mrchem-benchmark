@@ -1,0 +1,36 @@
+
+   ******************************************* 
+   **** OUTPUT FROM LSDALTON SHELL SCRIPT
+   ******************************************* 
+
+   DALTON release 2016.alpha
+
+   Invocation: /home/stig/dev/dalton/lsdalton -t . lsdalton
+
+   Wed Aug  9 16:26:27 CEST 2017
+
+   Calculation: lsdalton  (input files: lsdalton.dal and lsdalton.mol)
+   PID        : 34634
+   Input dir  : /home/stig/calculations/large_systems/ch4_002/initial_guess
+   Scratch dir: ./DALTON_scratch_stig/lsdalton_34634
+
+Error in /home/stig/dev/dalton/lsdalton.x, exit code 127
+
+SERIOUS ERROR:
+LSDALTON finished with non-zero exit code: 127
+
+File list in scratch directory:
+
+total 8
+-rw-rw-r-- 1 stig stig 643 Aug  9 16:26 MOLECULE.INP
+-rw-rw-r-- 1 stig stig  98 Aug  9 16:26 LSDALTON.INP
+12K	.
+Backup: renaming /home/stig/calculations/large_systems/ch4_002/initial_guess/lsdalton.tar.gz to /home/stig/calculations/large_systems/ch4_002/initial_guess/lsdalton.tar.gz.0
+lsdalton.tar.gz has been copied to /home/stig/calculations/large_systems/ch4_002/initial_guess
+LSDALTON.OUT has not been created from the present run.
+./DALTON_scratch_stig/lsdalton_34634 is therefore not deleted by this script.
+List of created files in ./DALTON_scratch_stig/lsdalton_34634 :
+total 12
+4 -rw-rw-r-- 1 stig stig  98 Aug  9 16:26 LSDALTON.INP
+4 -rw-rw-r-- 1 stig stig 643 Aug  9 16:26 MOLECULE.INP
+4 -rw-rw-r-- 1 stig stig  20 Aug  9 16:26 lsdalton.tar.gz
