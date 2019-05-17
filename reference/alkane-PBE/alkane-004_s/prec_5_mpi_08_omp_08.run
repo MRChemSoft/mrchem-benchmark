@@ -1,0 +1,38 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=ch4-004_s_5
+#SBATCH --nodes=4
+#SBATCH --ntasks-per-node=2
+#SBATCH --cpus-per-task=8
+#SBATCH --time=0-12:00:00
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+#SBATCH --output=prec_5_mpi_08_omp_08.slurm
+#SBATCH --error=prec_5_mpi_08_omp_08.slurm
+
+module purge
+module restore mrchem-intel
+
+# Make scratch
+SCRATCH=/cluster/work/users/${USER}/MRCHEM-${SLURM_JOBID}
+mkdir -p ${SCRATCH}
+
+# Copy to scratch
+cd ${SLURM_SUBMIT_DIR}
+cp prec_5_mpi_08_omp_08.inp ${SCRATCH}/mrchem.inp
+cp -r initial_guess ${SCRATCH}
+
+# Run calculation
+cd ${SCRATCH}
+/nird/home/stig/benchmarks-mrchem/ref/install-hybrid/bin/mrchem -D mrchem.inp
+mpirun /usr/bin/time -v /nird/home/stig/benchmarks-mrchem/ref/install-hybrid/bin/mrchem.x @mrchem.inp >mrchem.out
+
+# Copy back
+cd ${SLURM_SUBMIT_DIR}
+cp ${SCRATCH}/mrchem.out prec_5_mpi_08_omp_08.out
+
+# Delete scratch
+rm -r ${SCRATCH}/*
+rmdir ${SCRATCH}
+
+exit 0
