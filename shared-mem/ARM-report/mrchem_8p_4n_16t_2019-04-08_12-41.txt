@@ -1,0 +1,66 @@
+Command:        mpirun ../../install-hybrid/bin/mrchem.x @mrchem.inp
+Resources:      4 nodes (32 physical, 64 logical cores per node)
+Tasks:          8 processes, OMP_NUM_THREADS was 16
+Machine:        c12-12.cluster
+Start time:     man. apr. 8 2019 12:41:30 (UTC+02)
+Total time:     552 seconds (about 9 minutes)
+Full path:      /cluster/home/stig/benchmarks-mrchem/shared-mem/install-hybrid/bin
+
+Summary: mrchem.x is Compute-bound in this configuration
+Compute:                                     73.8% |======|
+MPI:                                         26.0% |==|
+I/O:                                          0.2% ||
+This application run was Compute-bound. A breakdown of this time and advice for investigating further is in the CPU section below. 
+As little time is spent in MPI calls, this code may also benefit from running at larger scales.
+
+CPU:
+A breakdown of the 73.8% CPU time:
+Single-core code:                            31.9% |==|
+OpenMP regions:                              68.1% |======|
+Scalar numeric ops:                           9.3% ||
+Vector numeric ops:                          11.7% ||
+Memory accesses:                             69.0% |======|
+The per-core performance is memory-bound. Use a profiler to identify time-consuming loops and check their cache performance.
+Little time is spent in vectorized instructions. Check the compiler's vectorization advice to see why key loops could not be vectorized.
+
+MPI:
+A breakdown of the 26.0% MPI time:
+Time in collective calls:                    14.0% ||
+Time in point-to-point calls:                86.0% |========|
+Effective process collective rate:             108 kB/s
+Effective process point-to-point rate:        1.48 GB/s
+Most of the time is spent in point-to-point calls with a high transfer rate. It may be possible to improve this further by overlapping communication and computation or reducing the amount of communication required.
+
+I/O:
+A breakdown of the 0.2% I/O time:
+Time in reads:                               13.3% ||
+Time in writes:                              86.7% |========|
+Effective process read rate:                  10.2 MB/s
+Effective process write rate:                 3.06 MB/s
+Most of the time is spent in write operations with a very low effective transfer rate. This may be caused by contention for the filesystem or inefficient access patterns. Use an I/O profiler to investigate which write calls are affected.
+
+OpenMP:
+A breakdown of the 68.1% time in OpenMP regions:
+Computation:                                 80.8% |=======|
+Synchronization:                             19.2% |=|
+Physical core utilization:                  100.0% |=========|
+System load:                                 72.3% |======|
+OpenMP thread performance looks good. Check the CPU breakdown for advice on improving code efficiency.
+
+Memory:
+Per-process memory usage may also affect scaling:
+Mean process memory usage:                    2.95 GiB
+Peak process memory usage:                    5.70 GiB
+Peak node memory usage:                      18.0% |=|
+There is significant variation between peak and mean memory usage. This may be a sign of workload imbalance or a memory leak.
+The peak node memory usage is very low. Running with fewer MPI processes and more data on each process may be more efficient.
+
+Energy:
+A breakdown of how the 102 Wh was used:
+CPU:                                        100.0% |=========|
+System:                                   not supported
+Mean node power:                          not supported
+Peak node power:                              0.00 W
+The whole system energy has been calculated using the CPU energy usage.
+System power metrics: No Arm IPMI Energy Agent config file found in /var/spool/ipmi-energy-agent. Did you start the Arm IPMI Energy Agent?
+
