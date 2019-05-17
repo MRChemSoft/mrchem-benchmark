@@ -1,0 +1,48 @@
+# vim:syntax=sh:
+
+rel_prec = 1.0e-5
+
+MRA {
+  min_scale = -6
+  max_scale = 20
+  corner = [ -1, -1, -1 ]
+  boxes = [ 2, 2, 2 ]
+}
+
+Derivatives {
+  kinetic = ABGV_00
+}
+
+Molecule {
+  multiplicity = 1
+  angstrom = false
+$coords
+ H   0.13251760          2.02206777          0.27700656 
+ H   1.02330289         -0.45726250         -1.80848040 
+ H   0.73882599         -1.05368989          1.48587508 
+ H  -4.01237225         -0.26172845          1.21990407 
+ H  -3.72839478          0.33771930         -2.07404036 
+ H  -3.12110265         -2.73918548         -0.86768777 
+ C  -0.10330025         -0.01241977         -0.11176281 
+ C  -2.88577285         -0.70477492         -0.47730266 
+$end
+}
+
+WaveFunction {
+  method = HF
+  restricted = true
+}
+
+Properties {
+  scf_energy = true
+  dipole_moment = true
+}
+
+SCF {
+  kain = 3
+  rotation = 30
+  canonical = false
+  orbital_thrs = 1.0e-4
+  initial_guess = GTO
+}
+

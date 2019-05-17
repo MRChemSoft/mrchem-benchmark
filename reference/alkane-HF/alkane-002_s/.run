@@ -1,0 +1,17 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=NAME
+#SBATCH --nodes=NODES
+#SBATCH --ntasks-per-node=TASKS
+#SBATCH --cpus-per-task=CPUS
+#SBATCH --time=0-HOURS:00:00
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+
+module purge
+module restore mrchem-intel
+
+/nird/home/stig/benchmarks-mrchem/ref/install-hybrid/bin/mrchem -D INPUT.inp
+mpirun /nird/home/stig/benchmarks-mrchem/ref/install-hybrid/bin/mrchem.x @INPUT.inp >OUTPUT.out
+
+exit 0

@@ -1,0 +1,18 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=ch4-006_s_4
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=32
+#SBATCH --time=0-24:00:00
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+#SBATCH --qos=preproc
+
+module purge
+module restore mrchem-intel
+
+/nird/home/stig/benchmarks-mrchem/ref/install-hybrid/bin/mrchem -D prec_4_mpi_01_omp_32.inp
+mpirun /nird/home/stig/benchmarks-mrchem/ref/install-hybrid/bin/mrchem.x @prec_4_mpi_01_omp_32.inp >prec_4_mpi_01_omp_32.out
+
+exit 0
