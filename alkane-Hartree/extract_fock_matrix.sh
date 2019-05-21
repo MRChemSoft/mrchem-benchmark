@@ -39,7 +39,7 @@ for mol in 010 020 030 040 050 060; do
                         | awk '{ print $3 }'`
                     tot_mat=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Calculating Fock matrix'`
-                    echo "ch4_${mol},${prec},${mpi},${omp},${kin_mat},${pot_mat},${tot_mat}" >> ${outfile}
+                    echo "alkane_${mol},${prec},${mpi},${omp},${kin_mat},${pot_mat},${tot_mat}" >> ${outfile}
                 fi
             done
         done

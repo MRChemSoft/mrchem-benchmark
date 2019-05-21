@@ -49,7 +49,7 @@ for mol in 002 004 006 008 010 020 030 040; do
                     scf_tot=`get_scf_cycle 1 ${inpfile} \
                         | grep -m 1 '### Wall time' \
                         | awk '{ print $4 }'`
-                    echo "ch4_${mol},${prec},${mpi},${omp},${localize},${scf_energy},${helmholtz},${kain},${fock_setup},${fock_calc},${scf_tot}" >> ${outfile}
+                    echo "alkane_${mol},${prec},${mpi},${omp},${localize},${scf_energy},${helmholtz},${kain},${fock_setup},${fock_calc},${scf_tot}" >> ${outfile}
                 fi
             done
         done

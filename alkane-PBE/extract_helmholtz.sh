@@ -36,7 +36,7 @@ for mol in 002 004 006 008 010 020 030 040; do
                     helm_app=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Applying Helmholtz operators'`
                     helm_tot=$(awk "BEGIN {print $helm_init+$helm_arg+$helm_app; exit}")
-                    echo "ch4_${mol},${prec},${mpi},${omp},${helm_init},${helm_arg},${helm_app},${helm_tot}" >> ${outfile}
+                    echo "alkane_${mol},${prec},${mpi},${omp},${helm_init},${helm_arg},${helm_app},${helm_tot}" >> ${outfile}
                 fi
             done
         done

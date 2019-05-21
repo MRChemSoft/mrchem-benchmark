@@ -43,7 +43,7 @@ for mol in 010 020 030 040 050 060; do
                         | awk '{ print $3 }'`
                     loc_tot=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Localizing orbitals'`
-                    echo "ch4_${mol},${prec},${mpi},${omp},${pos_mat},${foster_boys},${rotation},${loc_tot}" >> ${outfile}
+                    echo "alkane_${mol},${prec},${mpi},${omp},${pos_mat},${foster_boys},${rotation},${loc_tot}" >> ${outfile}
                 fi
             done
         done

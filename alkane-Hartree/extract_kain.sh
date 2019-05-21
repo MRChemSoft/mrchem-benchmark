@@ -47,7 +47,7 @@ for mol in 010 020 030 040 050 060; do
                         | awk '{ print $3 }'`
                     kain_tot=`get_scf_cycle 4 ${inpfile} \
                         | get_wall_time 'Iterative subspace accelerator'`
-                    echo "ch4_${mol},${prec},${mpi},${omp},${push_back},${setup},${solve},${expand},${kain_tot}" >> ${outfile}
+                    echo "alkane_${mol},${prec},${mpi},${omp},${push_back},${setup},${solve},${expand},${kain_tot}" >> ${outfile}
                 fi
             done
         done

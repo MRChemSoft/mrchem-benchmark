@@ -32,7 +32,7 @@ for mol in 010 020 030 040 050 060; do
                             max_mem=${mem}
                         fi
                     done
-                    echo "ch4_${mol},${prec},${mpi},${omp},${scf_cycles},${wall_time},${max_mem}" >> ${outfile}
+                    echo "alkane_${mol},${prec},${mpi},${omp},${scf_cycles},${wall_time},${max_mem}" >> ${outfile}
                 fi
 
             done
