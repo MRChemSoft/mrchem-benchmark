@@ -1,3 +1,5 @@
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stigrj/mrchem-benchmark/oct-2018)
+
 A set of benchmark calculations for the MRChem program
 on linear alkane chains using a variable number of
 MPI processes and OpenMP threads/process.
