@@ -16,8 +16,8 @@ max_iter=5
 guess='SAD_DZ'
 dev_hr=1
 pre_hr=12
-full_hr=2
-xyz_dir="/cluster/home/stig/benchmarks-mrchem/molecules/caffeine"
+full_hr=12
+xyz_dir="/cluster/home/stig/src/mrchem-benchmark/molecules/caffeine"
 
 if [[ $mult == 's' ]]; then mult=1; fi
 if [[ $mult == 'd' ]]; then mult=2; fi
@@ -30,8 +30,8 @@ if [[ $mult > 1 ]]; then restricted='false'; fi
 cd $name
 for prec in 5; do
     threshold=$((${prec}-1))
-    for MPI in 001 002 004 008 016 032 048 064; do
-        for OMP in 01 02 04 08 16 32; do
+    for MPI in 001 002 004 006 008 010 016; do
+        for OMP in 01 02 05 10 20 40; do
             file_name=prec_${prec}_mpi_${MPI}_omp_${OMP}
             echo ${file_name}
 
@@ -65,156 +65,215 @@ sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
 sed -i "s/CPUS/1/"                          *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
 run_file=mpi_001_omp_02
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
 sed -i "s/CPUS/2/"                          *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_001_omp_04
+run_file=mpi_001_omp_05
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_001_omp_08
+run_file=mpi_001_omp_10
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_001_omp_16
+run_file=mpi_001_omp_20
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_001_omp_32
+run_file=mpi_001_omp_40
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
 run_file=mpi_002_omp_01
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
 sed -i "s/CPUS/1/"                          *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
 run_file=mpi_002_omp_02
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
 sed -i "s/CPUS/2/"                          *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_002_omp_04
+run_file=mpi_002_omp_05
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_002_omp_08
+run_file=mpi_002_omp_10
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_002_omp_16
+run_file=mpi_002_omp_20
 sed -i "s/NODES/1/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
 sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=preproc" *${run_file}*.run
 
-run_file=mpi_002_omp_32
+run_file=mpi_002_omp_40
 sed -i "s/NODES/2/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
-sed -i "s/HOURS/${dev_hr}/"                 *${run_file}*.run
-sed -i "/partition/a #SBATCH --qos=devel"   *${run_file}*.run
-sed -i "/partition/a #SBATCH --nice=500"    *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
+sed -i "s/HOURS/${pre_hr}/"                 *${run_file}*.run
 
 run_file=mpi_004_omp_01
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
 sed -i "s/CPUS/1/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
 run_file=mpi_004_omp_02
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
 sed -i "s/CPUS/2/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_004_omp_04
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
+run_file=mpi_004_omp_05
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_004_omp_08
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
+run_file=mpi_004_omp_10
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_004_omp_16
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
+run_file=mpi_004_omp_20
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_004_omp_32
+run_file=mpi_004_omp_40
 sed -i "s/NODES/4/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_006_omp_01
+sed -i "s/NODES/1/"                         *${run_file}*.run
+sed -i "s/TASKS/6/"                         *${run_file}*.run
+sed -i "s/CPUS/1/"                          *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_006_omp_02
+sed -i "s/NODES/1/"                         *${run_file}*.run
+sed -i "s/TASKS/6/"                         *${run_file}*.run
+sed -i "s/CPUS/2/"                          *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_006_omp_05
+sed -i "s/NODES/1/"                         *${run_file}*.run
+sed -i "s/TASKS/6/"                         *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_006_omp_10
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/3/"                         *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_006_omp_20
+sed -i "s/NODES/3/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_006_omp_40
+sed -i "s/NODES/6/"                         *${run_file}*.run
+sed -i "s/TASKS/1/"                         *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
 run_file=mpi_008_omp_01
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/4/"                         *${run_file}*.run
 sed -i "s/CPUS/1/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
 run_file=mpi_008_omp_02
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/4/"                         *${run_file}*.run
 sed -i "s/CPUS/2/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_008_omp_04
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
+run_file=mpi_008_omp_05
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/4/"                         *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_008_omp_08
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
+run_file=mpi_008_omp_10
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/4/"                         *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_008_omp_16
+run_file=mpi_008_omp_20
 sed -i "s/NODES/4/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_008_omp_32
+run_file=mpi_008_omp_40
 sed -i "s/NODES/8/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_010_omp_01
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/5/"                         *${run_file}*.run
+sed -i "s/CPUS/1/"                          *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_010_omp_02
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/5/"                         *${run_file}*.run
+sed -i "s/CPUS/2/"                          *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_010_omp_05
+sed -i "s/NODES/2/"                         *${run_file}*.run
+sed -i "s/TASKS/5/"                         *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_010_omp_10
+sed -i "s/NODES/5/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_010_omp_20
+sed -i "s/NODES/5/"                         *${run_file}*.run
+sed -i "s/TASKS/2/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
+sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
+
+run_file=mpi_010_omp_40
+sed -i "s/NODES/10/"                         *${run_file}*.run
+sed -i "s/TASKS/1/"                         *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
 run_file=mpi_016_omp_01
@@ -229,243 +288,26 @@ sed -i "s/TASKS/4/"                         *${run_file}*.run
 sed -i "s/CPUS/2/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_016_omp_04
+run_file=mpi_016_omp_05
 sed -i "s/NODES/4/"                         *${run_file}*.run
 sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
+sed -i "s/CPUS/5/"                          *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_016_omp_08
+run_file=mpi_016_omp_10
 sed -i "s/NODES/4/"                         *${run_file}*.run
 sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
+sed -i "s/CPUS/10/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_016_omp_16
+run_file=mpi_016_omp_20
 sed -i "s/NODES/8/"                         *${run_file}*.run
 sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
+sed -i "s/CPUS/20/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_016_omp_32
-sed -i "s/NODES/16/"                        *${run_file}*.run
+run_file=mpi_016_omp_40
+sed -i "s/NODES/16/"                         *${run_file}*.run
 sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
+sed -i "s/CPUS/40/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_01
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/1/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_02
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/2/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_04
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_08
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_16
-sed -i "s/NODES/16/"                        *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_32
-sed -i "s/NODES/32/"                        *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_048_omp_01
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/12/"                        *${run_file}*.run
-sed -i "s/CPUS/1/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_048_omp_02
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/12/"                        *${run_file}*.run
-sed -i "s/CPUS/2/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_048_omp_04
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/12/"                        *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_048_omp_08
-sed -i "s/NODES/12/"                        *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_048_omp_16
-sed -i "s/NODES/24/"                        *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_048_omp_32
-sed -i "s/NODES/48/"                        *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_064_omp_01
-sed -i "s/NODES/4/"                         *${run_file}*.run
-sed -i "s/TASKS/16/"                        *${run_file}*.run
-sed -i "s/CPUS/1/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_064_omp_02
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/8/"                         *${run_file}*.run
-sed -i "s/CPUS/2/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_064_omp_04
-sed -i "s/NODES/16/"                        *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_064_omp_08
-sed -i "s/NODES/16/"                        *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_064_omp_16
-sed -i "s/NODES/32/"                        *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_064_omp_32
-sed -i "s/NODES/64/"                        *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/32/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_080_omp_08
-#sed -i "s/NODES/20/"                        *${run_file}*.run
-#sed -i "s/TASKS/4/"                         *${run_file}*.run
-#sed -i "s/CPUS/8/"                          *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_080_omp_16
-#sed -i "s/NODES/40/"                        *${run_file}*.run
-#sed -i "s/TASKS/2/"                         *${run_file}*.run
-#sed -i "s/CPUS/16/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_080_omp_32
-#sed -i "s/NODES/80/"                        *${run_file}*.run
-#sed -i "s/TASKS/1/"                         *${run_file}*.run
-#sed -i "s/CPUS/32/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_096_omp_08
-#sed -i "s/NODES/24/"                        *${run_file}*.run
-#sed -i "s/TASKS/4/"                         *${run_file}*.run
-#sed -i "s/CPUS/8/"                          *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_096_omp_16
-#sed -i "s/NODES/48/"                        *${run_file}*.run
-#sed -i "s/TASKS/2/"                         *${run_file}*.run
-#sed -i "s/CPUS/16/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_096_omp_32
-#sed -i "s/NODES/96/"                        *${run_file}*.run
-#sed -i "s/TASKS/1/"                         *${run_file}*.run
-#sed -i "s/CPUS/32/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_112_omp_08
-#sed -i "s/NODES/28/"                        *${run_file}*.run
-#sed -i "s/TASKS/4/"                         *${run_file}*.run
-#sed -i "s/CPUS/8/"                          *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_112_omp_16
-#sed -i "s/NODES/56/"                        *${run_file}*.run
-#sed -i "s/TASKS/2/"                         *${run_file}*.run
-#sed -i "s/CPUS/16/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_112_omp_32
-#sed -i "s/NODES/112/"                       *${run_file}*.run
-#sed -i "s/TASKS/1/"                         *${run_file}*.run
-#sed -i "s/CPUS/32/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_128_omp_08
-#sed -i "s/NODES/32/"                        *${run_file}*.run
-#sed -i "s/TASKS/4/"                         *${run_file}*.run
-#sed -i "s/CPUS/8/"                          *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_128_omp_16
-#sed -i "s/NODES/64/"                        *${run_file}*.run
-#sed -i "s/TASKS/2/"                         *${run_file}*.run
-#sed -i "s/CPUS/16/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_128_omp_32
-#sed -i "s/NODES/128/"                       *${run_file}*.run
-#sed -i "s/TASKS/1/"                         *${run_file}*.run
-#sed -i "s/CPUS/32/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_144_omp_08
-#sed -i "s/NODES/36/"                        *${run_file}*.run
-#sed -i "s/TASKS/4/"                         *${run_file}*.run
-#sed -i "s/CPUS/8/"                          *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_144_omp_16
-#sed -i "s/NODES/72/"                        *${run_file}*.run
-#sed -i "s/TASKS/2/"                         *${run_file}*.run
-#sed -i "s/CPUS/16/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_144_omp_32
-#sed -i "s/NODES/144/"                       *${run_file}*.run
-#sed -i "s/TASKS/1/"                         *${run_file}*.run
-#sed -i "s/CPUS/32/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_160_omp_08
-#sed -i "s/NODES/40/"                        *${run_file}*.run
-#sed -i "s/TASKS/4/"                         *${run_file}*.run
-#sed -i "s/CPUS/8/"                          *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_160_omp_16
-#sed -i "s/NODES/80/"                        *${run_file}*.run
-#sed -i "s/TASKS/2/"                         *${run_file}*.run
-#sed -i "s/CPUS/16/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-#run_file=mpi_160_omp_32
-#sed -i "s/NODES/160/"                       *${run_file}*.run
-#sed -i "s/TASKS/1/"                         *${run_file}*.run
-#sed -i "s/CPUS/32/"                         *${run_file}*.run
-#sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
