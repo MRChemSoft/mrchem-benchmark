@@ -13,11 +13,11 @@ Date     : Tue Mar 5 15:03:37 2019 +0100
 Hardware configuration:
 
 ```
-Cluster  : Fram
-Host     : UiT - The Arctic University of Norway
-System   : Lenovo NeXtScale nx360
-CPU type : Intel E5-2683v4 2.1GHz
-Core     : 2 x 16-core Intel Broadwell
-Memory   : 64GiB
+Cluster  : Saga
+Host     : NTNU, Trondheim, Norway
+System   : Hewlett Packard Enterprise - Apollo 2000/6500 Gen10
+CPU type : Intel Xeon-Gold 6138 2.0 GHz
+Core     : 2 x 20-core Intel Skylake
+Memory   : 192GiB
 Network  : Infiniband
 ```
