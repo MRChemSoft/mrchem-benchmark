@@ -20,7 +20,7 @@ outfile=../fock_matrix.csv
 echo "molecule,MPI,OMP,Kinetic matrix,Potential matrix,Total matrix" > ${outfile}
 
 for prec in 5; do
-    for mpi in 001 002 004 006 008 010 016; do
+    for mpi in 001 002 004 006 008 010 012 014 016 018 020; do
         for omp in 01 02 05 10 20 40; do
             inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
             if [ -f ${inpfile} ]; then
