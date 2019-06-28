@@ -1,14 +1,14 @@
 #!/bin/bash -l
 
-#SBATCH --job-name=NAME
-#SBATCH --nodes=NODES
-#SBATCH --ntasks-per-node=TASKS
-#SBATCH --cpus-per-task=CPUS
-#SBATCH --time=0-HOURS:00:00
+#SBATCH --job-name=caffeine_s_5
+#SBATCH --nodes=1
+#SBATCH --ntasks-per-node=1
+#SBATCH --cpus-per-task=10
+#SBATCH --time=0-12:00:00
 #SBATCH --account=nn4654k
 #SBATCH --partition=normal
-#SBATCH --output=OUTPUT.slurm
-#SBATCH --error=OUTPUT.slurm
+#SBATCH --output=prec_5_mpi_001_omp_10.slurm
+#SBATCH --error=prec_5_mpi_001_omp_10.slurm
 
 mrchem_version='mar-2019'
 
@@ -21,18 +21,18 @@ mkdir -p ${SCRATCH}
 
 # Copy to scratch
 cd ${SLURM_SUBMIT_DIR}
-cp INPUT.inp ${SCRATCH}/mrchem.inp
+cp prec_5_mpi_001_omp_10.inp ${SCRATCH}/mrchem.inp
 cp -r initial_guess ${SCRATCH}
 
 # Run calculation
-export OMP_NUM_THREADS=${SLURM_CPUS_PER_TASK}
+export OMP_NUM_THREADS=${SLURM_10_PER_TASK}
 cd ${SCRATCH}
 /home/stig/dev/mrchem-${mrchem_version}/bin/mrchem -D mrchem.inp
 mpirun /home/stig/dev/mrchem-${mrchem_version}/bin/mrchem.x @mrchem.inp >mrchem.out
 
 # Copy back
 cd ${SLURM_SUBMIT_DIR}
-cp ${SCRATCH}/mrchem.out OUTPUT.out
+cp ${SCRATCH}/mrchem.out prec_5_mpi_001_omp_10.out
 
 # Delete scratch
 rm -r ${SCRATCH}/*
