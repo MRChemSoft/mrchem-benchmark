@@ -4,6 +4,7 @@ name=$1
 mol=${name%_*}
 mult=${name#*_}
 
+mrchem_version='mrchem-mar-2019'
 min_scale=-5
 max_scale=20
 angstrom='true'
@@ -17,7 +18,7 @@ guess='SAD_DZ'
 dev_hr=1
 pre_hr=12
 full_hr=2
-xyz_dir="/cluster/home/stig/benchmarks-mrchem/molecules/caffeine"
+xyz_dir='/cluster/home/stig/benchmarks-mrchem/molecules/caffeine'
 
 if [[ $mult == 's' ]]; then mult=1; fi
 if [[ $mult == 'd' ]]; then mult=2; fi
@@ -30,32 +31,33 @@ if [[ $mult > 1 ]]; then restricted='false'; fi
 cd $name
 for prec in 5; do
     threshold=$((${prec}-1))
-    for MPI in 001 002 004 008 016 032 048 064; do
+    for MPI in 001 002 004 008 016 032 048; do
         for OMP in 01 02 04 08 16 32; do
             file_name=prec_${prec}_mpi_${MPI}_omp_${OMP}
             echo ${file_name}
 
-            cp ../mrchem.inp                          ${file_name}.inp
-            sed -i "/coords/r ${xyz_dir}/${mol}.xyz"  ${file_name}.inp
-            sed -i "s/REL_PREC/${prec}/"              ${file_name}.inp
-            sed -i "s/MIN_SCALE/${min_scale}/"        ${file_name}.inp
-            sed -i "s/MAX_SCALE/${max_scale}/"        ${file_name}.inp
-            sed -i "s/MULTIPLICITY/${mult}/"          ${file_name}.inp
-            sed -i "s/ANGSTROM/${angstrom}/"          ${file_name}.inp
-            sed -i "s/METHOD/${method}/"              ${file_name}.inp
-            sed -i "s/RESTRICTED/${restricted}/"      ${file_name}.inp
-            sed -i "s/XC_FUNC/${functional}/"         ${file_name}.inp
-            sed -i "s/KAIN/${kain}/"                  ${file_name}.inp
-            sed -i "s/ROTATION/${rotation}/"          ${file_name}.inp
-            sed -i "s/MAXIT/${max_iter}/"             ${file_name}.inp
-            sed -i "s/CANONICAL/${canonical}/"        ${file_name}.inp
-            sed -i "s/ORB_THRS/${threshold}/"         ${file_name}.inp
-            sed -i "s/INITIAL_GUESS/${guess}/"        ${file_name}.inp
-                                                      
-            cp ../mrchem.run                          ${file_name}.run
-            sed -i "s/NAME/${name}_${prec}/"          ${file_name}.run
-            sed -i "s/INPUT/${file_name}/"            ${file_name}.run
-            sed -i "s/OUTPUT/${file_name}/"           ${file_name}.run
+            cp ../mrchem.inp                             ${file_name}.inp
+            sed -i "/coords/r ${xyz_dir}/${mol}.xyz"     ${file_name}.inp
+            sed -i "s/REL_PREC/${prec}/"                 ${file_name}.inp
+            sed -i "s/MIN_SCALE/${min_scale}/"           ${file_name}.inp
+            sed -i "s/MAX_SCALE/${max_scale}/"           ${file_name}.inp
+            sed -i "s/MULTIPLICITY/${mult}/"             ${file_name}.inp
+            sed -i "s/ANGSTROM/${angstrom}/"             ${file_name}.inp
+            sed -i "s/METHOD/${method}/"                 ${file_name}.inp
+            sed -i "s/RESTRICTED/${restricted}/"         ${file_name}.inp
+            sed -i "s/XC_FUNC/${functional}/"            ${file_name}.inp
+            sed -i "s/KAIN/${kain}/"                     ${file_name}.inp
+            sed -i "s/ROTATION/${rotation}/"             ${file_name}.inp
+            sed -i "s/MAXIT/${max_iter}/"                ${file_name}.inp
+            sed -i "s/CANONICAL/${canonical}/"           ${file_name}.inp
+            sed -i "s/ORB_THRS/${threshold}/"            ${file_name}.inp
+            sed -i "s/INITIAL_GUESS/${guess}/"           ${file_name}.inp
+                                                         
+            cp ../mrchem.run                             ${file_name}.run
+            sed -i "s/NAME/${name}_${prec}/"             ${file_name}.run
+            sed -i "s/MRCHEM_VERSION/${mrchem_version}/" ${file_name}.run
+            sed -i "s/INPUT/${file_name}/"               ${file_name}.run
+            sed -i "s/OUTPUT/${file_name}/"              ${file_name}.run
         done
     done
 done

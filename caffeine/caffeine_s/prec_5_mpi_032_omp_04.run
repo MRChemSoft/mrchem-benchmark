@@ -11,7 +11,7 @@
 #SBATCH --error=prec_5_mpi_032_omp_04.slurm
 
 module purge
-module restore mrchem-intel
+module restore mrchem-mar-2019
 
 # Make scratch
 SCRATCH=/cluster/work/users/${USER}/MRCHEM-${SLURM_JOBID}
@@ -24,8 +24,8 @@ cp -r initial_guess ${SCRATCH}
 
 # Run calculation
 cd ${SCRATCH}
-/cluster/home/stig/benchmarks-mrchem/shared-mem/install-hybrid/bin/mrchem -D mrchem.inp
-mpirun /usr/bin/time -v /cluster/home/stig/benchmarks-mrchem/shared-mem/install-hybrid/bin/mrchem.x @mrchem.inp >mrchem.out
+/cluster/home/stig/dev/mrchem-mar-2019/bin/mrchem -D mrchem.inp
+mpirun /usr/bin/time -v /cluster/home/stig/dev/mrchem-mar-2019/bin/mrchem.x @mrchem.inp >mrchem.out
 
 # Copy back
 cd ${SLURM_SUBMIT_DIR}

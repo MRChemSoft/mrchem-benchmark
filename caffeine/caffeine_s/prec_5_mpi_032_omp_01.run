@@ -1,17 +1,17 @@
 #!/bin/bash -l
 
 #SBATCH --job-name=caffeine_s_5
-#SBATCH --nodes=4
-#SBATCH --ntasks-per-node=8
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=4
 #SBATCH --cpus-per-task=1
-#SBATCH --time=0-6:00:00
+#SBATCH --time=0-2:00:00
 #SBATCH --account=nn4654k
 #SBATCH --partition=normal
 #SBATCH --output=prec_5_mpi_032_omp_01.slurm
 #SBATCH --error=prec_5_mpi_032_omp_01.slurm
 
 module purge
-module restore mrchem-intel
+module restore mrchem-mar-2019
 
 # Make scratch
 SCRATCH=/cluster/work/users/${USER}/MRCHEM-${SLURM_JOBID}
@@ -24,8 +24,8 @@ cp -r initial_guess ${SCRATCH}
 
 # Run calculation
 cd ${SCRATCH}
-/cluster/home/stig/benchmarks-mrchem/shared-mem/install-hybrid/bin/mrchem -D mrchem.inp
-mpirun /usr/bin/time -v /cluster/home/stig/benchmarks-mrchem/shared-mem/install-hybrid/bin/mrchem.x @mrchem.inp >mrchem.out
+/cluster/home/stig/dev/mrchem-mar-2019/bin/mrchem -D mrchem.inp
+mpirun /usr/bin/time -v /cluster/home/stig/dev/mrchem-mar-2019/bin/mrchem.x @mrchem.inp >mrchem.out
 
 # Copy back
 cd ${SLURM_SUBMIT_DIR}
