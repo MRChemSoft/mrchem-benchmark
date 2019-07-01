@@ -5,6 +5,7 @@
 #SBATCH --ntasks-per-node=1
 #SBATCH --cpus-per-task=20
 #SBATCH --time=0-12:00:00
+#SBATCH --mem=30GB
 #SBATCH --account=nn4654k
 #SBATCH --partition=normal
 #SBATCH --output=prec_5_mpi_008_omp_20.slurm
@@ -25,7 +26,7 @@ cp prec_5_mpi_008_omp_20.inp ${SCRATCH}/mrchem.inp
 cp -r initial_guess ${SCRATCH}
 
 # Run calculation
-export OMP_NUM_THREADS=${SLURM_20_PER_TASK}
+export OMP_NUM_THREADS=20
 cd ${SCRATCH}
 /home/stig/dev/mrchem-${mrchem_version}/bin/mrchem -D mrchem.inp
 mpirun /home/stig/dev/mrchem-${mrchem_version}/bin/mrchem.x @mrchem.inp >mrchem.out
