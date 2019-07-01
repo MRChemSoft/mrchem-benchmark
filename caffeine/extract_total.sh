@@ -10,8 +10,8 @@ outfile=../total.csv
 echo "molecule,MPI,OMP,SCF cycles,Wall time,Max memory" > ${outfile}
 
 for prec in 5; do
-    for mpi in 001 002 004 006 008 010 012 014 016 018 020; do
-        for omp in 01 02 05 10 20 40; do
+    for mpi in 001 002 004 008 016 032; do
+        for omp in 01 02 05 10 16 20; do
             slurmfile=prec_${prec}_mpi_${mpi}_omp_${omp}.slurm
             inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
             if [ -f ${inpfile} ]; then
