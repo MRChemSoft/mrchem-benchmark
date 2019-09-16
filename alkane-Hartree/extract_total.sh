@@ -4,8 +4,9 @@ function get_convergence_rate {
     sed -n "/Convergence rate/,/SCF converged/p"
 }
 
-outfile=/cluster/home/stig/benchmarks-mrchem/ref/Hartree/total.csv
-echo "molecule,prec,MPI,OMP,SCF cycles,Wall time,Max memory" > ${outfile}
+current_dir=`pwd`
+outfile=${current_dir}/total.csv
+echo "molecule,MPI,OMP,orbs,SCF cycles,Wall time,Max memory" > ${outfile}
 
 #for mol in 002; do
 #    cd ch4-${mol}_s
@@ -13,13 +14,15 @@ echo "molecule,prec,MPI,OMP,SCF cycles,Wall time,Max memory" > ${outfile}
 #        for mpi in 04; do
 #            for omp in 04; do
 for mol in 010 020 030 040 050 060; do
-    cd ch4-${mol}_s
+    cd alkane-${mol}_s
     for prec in 5; do
         for mpi in 008 016 032 048 064 080 096 112 128 144 160; do
             for omp in 08 16 32; do
                 slurmfile=prec_${prec}_mpi_${mpi}_omp_${omp}.slurm
                 inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
                 if [ -f ${inpfile} ]; then
+                    n_orbs=`grep 'OrbitalVector' ${inpfile} \
+                        | awk '{ print $2 }'`
                     foo=`sed -n '/Convergence rate/,/SCF converged/p' ${inpfile} \
                         | awk '$0 ~ "SCF converged" {print NR}'`
                     scf_cycles=$(awk "BEGIN {print ${foo} - 6; exit}")
@@ -32,7 +35,7 @@ for mol in 010 020 030 040 050 060; do
                             max_mem=${mem}
                         fi
                     done
-                    echo "alkane_${mol},${prec},${mpi},${omp},${scf_cycles},${wall_time},${max_mem}" >> ${outfile}
+                    echo "alkane_${mol},${mpi},${omp},${n_orbs},${scf_cycles},${wall_time},${max_mem}" >> ${outfile}
                 fi
 
             done

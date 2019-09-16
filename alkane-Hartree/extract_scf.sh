@@ -14,8 +14,9 @@ function get_wall_time {
     | awk '{ print $3 }'
 }
 
-outfile=/cluster/home/stig/benchmarks-mrchem/ref/Hartree/scf.csv
-echo "molecule,prec,MPI,OMP,Localize,SCF energy,Helmholtz,KAIN,Fock operator,Fock matrix,Total SCF" > ${outfile}
+current_dir=`pwd`
+outfile=${current_dir}/scf.csv
+echo "molecule,MPI,OMP,orbs,Localize,SCF energy,Helmholtz,KAIN,Fock operator,Fock matrix,Total SCF" > ${outfile}
 
 #for mol in 002; do
 #    cd ch4-${mol}_s
@@ -23,12 +24,14 @@ echo "molecule,prec,MPI,OMP,Localize,SCF energy,Helmholtz,KAIN,Fock operator,Foc
 #        for mpi in 01; do
 #            for omp in 04; do
 for mol in 010 020 030 040 050 060; do
-    cd ch4-${mol}_s
+    cd alkane-${mol}_s
     for prec in 5; do
         for mpi in 008 016 032 048 064 080 096 112 128 144 160; do
             for omp in 08 16 32; do
                 inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
                 if [ -f ${inpfile} ]; then
+                    n_orbs=`grep 'OrbitalVector' ${inpfile} \
+                        | awk '{ print $2 }'`
                     localize=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Localizing orbitals'`
                     scf_energy=`get_scf_cycle 1 ${inpfile} \
@@ -47,7 +50,7 @@ for mol in 010 020 030 040 050 060; do
                     scf_tot=`get_scf_cycle 1 ${inpfile} \
                         | grep -m 1 '### Wall time' \
                         | awk '{ print $4 }'`
-                    echo "alkane_${mol},${prec},${mpi},${omp},${localize},${scf_energy},${helmholtz},${kain},${fock_setup},${fock_calc},${scf_tot}" >> ${outfile}
+                    echo "alkane_${mol},${mpi},${omp},${n_orbs},${localize},${scf_energy},${helmholtz},${kain},${fock_setup},${fock_calc},${scf_tot}" >> ${outfile}
                 fi
             done
         done

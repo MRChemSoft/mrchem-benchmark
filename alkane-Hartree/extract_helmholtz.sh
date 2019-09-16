@@ -14,8 +14,9 @@ function get_wall_time {
     | awk '{ print $3 }'
 }
 
-outfile=/cluster/home/stig/benchmarks-mrchem/ref/Hartree/helmholtz.csv
-echo "molecule,prec,MPI,OMP,Rotation,Operators,Argument,Apply,Total Helmholtz" > ${outfile}
+current_dir=`pwd`
+outfile=${current_dir}/helmholtz.csv
+echo "molecule,MPI,OMP,orbs,Rotation,Operators,Argument,Apply,Total Helmholtz" > ${outfile}
 
 #for mol in 002; do
 #    cd ch4-${mol}_s
@@ -23,12 +24,14 @@ echo "molecule,prec,MPI,OMP,Rotation,Operators,Argument,Apply,Total Helmholtz" >
 #        for mpi in 01; do
 #            for omp in 04; do
 for mol in 010 020 030 040 050 060; do
-    cd ch4-${mol}_s
+    cd alkane-${mol}_s
     for prec in 5; do
         for mpi in 008 016 032 048 064 080 096 112 128 144 160; do
             for omp in 08 16 32; do
                 inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
                 if [ -f ${inpfile} ]; then
+                    n_orbs=`grep 'OrbitalVector' ${inpfile} \
+                        | awk '{ print $2 }'`
                     helm_oper=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Setting up Helmholtz operators'`
                     helm_arg=`get_scf_cycle 1 ${inpfile} \
@@ -36,7 +39,7 @@ for mol in 010 020 030 040 050 060; do
                     helm_app=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Applying Helmholtz operators'`
                     helm_tot=$(awk "BEGIN { print $helm_oper+$helm_arg+$helm_app; exit }")
-                    echo "alkane_${mol},${prec},${mpi},${omp},${helm_oper},${helm_arg},${helm_app},${helm_tot}" >> ${outfile}
+                    echo "alkane_${mol},${mpi},${omp},${n_orbs},${helm_oper},${helm_arg},${helm_app},${helm_tot}" >> ${outfile}
                 fi
             done
         done
