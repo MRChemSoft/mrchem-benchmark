@@ -14,21 +14,24 @@ function get_wall_time {
     | awk '{ print $3 }'
 }
 
-outfile=/cluster/home/stig/benchmarks-mrchem/shared-mem/Hartree/localize.csv
-echo "molecule,MPI,OMP,Position matrix,Foster-Boys,Rotation,Total localize" > ${outfile}
+current_dir=`pwd`
+outfile=${current_dir}/localize.csv
+echo "molecule,MPI,OMP,orbs,Position matrix,Foster-Boys,Rotation,Total localize" > ${outfile}
 
 #for mol in 002; do
-#    cd ch4-${mol}_s
+#    cd alkane-${mol}_s
 #    for prec in 4; do
 #        for mpi in 01; do
 #            for omp in 04; do
 for mol in 010 020 030 040 050 060 070 090; do
-    cd ch4-${mol}_s
+    cd alkane-${mol}_s
     for prec in 5; do
         for mpi in 008 016 032 048 064 080 096 112 128 144 160; do
             for omp in 08 16 32; do
                 inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
                 if [ -f ${inpfile} ]; then
+                    n_orbs=`grep 'OrbitalVector' ${inpfile} \
+                        | awk '{ print $2 }'`
                     pos_mat=`get_scf_cycle 1 ${inpfile} \
                         | get_block 'Localizing orbitals' \
                         | grep 'Computing position matrices' \
@@ -43,7 +46,7 @@ for mol in 010 020 030 040 050 060 070 090; do
                         | awk '{ print $3 }'`
                     loc_tot=`get_scf_cycle 1 ${inpfile} \
                         | get_wall_time 'Localizing orbitals'`
-                    echo "ch4_${mol},${mpi},${omp},${pos_mat},${foster_boys},${rotation},${loc_tot}" >> ${outfile}
+                    echo "alkane_${mol},${mpi},${omp},${n_orbs},${pos_mat},${foster_boys},${rotation},${loc_tot}" >> ${outfile}
                 fi
             done
         done
