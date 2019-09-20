@@ -16,11 +16,11 @@ function get_wall_time {
 
 current_dir=`pwd`
 outfile=${current_dir}/fock_oper.csv
-echo "molecule,MPI,OMP,Coulomb dens,Coulomb pot,Allreduce pot,XC dens,XCFun,XC energy, XC pot,Total Fock" > ${outfile}
+echo "molecule,MPI,OMP,Coulomb dens,Coulomb pot,Allreduce pot,Total Fock" > ${outfile}
 
 cd caffeine_s
 for prec in 5; do
-    for mpi in 001 002 004 008 016 032; do
+    for mpi in 001 002 004 008 016; do
         for omp in 01 02 04 08 16; do
             inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
             if [ -f ${inpfile} ]; then
@@ -36,25 +36,9 @@ for prec in 5; do
                     | get_block 'Setting up Fock operator' \
                     | grep -m 1 'Allreduce potential' \
                     | awk '{ print $4 }'`
-                xc_dens=`get_scf_cycle 1 ${inpfile} \
-                    | get_block 'Setting up Fock operator' \
-                    | grep -m 1 'XC total density' \
-                    | awk '{ print $5 }'`
-                xc_fun=`get_scf_cycle 1 ${inpfile} \
-                    | get_block 'Setting up Fock operator' \
-                    | grep -m 1 'XC evaluate xcfun' \
-                    | awk '{ print $5 }'`
-                xc_en=`get_scf_cycle 1 ${inpfile} \
-                    | get_block 'Setting up Fock operator' \
-                    | grep -m 1 'XC energy' \
-                    | awk '{ print $4 }'`
-                xc_pot=`get_scf_cycle 1 ${inpfile} \
-                    | get_block 'Setting up Fock operator' \
-                    | grep -m 1 'XC potential' \
-                    | awk '{ print $4 }'`
                 tot_fock=`get_scf_cycle 1 ${inpfile} \
                     | get_wall_time 'Setting up Fock operator'`
-                echo "caffeine,${mpi},${omp},${coul_dens},${coul_pot},${reduce},${xc_dens},${xc_fun},${xc_en},${xc_pot},${tot_fock}" >> ${outfile}
+                echo "caffeine,${mpi},${omp},${coul_dens},${coul_pot},${reduce},${tot_fock}" >> ${outfile}
             fi
         done
     done

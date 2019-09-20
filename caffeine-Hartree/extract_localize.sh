@@ -20,7 +20,7 @@ echo "molecule,MPI,OMP,Position matrix,Foster-Boys,Rotation,Total localize" > ${
 
 cd caffeine_s
 for prec in 5; do
-    for mpi in 001 002 004 008 016 032; do
+    for mpi in 001 002 004 008 016; do
         for omp in 01 02 04 08 16; do
             inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
             if [ -f ${inpfile} ]; then

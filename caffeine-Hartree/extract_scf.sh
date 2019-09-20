@@ -20,7 +20,7 @@ echo "molecule,MPI,OMP,Localize,SCF energy,Helmholtz,Lowdin,KAIN,Fock operator,F
 
 cd caffeine_s
 for prec in 5; do
-    for mpi in 001 002 004 008 016 032; do
+    for mpi in 001 002 004 008 016; do
         for omp in 01 02 04 08 16; do
             inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
             if [ -f ${inpfile} ]; then
@@ -33,7 +33,7 @@ for prec in 5; do
                 helm_app=`get_scf_cycle 1 ${inpfile} \
                     | get_wall_time 'Applying Helmholtz operators'`
                 helmholtz=$(awk "BEGIN {print $helm_rot+$helm_app; exit}")
-                lowdin=`get_scf_cycle 1 ${inpfile} \
+                lowdin=`get_scf_cycle 4 ${inpfile} \
                     | get_wall_time 'Lowdin orthonormalization'`
                 kain=`get_scf_cycle 4 ${inpfile} \
                     | get_wall_time 'Iterative subspace accelerator'`

@@ -10,7 +10,7 @@ echo "molecule,MPI,OMP,SCF cycles,Wall time,Max memory" > ${outfile}
 
 cd caffeine_s
 for prec in 5; do
-    for mpi in 001 002 004 008 016 032; do
+    for mpi in 001 002 004 008 016; do
         for omp in 01 02 04 08 16; do
             slurmfile=prec_${prec}_mpi_${mpi}_omp_${omp}.slurm
             inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
