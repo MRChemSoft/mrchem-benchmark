@@ -2,12 +2,6 @@
 
 rel_prec = 1.0e-REL_PREC
 
-MPI {
-  numerically_exact = false
-  share_nuclear_potential = true
-  share_coulomb_potential = true
-}
-
 MRA {
   min_scale = MIN_SCALE
   max_scale = MAX_SCALE
@@ -38,7 +32,7 @@ Properties {
 
 SCF {
   kain = KAIN
-  max_iter = MAXIT
+  max_iter = 5
   rotation = ROTATION
   canonical = CANONICAL
   orbital_thrs = 1.0e-ORB_THRS

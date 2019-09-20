@@ -5,13 +5,13 @@
 #SBATCH --ntasks-per-node=TASKS
 #SBATCH --cpus-per-task=CPUS
 #SBATCH --time=0-HOURS:00:00
-#SBATCH --mem=30GB
+#SBATCH --mem=120GB
 #SBATCH --account=nn4654k
-#SBATCH --partition=normal
+#SBATCH --partition=highmem
 #SBATCH --output=OUTPUT.slurm
 #SBATCH --error=OUTPUT.slurm
 
-mrchem_version='mar-2019'
+mrchem_version='oct-2018'
 
 module purge
 module restore mrchem-${mrchem_version}

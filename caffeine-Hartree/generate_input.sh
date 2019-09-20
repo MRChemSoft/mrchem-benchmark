@@ -28,7 +28,7 @@ if [[ $mult > 1 ]]; then restricted='false'; fi
 cd $name
 for prec in 5; do
     threshold=$((${prec}-1))
-    for MPI in 001 002 004 008 016 032; do
+    for MPI in 001 002 004 008 016; do
         for OMP in 01 02 04 08 16; do
             file_name=prec_${prec}_mpi_${MPI}_omp_${OMP}
             echo ${file_name}
@@ -42,8 +42,8 @@ for prec in 5; do
             sed -i "s/ANGSTROM/${angstrom}/"          ${file_name}.inp
             sed -i "s/RESTRICTED/${restricted}/"      ${file_name}.inp
             sed -i "s/KAIN/${kain}/"                  ${file_name}.inp
-            sed -i "s/ROTATION/${rotation}/"          ${file_name}.inp
             sed -i "s/MAXIT/${max_iter}/"             ${file_name}.inp
+            sed -i "s/ROTATION/${rotation}/"          ${file_name}.inp
             sed -i "s/CANONICAL/${canonical}/"        ${file_name}.inp
             sed -i "s/ORB_THRS/${threshold}/"         ${file_name}.inp
             sed -i "s/INITIAL_GUESS/${guess}/"        ${file_name}.inp
@@ -206,32 +206,3 @@ sed -i "s/TASKS/1/"                         *${run_file}*.run
 sed -i "s/CPUS/16/"                         *${run_file}*.run
 sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
 
-run_file=mpi_032_omp_01
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/1/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_02
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/2/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_04
-sed -i "s/NODES/8/"                         *${run_file}*.run
-sed -i "s/TASKS/4/"                         *${run_file}*.run
-sed -i "s/CPUS/4/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_08
-sed -i "s/NODES/16/"                        *${run_file}*.run
-sed -i "s/TASKS/2/"                         *${run_file}*.run
-sed -i "s/CPUS/8/"                          *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
-
-run_file=mpi_032_omp_16
-sed -i "s/NODES/32/"                        *${run_file}*.run
-sed -i "s/TASKS/1/"                         *${run_file}*.run
-sed -i "s/CPUS/16/"                         *${run_file}*.run
-sed -i "s/HOURS/${full_hr}/"                *${run_file}*.run
