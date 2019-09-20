@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stigrj/mrchem-benchmark/stallo/mar-2019)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stigrj/mrchem-benchmark/stallo/oct-2018)
 
 A set of benchmark calculations for the MRChem program
 on linear alkane chains using a variable number of
@@ -7,8 +7,8 @@ MPI processes and OpenMP threads/process.
 MRChem version : pre-release
 
 ```
-Commit   : 6ec0bf08fafa37dbccd6ec7a6c5c702761767451
-Date     : Tue Mar 5 15:03:37 2019 +0100
+Commit   : 0e4c064a24c331b598041235a8a9989c3bfe436f
+Date     : Mon Oct 22 11:48:33 2018 +0200
 ```
 
 
