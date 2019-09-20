@@ -1,0 +1,42 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=caffeine_s_5
+#SBATCH --nodes=8
+#SBATCH --ntasks-per-node=4
+#SBATCH --cpus-per-task=1
+#SBATCH --time=0-12:00:00
+#SBATCH --mem=30GB
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+#SBATCH --output=prec_5_mpi_032_omp_01.slurm
+#SBATCH --error=prec_5_mpi_032_omp_01.slurm
+
+mrchem_version='mar-2019'
+
+module purge
+module restore mrchem-${mrchem_version}
+
+# Make scratch
+SCRATCH=/global/work/${USER}/MRCHEM-${SLURM_JOBID}
+mkdir -p ${SCRATCH}
+
+# Copy to scratch
+cd ${SLURM_SUBMIT_DIR}
+cp prec_5_mpi_032_omp_01.inp ${SCRATCH}/mrchem.inp
+cp -r initial_guess ${SCRATCH}
+
+# Run calculation
+export OMP_NUM_THREADS=1
+cd ${SCRATCH}
+/home/stig/dev/mrchem-${mrchem_version}/bin/mrchem -D mrchem.inp
+mpirun /home/stig/dev/mrchem-${mrchem_version}/bin/mrchem.x @mrchem.inp >mrchem.out
+
+# Copy back
+cd ${SLURM_SUBMIT_DIR}
+cp ${SCRATCH}/mrchem.out prec_5_mpi_032_omp_01.out
+
+# Delete scratch
+rm -r ${SCRATCH}/*
+rmdir ${SCRATCH}
+
+exit 0
