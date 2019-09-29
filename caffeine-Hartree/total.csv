@@ -1,0 +1,17 @@
+molecule,MPI,OMP,SCF cycles,Wall time,Max memory
+caffeine,001,01,-6,3.520192e+04,1
+caffeine,001,02,-6,1.724739e+04,1
+caffeine,001,04,-6,9.225380e+03,1
+caffeine,001,08,-6,5.497749e+03,1
+caffeine,001,16,-6,3.722121e+03,1
+caffeine,002,01,-6,1.830141e+04,1
+caffeine,002,16,-6,3.216390e+03,1
+caffeine,004,01,-6,1.434630e+04,1
+caffeine,004,16,-6,1.933087e+03,1
+caffeine,008,01,-6,8.304828e+03,1
+caffeine,008,16,-6,1.243500e+03,1
+caffeine,016,01,-6,5.965310e+03,1
+caffeine,016,02,-6,3.397325e+03,1
+caffeine,016,04,-6,2.011986e+03,1
+caffeine,016,08,-6,1.332013e+03,1
+caffeine,016,16,-6,9.736614e+02,1
