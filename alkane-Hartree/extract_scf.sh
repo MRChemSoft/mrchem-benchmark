@@ -26,7 +26,7 @@ echo "molecule,MPI,OMP,orbs,Localize,SCF energy,Helmholtz,Lowdin,KAIN,Fock opera
 for mol in 010 020 030 040 050 060 070 090; do
     cd alkane-${mol}_s
     for prec in 5; do
-        for mpi in 008 016 032 048 064 080 096 112 128 144 160; do
+        for mpi in 004 008 016 032 048 064 080 096 112 128 144 160; do
             for omp in 08 16 32; do
                 inpfile=prec_${prec}_mpi_${mpi}_omp_${omp}.out
                 if [ -f ${inpfile} ]; then
