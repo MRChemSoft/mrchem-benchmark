@@ -1,4 +1,4 @@
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/stigrj/mrchem-benchmark/saga/mar-2019)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/MRChemSoft/mrchem-benchmark/saga/mar-2019)
 
 A set of benchmark calculations for the MRChem program
 on linear alkane chains using a variable number of
