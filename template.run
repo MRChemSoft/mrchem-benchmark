@@ -1,0 +1,38 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=NAME
+#SBATCH --nodes=NODES
+#SBATCH --ntasks-per-node=TASKS
+#SBATCH --cpus-per-task=CPUS
+#SBATCH --time=0-HOURS:00:00
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+#SBATCH --output=OUTPUT.slurm
+#SBATCH --error=OUTPUT.slurm
+
+module purge
+module restore MRCHEM_VERSION
+
+# Make scratch
+SCRATCH=/cluster/work/users/${USER}/MRCHEM-${SLURM_JOBID}
+mkdir -p ${SCRATCH}
+
+# Copy to scratch
+cd ${SLURM_SUBMIT_DIR}
+cp INPUT.inp ${SCRATCH}/
+cp -r initial_guess ${SCRATCH}
+
+# Run calculation
+cd ${SCRATCH}
+/cluster/home/stig/dev/MRCHEM_VERSION/bin/mrchem --launcher="mpirun /usr/bin/time -v" INPUT
+
+# Copy back
+cd ${SLURM_SUBMIT_DIR}
+cp ${SCRATCH}/OUTPUT.json .
+cp ${SCRATCH}/OUTPUT.out .
+
+# Delete scratch
+rm -r ${SCRATCH}/*
+rmdir ${SCRATCH}
+
+exit 0

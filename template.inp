@@ -1,0 +1,33 @@
+# vim:syntax=sh:
+
+world_prec = 1.0e-WORLD_PREC
+world_unit = WORLD_UNIT
+
+MPI {
+  bank_size = 0
+  numerically_exact = false
+  share_nuclear_potential = true
+  share_coulomb_potential = true
+}
+
+Molecule {
+  translate = true
+  multiplicity = MULTIPLICITY
+$coords
+$end
+}
+
+WaveFunction {
+  method = METHOD
+  restricted = RESTRICTED
+}
+
+SCF {
+  kain = KAIN
+  max_iter = MAXIT
+  rotation = ROTATION
+  localize = LOCALIZE
+  guess_type = GUESS_TYPE
+  orbital_thrs = 1.0e-ORB_THRS
+}
+
