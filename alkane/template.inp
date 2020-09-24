@@ -1,7 +1,7 @@
 # vim:syntax=sh:
 
 world_prec = 1.0e-4
-world_unit = angstrom
+world_unit = bohr
 
 MPI {
   bank_size = 0
@@ -10,7 +10,7 @@ MPI {
 }
 
 Molecule {
-  translate = true
+  translate = false
 $coords
 $end
 }

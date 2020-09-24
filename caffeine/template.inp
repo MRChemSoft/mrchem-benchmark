@@ -1,0 +1,29 @@
+# vim:syntax=sh:
+
+world_prec = 1.0e-4
+world_unit = angstrom
+
+MPI {
+  bank_size = 0
+  share_nuclear_potential = true
+  share_coulomb_potential = true
+}
+
+Molecule {
+  translate = false
+$coords
+$end
+}
+
+WaveFunction {
+  method = PBE
+}
+
+SCF {
+  kain = 5
+  max_iter = -1
+  localize = true
+  guess_type = gto
+  orbital_thrs = 1.0e-3
+}
+

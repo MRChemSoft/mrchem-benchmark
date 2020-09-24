@@ -16,10 +16,10 @@ inp_name="nodes_${nodes}_tasks_${tasks_per_node}_omp_${cpus_per_task}"
 mkdir -p ${mol}
 cd ${mol}
 
-cp ../../template.inp                        ${inp_name}.inp
+cp ../template.inp                           ${inp_name}.inp
 sed -i "/coords/r ${mol_path}/${mol}.xyz"    ${inp_name}.inp
 
-cp ../../template.run                        ${inp_name}.run
+cp ../template.run                           ${inp_name}.run
 sed -i "s/NAME/${mol}/"                      ${inp_name}.run
 sed -i "s/NODES/${nodes}/"                   ${inp_name}.run
 sed -i "s/TASKS/${tasks_per_node}/"          ${inp_name}.run
