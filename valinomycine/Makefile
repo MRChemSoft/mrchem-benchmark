@@ -1,10 +1,10 @@
 SHELL=/bin/bash
 
-.PHONY: all caffeine clean
-.DEFAULT_GOAL := all
-
 account=nn4654k
 targets=valinomycine
+
+.PHONY: ${targets}
+.DEFAULT_GOAL := all
 
 all: ${targets}
 
@@ -13,17 +13,11 @@ valinomycine:
 	@mkdir -p $@
 	@cp -r ../molecules/$@ $@/initial_guess
 	@echo "Generating $@ inputs"
-	@../generate.sh $@ 01 01 01 00:30:00 ${account} devel
-	@../generate.sh $@ 01 01 02 00:30:00 ${account} devel
-	@../generate.sh $@ 01 01 04 00:30:00 ${account} devel
-	@../generate.sh $@ 01 01 08 00:30:00 ${account} devel
-	@../generate.sh $@ 01 01 16 00:30:00 ${account} devel
-	@../generate.sh $@ 01 01 32 00:30:00 ${account} devel
-	@../generate.sh $@ 01 02 01 00:30:00 ${account} devel
-	@../generate.sh $@ 01 02 02 00:30:00 ${account} devel
-	@../generate.sh $@ 01 02 04 00:30:00 ${account} devel
-	@../generate.sh $@ 01 02 08 00:30:00 ${account} devel
-	@../generate.sh $@ 01 02 16 00:30:00 ${account} devel
+	@../generate.sh $@ 04 02 16 02:00:00 ${account} ${account}
+	@../generate.sh $@ 08 02 16 02:00:00 ${account} ${account}
+	@../generate.sh $@ 16 02 16 02:00:00 ${account} ${account}
+	@../generate.sh $@ 32 02 16 02:00:00 ${account} ${account}
+	@../generate.sh $@ 64 02 16 02:00:00 ${account} ${account}
 
 clean:
 	@echo "Cleaning ${targets}"

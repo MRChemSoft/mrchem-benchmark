@@ -1,10 +1,10 @@
 SHELL=/bin/bash
 
-.PHONY: all caffeine clean
-.DEFAULT_GOAL := all
-
 account=nn4654k
 targets=alkane-002 alkane-004 alkane-006 alkane-008 alkane-010
+
+.PHONY: ${targets}
+.DEFAULT_GOAL := all
 
 all: ${targets}
 
