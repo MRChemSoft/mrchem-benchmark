@@ -4,7 +4,6 @@ world_prec = 1.0e-4
 world_unit = angstrom
 
 MPI {
-  bank_size = 0
   share_nuclear_potential = true
   share_coulomb_potential = true
 }
@@ -16,12 +15,12 @@ $end
 }
 
 WaveFunction {
-  method = PBE
+  method = METHOD
 }
 
 SCF {
   kain = 5
-  max_iter = -1
+  max_iter = 20
   localize = true
   guess_type = gto
   orbital_thrs = 1.0e-3

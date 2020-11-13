@@ -4,26 +4,69 @@ SHELL=/bin/bash
 .DEFAULT_GOAL := all
 
 account=nn4654k
-targets=caffeine
+targets=pbe,hf
 
 all: ${targets}
 
-caffeine:
+pbe:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
-	@cp -r ../molecules/$@ $@/initial_guess
+	@cp -r ../molecules/caffeine $@/initial_guess
 	@echo "Generating $@ inputs"
-	@./generate.sh $@ 01 01 01 00:30:00 ${account} devel
-	@./generate.sh $@ 01 01 02 00:30:00 ${account} devel
-	@./generate.sh $@ 01 01 04 00:30:00 ${account} devel
-	@./generate.sh $@ 01 01 08 00:30:00 ${account} devel
-	@./generate.sh $@ 01 01 16 00:30:00 ${account} devel
-	@./generate.sh $@ 01 01 32 00:30:00 ${account} devel
-	@./generate.sh $@ 01 02 01 00:30:00 ${account} devel
-	@./generate.sh $@ 01 02 02 00:30:00 ${account} devel
-	@./generate.sh $@ 01 02 04 00:30:00 ${account} devel
-	@./generate.sh $@ 01 02 08 00:30:00 ${account} devel
-	@./generate.sh $@ 01 02 16 00:30:00 ${account} devel
+	@./generate.sh $@ 01 01 32 01:00:00 ${account} ${account}
+	@./generate.sh $@ 01 02 16 01:00:00 ${account} ${account}
+	@./generate.sh $@ 01 04 08 01:00:00 ${account} ${account}
+	@./generate.sh $@ 01 08 04 01:00:00 ${account} ${account}
+	@./generate.sh $@ 02 01 32 01:00:00 ${account} ${account}
+	@./generate.sh $@ 02 02 16 01:00:00 ${account} ${account}
+	@./generate.sh $@ 02 04 08 01:00:00 ${account} ${account}
+	@./generate.sh $@ 02 08 04 01:00:00 ${account} ${account}
+	@./generate.sh $@ 03 01 32 01:00:00 ${account} ${account}
+	@./generate.sh $@ 03 02 16 01:00:00 ${account} ${account}
+	@./generate.sh $@ 03 04 08 01:00:00 ${account} ${account}
+	@./generate.sh $@ 03 08 04 01:00:00 ${account} ${account}
+	@./generate.sh $@ 04 01 32 01:00:00 ${account} ${account}
+	@./generate.sh $@ 04 02 16 01:00:00 ${account} ${account}
+	@./generate.sh $@ 04 04 08 01:00:00 ${account} ${account}
+	@./generate.sh $@ 04 08 04 01:00:00 ${account} ${account}
+	@./generate.sh $@ 05 01 32 01:00:00 ${account} ${account}
+	@./generate.sh $@ 05 02 16 01:00:00 ${account} ${account}
+	@./generate.sh $@ 05 04 08 01:00:00 ${account} ${account}
+	@./generate.sh $@ 05 08 04 01:00:00 ${account} ${account}
+	@./generate.sh $@ 06 01 32 01:00:00 ${account} ${account}
+	@./generate.sh $@ 06 02 16 01:00:00 ${account} ${account}
+	@./generate.sh $@ 06 04 08 01:00:00 ${account} ${account}
+	@./generate.sh $@ 06 08 04 01:00:00 ${account} ${account}
+
+hf:
+	@echo "Generating $@ guess"
+	@mkdir -p $@
+	@cp -r ../molecules/caffeine $@/initial_guess
+	@echo "Generating $@ inputs"
+	@./generate.sh $@ 01 01 32 02:00:00 ${account} ${account}
+	@./generate.sh $@ 01 02 16 02:00:00 ${account} ${account}
+	@./generate.sh $@ 01 04 08 02:00:00 ${account} ${account}
+	@./generate.sh $@ 01 08 04 02:00:00 ${account} ${account}
+	@./generate.sh $@ 02 01 32 02:00:00 ${account} ${account}
+	@./generate.sh $@ 02 02 16 02:00:00 ${account} ${account}
+	@./generate.sh $@ 02 04 08 02:00:00 ${account} ${account}
+	@./generate.sh $@ 02 08 04 02:00:00 ${account} ${account}
+	@./generate.sh $@ 03 01 32 02:00:00 ${account} ${account}
+	@./generate.sh $@ 03 02 16 02:00:00 ${account} ${account}
+	@./generate.sh $@ 03 04 08 02:00:00 ${account} ${account}
+	@./generate.sh $@ 03 08 04 02:00:00 ${account} ${account}
+	@./generate.sh $@ 04 01 32 02:00:00 ${account} ${account}
+	@./generate.sh $@ 04 02 16 02:00:00 ${account} ${account}
+	@./generate.sh $@ 04 04 08 02:00:00 ${account} ${account}
+	@./generate.sh $@ 04 08 04 02:00:00 ${account} ${account}
+	@./generate.sh $@ 05 01 32 02:00:00 ${account} ${account}
+	@./generate.sh $@ 05 02 16 02:00:00 ${account} ${account}
+	@./generate.sh $@ 05 04 08 02:00:00 ${account} ${account}
+	@./generate.sh $@ 05 08 04 02:00:00 ${account} ${account}
+	@./generate.sh $@ 06 01 32 02:00:00 ${account} ${account}
+	@./generate.sh $@ 06 02 16 02:00:00 ${account} ${account}
+	@./generate.sh $@ 06 04 08 02:00:00 ${account} ${account}
+	@./generate.sh $@ 06 08 04 02:00:00 ${account} ${account}
 
 clean:
 	@echo "Cleaning ${targets}"
