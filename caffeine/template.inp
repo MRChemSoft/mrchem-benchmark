@@ -1,9 +1,10 @@
 # vim:syntax=sh:
 
-world_prec = 1.0e-4
+world_prec = 1.0e-5
 world_unit = angstrom
 
 MPI {
+  bank = BANK
   share_nuclear_potential = true
   share_coulomb_potential = true
 }
@@ -22,7 +23,7 @@ SCF {
   kain = 5
   max_iter = 20
   localize = true
-  guess_type = gto
+  guess_type = sad_dz
   orbital_thrs = 1.0e-3
 }
 

@@ -16,9 +16,9 @@ inp_name="nodes_${nodes}_tasks_${tasks_per_node}_omp_${cpus_per_task}"
 
 if [ $method = "hf" ]
 then
-    bank=0
-else
     bank=-1
+else
+    bank=0
 fi
 
 mkdir -p ${method}
