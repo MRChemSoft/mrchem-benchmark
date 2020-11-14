@@ -14,11 +14,19 @@ root_path="\/cluster\/home\/stig\/src\/mrchem-benchmark"
 mol_path="/cluster/home/stig/src/mrchem-benchmark/molecules/${mol}"
 inp_name="nodes_${nodes}_tasks_${tasks_per_node}_omp_${cpus_per_task}"
 
+if [ $method = "hf" ]
+then
+    bank=0
+else
+    bank=-1
+fi
+
 mkdir -p ${method}
 cd ${method}
 
 cp ../template.inp                           ${inp_name}.inp
 sed -i "/coords/r ${mol_path}/${mol}.xyz"    ${inp_name}.inp
+sed -i "s/BANK/${bank}/"                     ${inp_name}.inp
 sed -i "s/METHOD/${method}/"                 ${inp_name}.inp
 
 cp ../template.run                           ${inp_name}.run
