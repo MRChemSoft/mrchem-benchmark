@@ -16,6 +16,6 @@ root_path="ROOT_PATH"
 source ${root_path}/MACHINE.env
 
 # Run calculation
-${root_path}/mrchem_install/bin/mrchem --launcher="mpirun /usr/bin/time -v" INPUT
+${root_path}/mrchem_install/bin/mrchem --launcher="mpirun -bind-to none /usr/bin/time -v" INPUT
 
 exit 0

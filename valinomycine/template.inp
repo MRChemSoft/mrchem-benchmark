@@ -1,10 +1,10 @@
 # vim:syntax=sh:
 
-world_prec = 1.0e-4
+world_prec = 1.0e-5
 world_unit = angstrom
 
 MPI {
-  bank_size = 0
+  bank_size = BANK
   share_nuclear_potential = true
   share_coulomb_potential = true
 }
@@ -16,14 +16,14 @@ $end
 }
 
 WaveFunction {
-  method = PBE
+  method = METHOD
 }
 
 SCF {
   kain = 5
-  max_iter = -1
+  max_iter = 20
   localize = true
   guess_type = sad_dz
-  orbital_thrs = 1.0e-3
+  energy_thrs = 1.0e-3
 }
 
