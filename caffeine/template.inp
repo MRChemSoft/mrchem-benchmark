@@ -4,7 +4,7 @@ world_prec = 1.0e-5
 world_unit = angstrom
 
 MPI {
-  bank = BANK
+  bank_size = BANK
   share_nuclear_potential = true
   share_coulomb_potential = true
 }
@@ -24,6 +24,7 @@ SCF {
   max_iter = 20
   localize = true
   guess_type = sad_dz
-  orbital_thrs = 1.0e-3
+  energy_thrs = 1.0e-3
+  orbital_thrs = -1.0
 }
 
