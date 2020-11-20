@@ -23,6 +23,7 @@ SCF {
   kain = 5
   max_iter = 20
   localize = true
+  guess_prec = 1.0e-4
   guess_type = sad_dz
   energy_thrs = 1.0e-3
   orbital_thrs = -1.0
