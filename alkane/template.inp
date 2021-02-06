@@ -1,6 +1,6 @@
 # vim:syntax=sh:
 
-world_prec = 1.0e-4
+world_prec = 1.0e-5
 world_unit = bohr
 
 MPI {
@@ -10,7 +10,7 @@ MPI {
 }
 
 Molecule {
-  translate = false
+  translate = true
 $coords
 $end
 }
@@ -21,9 +21,9 @@ WaveFunction {
 
 SCF {
   kain = 5
-  max_iter = -1
+  max_iter = 30
   localize = true
-  guess_type = gto
+  guess_type = sad_dz
   orbital_thrs = 1.0e-3
 }
 
