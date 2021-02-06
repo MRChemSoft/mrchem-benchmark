@@ -15,7 +15,6 @@ pbe:
 	@mkdir -p $@/checkpoint
 	@mkdir -p $@/plots
 	@mkdir -p $@/initial_guess
-	#@cp -r ../molecules/caffeine $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 02 02 16 06:00:00 ${account} ${account}
 	@./generate.sh $@ 02 04 08 06:00:00 ${account} ${account}
@@ -34,7 +33,6 @@ hf:
 	@mkdir -p $@/checkpoint
 	@mkdir -p $@/plots
 	@mkdir -p $@/initial_guess
-	#@cp -r ../molecules/caffeine $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 02 02 16 12:00:00 ${account} ${account}
 	@./generate.sh $@ 02 04 08 12:00:00 ${account} ${account}
