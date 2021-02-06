@@ -16,6 +16,7 @@ root_path="ROOT_PATH"
 source ${root_path}/modules.env
 
 # Run calculation
+export OMP_NUM_THREADS=CPUS
 ${root_path}/mrchem_install/bin/mrchem --launcher="mpirun /usr/bin/time -v" INPUT
 
 exit 0
