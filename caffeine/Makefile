@@ -9,13 +9,12 @@ targets=pbe hf
 all: ${targets}
 
 pbe:
-	@echo "Generating $@ guess"
+	@echo "Generating $@ inputs"
 	@mkdir -p $@
 	@mkdir -p $@/orbitals
 	@mkdir -p $@/checkpoint
 	@mkdir -p $@/plots
 	@mkdir -p $@/initial_guess
-	@echo "Generating $@ inputs"
 	@./generate.sh $@ 02 02 16 06:00:00 ${account} ${account}
 	@./generate.sh $@ 02 04 08 06:00:00 ${account} ${account}
 	@./generate.sh $@ 02 08 04 06:00:00 ${account} ${account}
@@ -27,13 +26,12 @@ pbe:
 	@./generate.sh $@ 06 08 04 06:00:00 ${account} ${account}
 
 hf:
-	@echo "Generating $@ guess"
+	@echo "Generating $@ inputs"
 	@mkdir -p $@
 	@mkdir -p $@/orbitals
 	@mkdir -p $@/checkpoint
 	@mkdir -p $@/plots
 	@mkdir -p $@/initial_guess
-	@echo "Generating $@ inputs"
 	@./generate.sh $@ 02 02 16 12:00:00 ${account} ${account}
 	@./generate.sh $@ 02 04 08 12:00:00 ${account} ${account}
 	@./generate.sh $@ 02 08 04 12:00:00 ${account} ${account}
