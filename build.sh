@@ -1,10 +1,9 @@
 #!/bin/bash -l
 
-machine_name=$1
-mrchem_version=$2
+mrchem_version=$1
 
-echo "-- Setting up environment for" ${machine_name}
-source ${machine_name}.env
+echo "-- Setting up environment"
+source modules.env
 
 src_dir="mrchem_src"
 build_dir="mrchem_build"
