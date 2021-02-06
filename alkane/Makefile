@@ -11,6 +11,9 @@ all: ${targets}
 alkane-002:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/$@ $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 01 01 01 00:30:00 ${account} devel
@@ -28,6 +31,9 @@ alkane-002:
 alkane-004:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/$@ $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 01 01 01 00:30:00 ${account} devel
@@ -45,6 +51,9 @@ alkane-004:
 alkane-006:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/$@ $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 01 01 01 00:30:00 ${account} devel
@@ -62,6 +71,9 @@ alkane-006:
 alkane-008:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/$@ $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 01 01 01 00:30:00 ${account} devel
@@ -79,6 +91,9 @@ alkane-008:
 alkane-010:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/$@ $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 01 01 01 00:30:00 ${account} devel

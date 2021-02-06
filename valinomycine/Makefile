@@ -11,6 +11,9 @@ all: ${targets}
 pbe:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/valinomycine $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 16 02 16 6:00:00 ${account} ${account}
@@ -21,6 +24,9 @@ pbe:
 hf:
 	@echo "Generating $@ guess"
 	@mkdir -p $@
+	@mkdir -p $@/orbitals
+	@mkdir -p $@/checkpoint
+	@mkdir -p $@/plots
 	@cp -r ../molecules/valinomycine $@/initial_guess
 	@echo "Generating $@ inputs"
 	@./generate.sh $@ 16 02 16 1-00:00:00 ${account} ${account}
