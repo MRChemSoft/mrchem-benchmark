@@ -8,7 +8,6 @@ time=$5
 account=$6
 qos=$7
 
-machine_name="fram"
 root_path="\/cluster\/home\/stig\/src\/mrchem-benchmark"
 mol_path="/cluster/home/stig/src/mrchem-benchmark/molecules/${mol}"
 inp_name="nodes_${nodes}_tasks_${tasks_per_node}_omp_${cpus_per_task}"
@@ -29,5 +28,4 @@ sed -i "s/ACCOUNT/${account}/"               ${inp_name}.run
 sed -i "s/QOS/${qos}/"                       ${inp_name}.run
 sed -i "s/INPUT/${inp_name}/"                ${inp_name}.run
 sed -i "s/ROOT_PATH/${root_path}/"           ${inp_name}.run
-sed -i "s/MACHINE/${machine_name}/"          ${inp_name}.run
 echo ${inp_name}

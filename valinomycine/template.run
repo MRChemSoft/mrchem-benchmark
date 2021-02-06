@@ -13,7 +13,7 @@
 
 # Source environment
 root_path="ROOT_PATH"
-source ${root_path}/MACHINE.env
+source ${root_path}/modules.env
 
 # Run calculation
 ${root_path}/mrchem_install/bin/mrchem --launcher="mpirun -bind-to none /usr/bin/time -v" INPUT
