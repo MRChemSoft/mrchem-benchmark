@@ -1,10 +1,12 @@
 # vim:syntax=sh:
 
 world_prec = 1.0e-5
-world_unit = bohr
+
+Printer {
+  print_level = 1
+}
 
 MPI {
-  bank_size = 0
   share_nuclear_potential = true
   share_coulomb_potential = true
 }
@@ -23,7 +25,7 @@ SCF {
   kain = 5
   max_iter = 30
   localize = true
-  guess_type = sad_dz
+  initial_guess = sad_dz
   orbital_thrs = 1.0e-3
 }
 

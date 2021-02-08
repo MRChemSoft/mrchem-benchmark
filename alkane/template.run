@@ -14,9 +14,11 @@
 # Source environment
 root_path="ROOT_PATH"
 source ${root_path}/modules.env
+source ${root_path}/venv/bin/activate
 
 # Run calculation
 export OMP_NUM_THREADS=CPUS
-${root_path}/mrchem_install/bin/mrchem --launcher="mpirun -map-by ppr:1:numa -bind-to numa" INPUT
+${root_path}/mrchem_install/bin/mrchem -D INPUT.inp
+mpirun ${root_path}/mrchem_install/bin/mrchem.x INPUT.json >INPUT.out
 
 exit 0

@@ -8,8 +8,8 @@ time=$5
 account=$6
 qos=$7
 
-root_path="\/cluster\/home\/stig\/src\/mrchem-benchmark"
-mol_path="/cluster/home/stig/src/mrchem-benchmark/molecules/${mol}"
+root_path="\/cluster\/home\/stig\/src\/mrchem-benchmark-2"
+mol_path="/cluster/home/stig/src/mrchem-benchmark-2/molecules/${mol}"
 inp_name="nodes_${nodes}_tasks_${tasks_per_node}_omp_${cpus_per_task}"
 
 mkdir -p ${mol}
@@ -26,6 +26,6 @@ sed -i "s/CPUS/${cpus_per_task}/"            ${inp_name}.run
 sed -i "s/TIME/${time}/"                     ${inp_name}.run
 sed -i "s/ACCOUNT/${account}/"               ${inp_name}.run
 sed -i "s/QOS/${qos}/"                       ${inp_name}.run
-sed -i "s/INPUT/${inp_name}/"                ${inp_name}.run
+sed -i "s/INPUT/${inp_name}/g"               ${inp_name}.run
 sed -i "s/ROOT_PATH/${root_path}/"           ${inp_name}.run
 echo ${inp_name}
