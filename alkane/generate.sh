@@ -8,8 +8,8 @@ time=$5
 account=$6
 qos=$7
 
-root_path="\/cluster\/home\/stig\/src\/mrchem-benchmark"
-mol_path="/cluster/home/stig/src/mrchem-benchmark/molecules/${mol}"
+root_path="\/cluster\/home\/stig\/src\/mrchem"
+mol_path="/cluster/home/stig/src/benchmark-1.1/molecules/${mol}"
 inp_name="nodes_${nodes}_tasks_${tasks_per_node}_omp_${cpus_per_task}"
 
 mkdir -p ${mol}
