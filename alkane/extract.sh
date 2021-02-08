@@ -2,7 +2,7 @@
 
 outfile=$PWD/alkane.csv
 
-echo "molecule,nodes,tasks,cpus,SCF energy,SCF cycles,wall time" > ${outfile}
+echo "molecule,version,nodes,tasks,cpus,SCF energy,SCF cycles,wall time" > ${outfile}
 
 version="v1.1"
 tasks=08
