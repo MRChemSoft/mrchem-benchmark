@@ -1,0 +1,300 @@
+{
+  "mpi": {
+    "numerically_exact": false,
+    "shared_memory_size": 10000
+  },
+  "printer": {
+    "print_level": 1,
+    "print_input": false,
+    "print_mpi": false,
+    "file_name": "mrchem",
+    "print_prec": 6,
+    "print_width": 70
+  },
+  "molecule": {
+    "charge": 0,
+    "multiplicity": 1,
+    "coords": [
+      {
+        "atom": "h",
+        "xyz": [
+          4.329240215156053,
+          6.432765607706269,
+          0.48909099603230144
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          5.383150635156054,
+          3.75956802770627,
+          -1.2603838039676984
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          5.221557645156054,
+          3.6136694377062697,
+          2.0933367860323013
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          0.4506692251560538,
+          4.065469047706269,
+          1.8692741560323014
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          0.6123519551560537,
+          4.20915098770627,
+          -1.4587678739676986
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          2.4507137751560535,
+          -0.18764492229372998,
+          -1.5598490139676986
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          2.2874177551560537,
+          -0.3319548922937301,
+          1.7696858960323014
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -2.450429794843946,
+          0.18687928770626971,
+          1.5606438660323014
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -2.2877390348439466,
+          0.3327199077062697,
+          -1.7688494039676983
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -0.4519293148439463,
+          -4.06448784229373,
+          -1.8715012139676985
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -0.610929764843946,
+          -4.20985066229373,
+          1.4565948460323015
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -5.381834274843946,
+          -3.7608789822937307,
+          1.2623565960323013
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -5.223080614843946,
+          -3.61272162229373,
+          -2.0913930439676984
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -4.329053434843946,
+          -6.4328120322937306,
+          -0.4897440939676985
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          4.261413985156054,
+          4.35278114770627,
+          0.39531811603230144
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          1.5414587451560537,
+          3.3831244977062696,
+          0.22176048603230142
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          1.3574907451560536,
+          0.49544939770626995,
+          0.08806140603230145
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          -1.357487524843946,
+          -0.49543091229373015,
+          -0.08777108396769856
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          -1.541445464843946,
+          -3.38303982229373,
+          -0.2227753339676986
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          -4.261439294843946,
+          -4.35287351229373,
+          -0.3946351039676986
+        ]
+      }
+    ]
+  },
+  "mra": {
+    "basis_type": "i",
+    "order": 8,
+    "boxes": [
+      2,
+      2,
+      2
+    ],
+    "corner": [
+      -1,
+      -1,
+      -1
+    ],
+    "min_scale": -4,
+    "max_scale": 20,
+    "scaling_factor": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "initial_guess": {
+    "restricted": true,
+    "guess_prec": 1e-05,
+    "method": "sad",
+    "zeta": 2,
+    "start_orbitals": "orbitals/phi",
+    "final_orbitals": "orbitals/phi",
+    "file_basis": "initial_guess/mrchem.bas",
+    "file_moa": "initial_guess/mrchem.moa",
+    "file_mob": "initial_guess/mrchem.mob",
+    "write_orbitals": false
+  },
+  "scf_calculation": {
+    "final_orbitals": "orbitals/phi",
+    "write_orbitals": false,
+    "cube_plot": {
+      "density": false,
+      "orbital": [],
+      "plotter": {
+        "points": [
+          20,
+          20,
+          20
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "B": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "C": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "initial_energy": {
+      "method_name": "DFT (PBE)",
+      "localize": true,
+      "prec": 1e-05
+    },
+    "orbital_solver": {
+      "method_name": "DFT (PBE)",
+      "kain": 5,
+      "max_iter": 30,
+      "rotation": 0,
+      "localize": true,
+      "start_prec": 1e-05,
+      "final_prec": 1e-05,
+      "orbital_thrs": 0.001,
+      "property_thrs": -1.0,
+      "helmholtz_prec": 1e-05
+    },
+    "fock_operator": {
+      "kinetic_operator": {
+        "derivative": "abgv_55"
+      },
+      "nuclear_operator": {
+        "proj_prec": 1e-05,
+        "smooth_prec": 1e-05,
+        "shared_memory": true
+      },
+      "coulomb_operator": {
+        "poisson_prec": 1e-05,
+        "shared_memory": true
+      },
+      "exchange_operator": {
+        "screen": false,
+        "poisson_prec": 1e-05
+      },
+      "xc_operator": {
+        "grid_prec": -1.0,
+        "shared_memory": false,
+        "xc_functional": {
+          "spin": false,
+          "gamma": false,
+          "cutoff": 0.0,
+          "derivative": "abgv_00",
+          "functionals": [
+            {
+              "name": "pbe",
+              "coef": 1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rsp_calculations": []
+}

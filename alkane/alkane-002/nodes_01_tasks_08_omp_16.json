@@ -1,0 +1,204 @@
+{
+  "mpi": {
+    "numerically_exact": false,
+    "shared_memory_size": 10000
+  },
+  "printer": {
+    "print_level": 1,
+    "print_input": false,
+    "print_mpi": false,
+    "file_name": "mrchem",
+    "print_prec": 6,
+    "print_width": 70
+  },
+  "molecule": {
+    "charge": 0,
+    "multiplicity": 1,
+    "coords": [
+      {
+        "atom": "h",
+        "xyz": [
+          1.6270542807287351,
+          2.3806817135269265,
+          0.5715468843058713
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          2.5178395707287353,
+          -0.0986485564730738,
+          -1.5139400756941288
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          2.2333626707287353,
+          -0.6950759464730738,
+          1.7804154043058713
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -2.517835569271265,
+          0.09688549352692621,
+          1.5144443943058712
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -2.2338580992712647,
+          0.6963332435269263,
+          -1.7795000356941288
+        ]
+      },
+      {
+        "atom": "h",
+        "xyz": [
+          -1.6265659692712648,
+          -2.3805715364730737,
+          -0.5731474456941286
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          1.3912364307287353,
+          0.3461941735269262,
+          0.18277751430587136
+        ]
+      },
+      {
+        "atom": "c",
+        "xyz": [
+          -1.3912361692712647,
+          -0.34616097647307376,
+          -0.18276233569412864
+        ]
+      }
+    ]
+  },
+  "mra": {
+    "basis_type": "i",
+    "order": 8,
+    "boxes": [
+      2,
+      2,
+      2
+    ],
+    "corner": [
+      -1,
+      -1,
+      -1
+    ],
+    "min_scale": -4,
+    "max_scale": 20,
+    "scaling_factor": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "initial_guess": {
+    "restricted": true,
+    "guess_prec": 1e-05,
+    "method": "sad",
+    "zeta": 2,
+    "start_orbitals": "orbitals/phi",
+    "final_orbitals": "orbitals/phi",
+    "file_basis": "initial_guess/mrchem.bas",
+    "file_moa": "initial_guess/mrchem.moa",
+    "file_mob": "initial_guess/mrchem.mob",
+    "write_orbitals": false
+  },
+  "scf_calculation": {
+    "final_orbitals": "orbitals/phi",
+    "write_orbitals": false,
+    "cube_plot": {
+      "density": false,
+      "orbital": [],
+      "plotter": {
+        "points": [
+          20,
+          20,
+          20
+        ],
+        "O": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "A": [
+          1.0,
+          0.0,
+          0.0
+        ],
+        "B": [
+          0.0,
+          1.0,
+          0.0
+        ],
+        "C": [
+          0.0,
+          0.0,
+          1.0
+        ]
+      }
+    },
+    "initial_energy": {
+      "method_name": "DFT (PBE)",
+      "localize": true,
+      "prec": 1e-05
+    },
+    "orbital_solver": {
+      "method_name": "DFT (PBE)",
+      "kain": 5,
+      "max_iter": 30,
+      "rotation": 0,
+      "localize": true,
+      "start_prec": 1e-05,
+      "final_prec": 1e-05,
+      "orbital_thrs": 0.001,
+      "property_thrs": -1.0,
+      "helmholtz_prec": 1e-05
+    },
+    "fock_operator": {
+      "kinetic_operator": {
+        "derivative": "abgv_55"
+      },
+      "nuclear_operator": {
+        "proj_prec": 1e-05,
+        "smooth_prec": 1e-05,
+        "shared_memory": true
+      },
+      "coulomb_operator": {
+        "poisson_prec": 1e-05,
+        "shared_memory": true
+      },
+      "exchange_operator": {
+        "screen": false,
+        "poisson_prec": 1e-05
+      },
+      "xc_operator": {
+        "grid_prec": -1.0,
+        "shared_memory": false,
+        "xc_functional": {
+          "spin": false,
+          "gamma": false,
+          "cutoff": 0.0,
+          "derivative": "abgv_00",
+          "functionals": [
+            {
+              "name": "pbe",
+              "coef": 1.0
+            }
+          ]
+        }
+      }
+    }
+  },
+  "rsp_calculations": []
+}

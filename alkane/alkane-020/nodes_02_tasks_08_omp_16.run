@@ -1,0 +1,24 @@
+#!/bin/bash -l
+
+#SBATCH --job-name=alkane-020
+#SBATCH --nodes=02
+#SBATCH --ntasks-per-node=08
+#SBATCH --cpus-per-task=16
+#SBATCH --time=01:00:00
+#SBATCH --account=nn4654k
+#SBATCH --partition=normal
+#SBATCH --qos=devel
+#SBATCH --output=nodes_02_tasks_08_omp_16.slurm
+#SBATCH --error=nodes_02_tasks_08_omp_16.slurm
+
+# Source environment
+root_path="/cluster/home/stig/src/mrchem-benchmark-2"
+source ${root_path}/modules.env
+source ${root_path}/venv/bin/activate
+
+# Run calculation
+export OMP_NUM_THREADS=16
+${root_path}/mrchem_install/bin/mrchem -D nodes_02_tasks_08_omp_16.inp
+mpirun ${root_path}/mrchem_install/bin/mrchem.x nodes_02_tasks_08_omp_16.json >nodes_02_tasks_08_omp_16.out
+
+exit 0
