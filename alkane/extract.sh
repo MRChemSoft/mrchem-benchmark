@@ -2,9 +2,9 @@
 
 outfile=$PWD/alkane.csv
 
-echo "molecule,nodes,tasks,cpus,SCF energy,SCF cycles,wall time" > ${outfile}
+echo "molecule,version,nodes,tasks,cpus,SCF energy,SCF cycles,wall time" > ${outfile}
 
-version="v1.1"
+version="v1.0"
 tasks=08
 omp=16
 for mol in 002 004 006 008 010 020 030 040 050 060; do
